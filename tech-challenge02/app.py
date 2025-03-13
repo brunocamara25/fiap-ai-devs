@@ -8,25 +8,25 @@ import yfinance as yf
 
 # Page config
 st.set_page_config(
-    page_title="Portfolio Optimizer",
+    page_title="Otimizador de Portfólio",
     page_icon="📈",
     layout="wide"
 )
 
 # Title and description
-st.title("📊 Genetic Algorithm Portfolio Optimizer")
+st.title("📊 Otimizador de Portfólio com Algoritmo Genético")
 st.markdown("""
-This app uses a genetic algorithm to find the optimal portfolio allocation based on the Sharpe Ratio.
-You can select stocks, set your investment amount, and watch the optimization process in real-time!
+Este aplicativo usa um algoritmo genético para encontrar a alocação ideal de portfólio baseada no Índice Sharpe.
+Você pode selecionar ações, definir seu valor de investimento e acompanhar o processo de otimização em tempo real!
 """)
 
 # Sidebar
 with st.sidebar:
-    st.header("📝 Parameters")
+    st.header("📝 Parâmetros")
     
     # Investment amount
     investment = st.number_input(
-        "Investment Amount ($)",
+        "Valor do Investimento ($)",
         min_value=1000,
         max_value=10000000,
         value=10000,
@@ -34,68 +34,68 @@ with st.sidebar:
     )
     
     # Date range
-    st.subheader("Date Range")
+    st.subheader("Período")
     start_date = st.date_input(
-        "Start Date",
+        "Data Inicial",
         value=pd.Timestamp("2020-01-01")
     )
     end_date = st.date_input(
-        "End Date",
+        "Data Final",
         value=pd.Timestamp("2023-01-01")
     )
     
     # Stock selection
-    st.subheader("Stock Selection")
+    st.subheader("Seleção de Ações")
     default_tickers = ["AAPL", "GOOGL", "MSFT", "AMZN", "TSLA"]
     custom_tickers = st.text_input(
-        "Enter additional stock tickers (comma-separated)",
+        "Digite códigos de ações adicionais (separados por vírgula)",
         "META, NVDA"
     ).replace(" ", "")
     
     all_tickers = default_tickers + [t.strip() for t in custom_tickers.split(",") if t.strip()]
     selected_tickers = st.multiselect(
-        "Select stocks for your portfolio",
+        "Selecione ações para seu portfólio",
         all_tickers,
         default=default_tickers[:3]
     )
     
     # Algorithm parameters
-    st.subheader("Algorithm Parameters")
-    population_size = st.slider("Population Size", 50, 200, 100)
-    num_generations = st.slider("Number of Generations", 10, 100, 50)
-    mutation_rate = st.slider("Mutation Rate", 0.0, 0.5, 0.1)
-    risk_free_rate = st.slider("Risk-Free Rate (%)", 0.0, 5.0, 2.0) / 100
+    st.subheader("Parâmetros do Algoritmo")
+    population_size = st.slider("Tamanho da População", 50, 200, 100)
+    num_generations = st.slider("Número de Gerações", 10, 100, 50)
+    mutation_rate = st.slider("Taxa de Mutação", 0.0, 0.5, 0.1)
+    risk_free_rate = st.slider("Taxa Livre de Risco (%)", 0.0, 5.0, 2.0) / 100
 
 def download_data(tickers, start_date, end_date):
-    """Download stock data"""
+    """Baixar dados das ações"""
     try:
         data = yf.download(tickers, start=start_date, end=end_date,auto_adjust=False)['Adj Close']
         if isinstance(data, pd.Series):
             data = pd.DataFrame(data)
         return data
     except Exception as e:
-        st.error(f"Error downloading data: {str(e)}")
+        st.error(f"Erro ao baixar dados: {str(e)}")
         return None
 
 def calculate_metrics(weights, returns, cov_matrix, risk_free_rate):
-    """Calculate portfolio metrics"""
+    """Calcular métricas do portfólio"""
     portfolio_return = np.sum(returns.mean() * weights) * 252
     portfolio_vol = np.sqrt(np.dot(weights.T, np.dot(cov_matrix * 252, weights)))
     sharpe_ratio = (portfolio_return - risk_free_rate) / portfolio_vol
     return portfolio_return, portfolio_vol, sharpe_ratio
 
 def create_individual(size):
-    """Create random portfolio weights"""
+    """Criar pesos aleatórios para o portfólio"""
     weights = np.random.random(size)
     return weights / np.sum(weights)
 
 def optimize_portfolio():
     if len(selected_tickers) < 2:
-        st.warning("Please select at least 2 stocks.")
+        st.warning("Por favor, selecione pelo menos 2 ações.")
         return
     
     # Download data
-    with st.spinner("Downloading stock data..."):
+    with st.spinner("Baixando dados das ações..."):
         data = download_data(selected_tickers, start_date, end_date)
         if data is None:
             return
@@ -109,19 +109,19 @@ def optimize_portfolio():
     col1, col2 = st.columns(2)
     
     with col1:
-        st.subheader("Current Stock Prices")
+        st.subheader("Preços Atuais das Ações")
         price_df = pd.DataFrame({
-            'Stock': latest_prices.index,
-            'Price': latest_prices.values
+            'Ação': latest_prices.index,
+            'Preço': latest_prices.values
         })
-        st.dataframe(price_df.style.format({'Price': '${:.2f}'}))
+        st.dataframe(price_df.style.format({'Preço': '${:.2f}'}))
     
     with col2:
-        st.subheader("Stock Returns")
+        st.subheader("Retorno das Ações")
         returns_chart = st.empty()
         fig_returns, ax = plt.subplots(figsize=(10, 6))
         (returns + 1).cumprod().plot(ax=ax)
-        ax.set_title("Cumulative Returns")
+        ax.set_title("Retornos Acumulados")
         ax.grid(True)
         returns_chart.pyplot(fig_returns)
         plt.close(fig_returns)
@@ -169,16 +169,16 @@ def optimize_portfolio():
             # Update progress
             progress = (generation + 1) / num_generations
             progress_bar.progress(progress)
-            status_text.text(f"Generation {generation + 1}/{num_generations}")
+            status_text.text(f"Geração {generation + 1}/{num_generations}")
             
             # Update metrics
             if best_weights is not None:
                 ret, vol, _ = calculate_metrics(best_weights, returns, cov_matrix, risk_free_rate)
                 metrics_text.markdown(f"""
-                **Current Best Portfolio:**
-                - Expected Annual Return: {ret:.2%}
-                - Expected Annual Volatility: {vol:.2%}
-                - Sharpe Ratio: {best_sharpe:.4f}
+                **Melhor Portfólio Atual:**
+                - Retorno Anual Esperado: {ret:.2%}
+                - Volatilidade Anual Esperada: {vol:.2%}
+                - Índice Sharpe: {best_sharpe:.4f}
                 """)
             
             # Update charts
@@ -186,9 +186,9 @@ def optimize_portfolio():
                 # Progress chart
                 ax_progress.clear()
                 ax_progress.plot(best_history, 'b-')
-                ax_progress.set_xlabel('Generation')
-                ax_progress.set_ylabel('Best Sharpe Ratio')
-                ax_progress.set_title('Optimization Progress')
+                ax_progress.set_xlabel('Geração')
+                ax_progress.set_ylabel('Melhor Índice Sharpe')
+                ax_progress.set_title('Progresso da Otimização')
                 ax_progress.grid(True)
                 progress_chart.pyplot(fig_progress)
                 
@@ -196,7 +196,7 @@ def optimize_portfolio():
                 ax_allocation.clear()
                 if best_weights is not None:
                     ax_allocation.pie(best_weights, labels=selected_tickers, autopct='%1.1f%%')
-                    ax_allocation.set_title('Current Best Portfolio Allocation')
+                    ax_allocation.set_title('Melhor Alocação de Portfólio Atual')
                 allocation_chart.pyplot(fig_allocation)
             
             # Selection
@@ -229,19 +229,19 @@ def optimize_portfolio():
             population = new_population
     
     except Exception as e:
-        st.error(f"Optimization error: {str(e)}")
+        st.error(f"Erro de otimização: {str(e)}")
         return
     finally:
         plt.close(fig_progress)
         plt.close(fig_allocation)
     
     # Final Results
-    st.header("🎯 Final Portfolio")
+    st.header("🎯 Portfólio Final")
     
     col5, col6 = st.columns(2)
     
     with col5:
-        st.subheader("Portfolio Metrics")
+        st.subheader("Métricas do Portfólio")
         final_return, final_vol, final_sharpe = calculate_metrics(
             best_weights, returns, cov_matrix, risk_free_rate
         )
@@ -249,22 +249,22 @@ def optimize_portfolio():
         # Calculate projected returns for different time horizons
         monthly_return = (1 + final_return) ** (1/12) - 1
         projected_values = {
-            "1 month": investment * (1 + monthly_return),
-            "3 months": investment * (1 + monthly_return) ** 3,
-            "6 months": investment * (1 + monthly_return) ** 6,
-            "1 year": investment * (1 + final_return),
-            "2 years": investment * (1 + final_return) ** 2,
-            "5 years": investment * (1 + final_return) ** 5
+            "1 mês": investment * (1 + monthly_return),
+            "3 meses": investment * (1 + monthly_return) ** 3,
+            "6 meses": investment * (1 + monthly_return) ** 6,
+            "1 ano": investment * (1 + final_return),
+            "2 anos": investment * (1 + final_return) ** 2,
+            "5 anos": investment * (1 + final_return) ** 5
         }
         
         st.markdown(f"""
-        #### Current Metrics
-        - Expected Annual Return: **{final_return:.2%}**
-        - Expected Annual Volatility: **{final_vol:.2%}**
-        - Sharpe Ratio: **{final_sharpe:.4f}**
+        #### Métricas Atuais
+        - Retorno Anual Esperado: **{final_return:.2%}**
+        - Volatilidade Anual Esperada: **{final_vol:.2%}**
+        - Índice Sharpe: **{final_sharpe:.4f}**
         
-        #### Projected Investment Value
-        Assuming the expected return rate remains constant:
+        #### Valor Projetado do Investimento
+        Assumindo que a taxa de retorno esperada permaneça constante:
         """)
         
         for period, value in projected_values.items():
@@ -272,32 +272,32 @@ def optimize_portfolio():
             profit_percent = (profit / investment) * 100
             st.markdown(f"""
             **{period}:**
-            - Value: **${value:,.2f}**
-            - Profit: **${profit:,.2f}** (*{profit_percent:+.1f}%*)
+            - Valor: **${value:,.2f}**
+            - Lucro: **${profit:,.2f}** (*{profit_percent:+.1f}%*)
             """)
             
         st.warning("""
-        ⚠️ Note: These projections are based on historical data and expected returns. 
-        Actual returns may vary due to market conditions and other factors.
-        Past performance does not guarantee future results.
+        ⚠️ Nota: Estas projeções são baseadas em dados históricos e retornos esperados. 
+        Os retornos reais podem variar devido às condições do mercado e outros fatores.
+        O desempenho passado não garante resultados futuros.
         """)
     
     with col6:
-        st.subheader("Investment Allocation")
+        st.subheader("Alocação do Investimento")
         allocation_df = pd.DataFrame({
-            'Stock': selected_tickers,
-            'Weight': best_weights,
-            'Amount': best_weights * investment,
-            'Shares': (best_weights * investment / latest_prices).round(2)
+            'Ação': selected_tickers,
+            'Peso': best_weights,
+            'Valor': best_weights * investment,
+            'Ações': (best_weights * investment / latest_prices).round(2)
         })
         st.dataframe(
             allocation_df.style.format({
-                'Weight': '{:.2%}',
-                'Amount': '${:,.2f}',
-                'Shares': '{:.2f}'
+                'Peso': '{:.2%}',
+                'Valor': '${:,.2f}',
+                'Ações': '{:.2f}'
             })
         )
 
 # Run button
-if st.button("🚀 Optimize Portfolio"):
+if st.button("🚀 Otimizar Portfólio"):
     optimize_portfolio()
