@@ -2,8 +2,10 @@
 venv/
 .env/
 *.env
+/venv/
 
-source/
+# Ignore a pasta source
+/source/
 
 # Ignore arquivos de compilação
 *.pyc

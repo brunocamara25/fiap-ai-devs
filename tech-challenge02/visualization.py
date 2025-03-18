@@ -105,23 +105,44 @@ def update_allocation_chart(allocation_chart, best_weights, selected_tickers):
             plt.close(fig)
 
 
-def display_final_results(best_weights, test_data, test_cov_matrix, risk_free_rate, investment, selected_tickers, data, train_cov_matrix, returns, evaluation_method):
+def display_final_results(best_weights, test_data, test_cov_matrix, risk_free_rate, investment, selected_tickers, data, train_cov_matrix, returns, evaluation_method, pareto_front_history, best_history):
     """Exibir os resultados finais do portfólio."""
     # Avaliar no conjunto de teste
     test_return, test_vol, test_sharpe = calculate_metrics(best_weights, test_data, test_cov_matrix, risk_free_rate)
-    st.markdown(f"**Desempenho no Conjunto de Teste:**")
-    st.markdown(f"- Retorno: {test_return:.2%}")
-    st.markdown(f"- Volatilidade: {test_vol:.2%}")
-    st.markdown(f"- Índice {evaluation_method}: {test_sharpe:.4f}")
+    
+    # Seção: Desempenho no Conjunto de Teste
+    st.header("📊 Desempenho no Conjunto de Teste")
+    col1, col2 = st.columns(2)
+    with col1:
+        st.markdown(f"- **Retorno:** {test_return:.2%}")
+        st.markdown(f"- **Volatilidade:** {test_vol:.2%}")
+        st.markdown(f"- **Índice {evaluation_method}:** {test_sharpe:.4f}")
+    with col2:
+        st.subheader("Gráfico de Alocação (Teste)")
+        plot_interactive_allocation(best_weights, selected_tickers)
 
-    # Exibir métricas finais
+    # Seção: Portfólio Final
     st.header("🎯 Portfólio Final")
     final_return, final_vol, final_sharpe = calculate_metrics(best_weights, returns, train_cov_matrix, risk_free_rate)
-    display_portfolio_metrics(final_return, final_vol, final_sharpe, investment, best_weights, selected_tickers, data)
+    display_portfolio_metrics(final_return, final_vol, final_sharpe, investment, best_weights, selected_tickers, data, evaluation_method)
+
+    # Seção: Gráficos Finais
+    st.header("📈 Gráficos Finais")
+    display_final_charts(pareto_front_history=pareto_front_history, best_history=best_history, evaluation_method=evaluation_method)
+
+    # Exportação de Resultados
+    st.header("📤 Exportar Resultados")
+    latest_prices = data.iloc[-1]
+    allocation_df = pd.DataFrame({
+        'Ação': selected_tickers,
+        'Peso (%)': [f"{weight * 100:.2f}" for weight in best_weights],
+        'Valor Alocado ($)': [f"{weight * investment:,.2f}" for weight in best_weights],
+        'Quantidade de Ações': [(weight * investment / latest_prices[ticker]).round(2) for weight, ticker in zip(best_weights, selected_tickers)]
+    })
+    export_results(allocation_df)
 
 
-
-def display_portfolio_metrics(final_return, final_vol, final_sharpe, investment, best_weights, selected_tickers, data):
+def display_portfolio_metrics(final_return, final_vol, final_sharpe, investment, best_weights, selected_tickers, data, evaluation_method):
     """Exibir métricas e alocação do portfólio final."""
     col1, col2 = st.columns(2)
     monthly_return = (1 + final_return) ** (1/12) - 1
@@ -159,13 +180,11 @@ def display_portfolio_metrics(final_return, final_vol, final_sharpe, investment,
     
     # Exibir resultados finais
     st.header("📈 Resultados Finais")
-    display_summary(final_return, final_vol, final_sharpe, investment, projected_values)
+    display_summary(final_return, final_vol, final_sharpe, investment, projected_values, evaluation_method)
     
     # Após a otimização
     highlight_best_portfolio(best_weights, selected_tickers, investment)
     
-    # plot_interactive_allocation(best_weights, selected_tickers)
-
     # benchmark_history = [benchmark_returns] * len(best_history)  # Exemplo de benchmark constante
     # plot_with_benchmark(best_history, benchmark_history, evaluation_method)
 
@@ -335,13 +354,13 @@ def plot_interactive_allocation(best_weights, selected_tickers):
     fig = px.pie(allocation_df, values='Peso (%)', names='Ação', title='Distribuição do Portfólio')
     st.plotly_chart(fig)
 
-def display_summary(final_return, final_vol, final_sharpe, investment, projected_values):
+def display_summary(final_return, final_vol, final_sharpe, investment, projected_values, evaluation_method):
     """Exibir resumo consolidado."""
     st.markdown("### 📊 Resumo Consolidado")
     st.markdown(f"""
     - **Retorno Anual Esperado:** {final_return:.2%}
     - **Volatilidade Anual Esperada:** {final_vol:.2%}
-    - **Índice Sharpe:** {final_sharpe:.4f}
+    - **Índice {evaluation_method}:** {final_sharpe:.4f}
     """)
     st.markdown("### 📈 Projeções de Investimento")
     projections_df = pd.DataFrame({

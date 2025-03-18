@@ -9,7 +9,20 @@ from utils import normalize_fitness_scores
 from visualization import *
 import plotly.express as px
 
+import numpy as np
+
 def create_individual(size, strategy="random", returns=None):
+    """
+    Cria um indivíduo (pesos do portfólio) com base na estratégia especificada.
+
+    Parâmetros:
+        size (int): Número de ativos no portfólio.
+        strategy (str): Estratégia de inicialização ("random", "uniform", "return_based", "volatility_inverse").
+        returns (pd.DataFrame, opcional): Retornos históricos dos ativos (necessário para algumas estratégias).
+
+    Retorna:
+        np.ndarray: Pesos normalizados do portfólio.
+    """
     if strategy == "random":
         weights = np.random.random(size)
     elif strategy == "uniform":
@@ -27,6 +40,21 @@ def create_individual(size, strategy="random", returns=None):
     return weights / np.sum(weights)
 
 def evaluate_population(population, returns, cov_matrix, risk_free_rate, metric=None, market_returns=None, multiobjective=False):
+    """
+    Avalia a população de portfólios com base em métricas de desempenho.
+
+    Parâmetros:
+        population (list): Lista de indivíduos (pesos do portfólio).
+        returns (pd.DataFrame): Retornos históricos dos ativos.
+        cov_matrix (pd.DataFrame): Matriz de covariância dos retornos.
+        risk_free_rate (float): Taxa livre de risco.
+        metric (str, opcional): Métrica de avaliação ("sharpe", "sortino", "treynor", "var").
+        market_returns (pd.Series, opcional): Retornos do mercado (necessário para algumas métricas).
+        multiobjective (bool): Se True, avalia retorno e risco como objetivos separados.
+
+    Retorna:
+        list: Lista de scores de fitness para cada indivíduo.
+    """
     fitness_scores = []
     for weights in population:
         if multiobjective:
@@ -46,6 +74,16 @@ def evaluate_population(population, returns, cov_matrix, risk_free_rate, metric=
     return fitness_scores
 
 def select_pareto_front(population, fitness_scores):
+    """
+    Seleciona o Pareto Front (conjunto de soluções não dominadas).
+
+    Parâmetros:
+        population (list): Lista de indivíduos (pesos do portfólio).
+        fitness_scores (list): Lista de scores de fitness (retorno e risco).
+
+    Retorna:
+        list: Lista de indivíduos e seus scores no Pareto Front.
+    """
     pareto_front = []
     for i, (ret1, vol1) in enumerate(fitness_scores):
         dominated = False
@@ -60,12 +98,33 @@ def select_pareto_front(population, fitness_scores):
     return pareto_front
 
 def select_parents_from_pareto(pareto_front):
+    """
+    Seleciona dois pais aleatoriamente do Pareto Front.
+
+    Parâmetros:
+        pareto_front (list): Lista de indivíduos no Pareto Front.
+
+    Retorna:
+        tuple: Dois indivíduos selecionados como pais.
+    """
     indices = np.random.choice(len(pareto_front), size=2, replace=False)
-    parent1 = pareto_front[indices[0]][0]  # Pesos do primeiro pai
-    parent2 = pareto_front[indices[1]][0]  # Pesos do segundo pai
+    parent1 = pareto_front[indices[0]][0]
+    parent2 = pareto_front[indices[1]][0]
     return parent1, parent2
 
 def select_parents(population, fitness_scores, method="tournament", tournament_size=3):
+    """
+    Seleciona dois pais da população com base no método especificado.
+
+    Parâmetros:
+        population (list): Lista de indivíduos.
+        fitness_scores (list): Lista de scores de fitness.
+        method (str): Método de seleção ("tournament", "roulette", "elitism").
+        tournament_size (int): Tamanho do torneio (apenas para o método "tournament").
+
+    Retorna:
+        tuple: Dois indivíduos selecionados como pais.
+    """
     if method == "tournament":
         tournament = np.random.choice(len(population), tournament_size)
         parent1 = population[tournament[np.argmax([fitness_scores[i] for i in tournament])]]
@@ -81,6 +140,18 @@ def select_parents(population, fitness_scores, method="tournament", tournament_s
     return parent1, parent2
 
 def crossover(parent1, parent2, method="uniform", crossover_rate=0.8):
+    """
+    Realiza o crossover entre dois pais para gerar um filho.
+
+    Parâmetros:
+        parent1 (np.ndarray): Pesos do primeiro pai.
+        parent2 (np.ndarray): Pesos do segundo pai.
+        method (str): Método de crossover ("uniform", "single_point", "arithmetic").
+        crossover_rate (float): Taxa de crossover.
+
+    Retorna:
+        np.ndarray: Pesos do filho gerado.
+    """
     if np.random.random() < crossover_rate:
         if method == "uniform":
             mask = np.random.randint(0, 2, len(parent1))
@@ -94,8 +165,21 @@ def crossover(parent1, parent2, method="uniform", crossover_rate=0.8):
         return child / np.sum(child)
     return parent1.copy()
 
-
 def mutate(child, mutation_rate, mutation_intensity, min_weight=0.01, max_weight=1.0, distribution="normal"):
+    """
+    Aplica mutação a um indivíduo.
+
+    Parâmetros:
+        child (np.ndarray): Pesos do indivíduo.
+        mutation_rate (float): Taxa de mutação.
+        mutation_intensity (float): Intensidade da mutação.
+        min_weight (float): Peso mínimo permitido.
+        max_weight (float): Peso máximo permitido.
+        distribution (str): Distribuição da mutação ("normal", "uniform").
+
+    Retorna:
+        np.ndarray: Pesos do indivíduo após a mutação.
+    """
     if np.random.random() < mutation_rate:
         if distribution == "normal":
             mutation = np.random.normal(0, mutation_intensity, len(child))
@@ -127,6 +211,7 @@ def optimize_portfolio(
         if data is None:
             return
 
+
     # Preparar dados
     returns = data.pct_change().dropna()
     market_returns = data[selected_tickers].pct_change().dropna().mean(axis=1).reindex(returns.index).fillna(method='ffill').fillna(method='bfill')
@@ -137,13 +222,45 @@ def optimize_portfolio(
     train_data, test_data = returns[:int(0.7 * len(returns))], returns[int(0.7 * len(returns)):]
     train_cov_matrix, test_cov_matrix = train_data.cov(), test_data.cov()
 
-    # Exibir dados iniciais
+    # Organização em abas para exibição inicial
     st.header("📊 Dados Iniciais")
-    plot_correlation_matrix(train_cov_matrix)
-    plot_cumulative_returns(data)
+    tabs = st.tabs(["📈 Retornos e Estatísticas", "📊 Matrizes de Covariância e Correlação", "📉 Visualizações"])
+    
+    with tabs[0]:
+        st.subheader("Retornos e Estatísticas")
+        col1, col2 = st.columns(2)
+        with col1:
+            st.write("Dados de Retorno (Treinamento):")
+            st.dataframe(train_data)
+        with col2:
+            st.write("Estatísticas Descritivas dos Dados de Retorno:")
+            st.write(train_data.describe())
 
+    with tabs[1]:
+        st.subheader("Matrizes de Covariância e Correlação")
+        col1, col2 = st.columns(2)
+        with col1:
+            st.write("Matriz de Covariância (Treinamento):")
+            st.dataframe(train_cov_matrix)
+        with col2:
+            correlation_matrix = train_cov_matrix.corr()
+            st.write("Matriz de Correlação (Treinamento):")
+            st.dataframe(correlation_matrix)
+
+    with tabs[2]:
+        st.subheader("Visualizações")
+        col1, col2 = st.columns(2)
+        with col1:
+            plot_correlation_matrix(correlation_matrix)
+        with col2:
+            plot_cumulative_returns(data)
+
+    st.header("📊 Informações iniciais")
     # Exibir informações iniciais
     display_initial_data(data, train_cov_matrix)
+
+    st.header("📊 Otimização de portfolio")
+    col1, col2 = st.columns(2)
 
     # Inicializar população
     population = [create_individual(len(selected_tickers), strategy=init_strategy, returns=train_data) for _ in range(population_size)]
@@ -153,8 +270,9 @@ def optimize_portfolio(
 
     # Configurar exibição de progresso
     progress_bar, status_text, metrics_text = st.progress(0), st.empty(), st.empty()
+
     col1, col2 = st.columns(2)
-   
+
     # Dividir a interface em duas colunas
     with col1:
         progress_chart = st.empty()
@@ -198,16 +316,40 @@ def optimize_portfolio(
             num_generations, min_weight, max_weight, mutation_distribution,
             elitism_count=elitism_count
         )
-   
-    if multiobjective:
-        plot_interactive_pareto_front(pareto_front_history)
-        display_pareto_summary(pareto_front_history, best_history)
 
-    # Avaliar e exibir resultados finais
-    display_final_results(best_weights, test_data, test_cov_matrix, risk_free_rate, investment, selected_tickers, data, train_cov_matrix, returns, evaluation_method)
+    # Chamando o método display_final_results no final da função optimize_portfolio
+    display_final_results(
+        best_weights=best_weights,               # Pesos do melhor portfólio encontrado
+        test_data=test_data,                     # Dados de teste (retornos)
+        test_cov_matrix=test_cov_matrix,         # Matriz de covariância dos dados de teste
+        risk_free_rate=risk_free_rate,           # Taxa livre de risco
+        investment=investment,                   # Valor do investimento
+        selected_tickers=selected_tickers,       # Lista de tickers selecionados
+        data=data,                               # Dados históricos das ações
+        train_cov_matrix=train_cov_matrix,       # Matriz de covariância dos dados de treinamento
+        returns=returns,                         # Retornos calculados a partir dos dados históricos
+        evaluation_method=evaluation_method,     # Método de avaliação (ex.: "treynor")
+        pareto_front_history=pareto_front_history,
+        best_history=best_history
+    )
 
 def evaluate_population_step(population, train_data, train_cov_matrix, risk_free_rate, evaluation_method, market_returns, multiobjective):
-    """Avaliar a população e retornar os scores e o Pareto Front."""
+    """
+    Avaliar a população e retornar os scores e o Pareto Front.
+
+    Parâmetros:
+    - population (list): Lista de indivíduos (pesos do portfólio).
+    - train_data (pd.DataFrame): Retornos históricos de treinamento.
+    - train_cov_matrix (pd.DataFrame): Matriz de covariância dos retornos de treinamento.
+    - risk_free_rate (float): Taxa livre de risco.
+    - evaluation_method (str): Método de avaliação (ex.: "sharpe", "sortino").
+    - market_returns (pd.Series): Retornos do mercado (necessário para algumas métricas).
+    - multiobjective (bool): Se True, avalia retorno e risco como objetivos separados.
+
+    Retorna:
+    - fitness_scores (list): Lista de scores de fitness para cada indivíduo.
+    - pareto_front (list ou None): Pareto Front se multiobjetivo, caso contrário None.
+    """
     fitness_scores = evaluate_population(population, train_data, train_cov_matrix, risk_free_rate, evaluation_method, market_returns, multiobjective)
     if multiobjective:
         normalized_scores = normalize_fitness_scores(fitness_scores)
@@ -219,7 +361,21 @@ def evaluate_population_step(population, train_data, train_cov_matrix, risk_free
 
 
 def update_best_solution(fitness_scores, pareto_front, best_weights, best_sharpe, multiobjective, population):
-    """Atualizar a melhor solução encontrada."""
+    """
+    Atualizar a melhor solução encontrada.
+
+    Parâmetros:
+    - fitness_scores (list): Lista de scores de fitness.
+    - pareto_front (list): Pareto Front (apenas se multiobjetivo).
+    - best_weights (np.ndarray): Pesos do melhor portfólio encontrado até agora.
+    - best_sharpe (float): Melhor índice Sharpe encontrado até agora.
+    - multiobjective (bool): Se True, avalia retorno e risco como objetivos separados.
+    - population (list): Lista de indivíduos (pesos do portfólio).
+
+    Retorna:
+    - best_weights (np.ndarray): Pesos do melhor portfólio atualizado.
+    - best_sharpe (float): Melhor índice Sharpe atualizado.
+    """
     if multiobjective:
         best_individual = max(pareto_front, key=lambda x: x[1][0])  # Baseado no maior retorno
         best_weights = best_individual[0]
@@ -231,8 +387,29 @@ def update_best_solution(fitness_scores, pareto_front, best_weights, best_sharpe
             best_weights = population[max_idx].copy()
     return best_weights, best_sharpe
 
+
 def generate_new_population(population, fitness_scores, pareto_front, multiobjective, selection_method, crossover_method, mutation_rate, generation, num_generations, min_weight, max_weight, mutation_distribution, elitism_count=1):
-    """Gerar nova população com seleção, crossover, mutação e elitismo."""
+    """
+    Gerar nova população com seleção, crossover, mutação e elitismo.
+
+    Parâmetros:
+    - population (list): Lista de indivíduos (pesos do portfólio).
+    - fitness_scores (list): Lista de scores de fitness.
+    - pareto_front (list): Pareto Front (apenas se multiobjetivo).
+    - multiobjective (bool): Se True, avalia retorno e risco como objetivos separados.
+    - selection_method (str): Método de seleção (ex.: "tournament", "roulette").
+    - crossover_method (str): Método de crossover (ex.: "uniform", "single_point").
+    - mutation_rate (float): Taxa de mutação.
+    - generation (int): Geração atual.
+    - num_generations (int): Número total de gerações.
+    - min_weight (float): Peso mínimo permitido.
+    - max_weight (float): Peso máximo permitido.
+    - mutation_distribution (str): Distribuição da mutação ("normal", "uniform").
+    - elitism_count (int): Número de indivíduos elitistas a serem preservados.
+
+    Retorna:
+    - new_population (list): Nova população gerada.
+    """
     new_population = []
 
     # **Elitismo**: Preservar os melhores indivíduos
@@ -258,9 +435,6 @@ def generate_new_population(population, fitness_scores, pareto_front, multiobjec
         # Realizar crossover
         child = crossover(parent1, parent2, method=crossover_method)
 
-        # Log da evolução
-        # log_evolution(generation, [parent1, parent2], population)
-        
         # Realizar mutação
         mutation_intensity = 0.1 * (1 - generation / num_generations)  # Mutação adaptativa
         child = mutate(child, mutation_rate, mutation_intensity, min_weight, max_weight, distribution=mutation_distribution)
@@ -269,7 +443,16 @@ def generate_new_population(population, fitness_scores, pareto_front, multiobjec
 
     return new_population
 
+
 def log_evolution(generation, parents, children):
+    """
+    Log da evolução do algoritmo.
+
+    Parâmetros:
+    - generation (int): Geração atual.
+    - parents (list): Lista de pais selecionados.
+    - children (list): Lista de filhos gerados.
+    """
     st.text(f"Geração {generation}:")
     st.text(f"Pais Selecionados: {parents}")
     st.text(f"Filhos Gerados: {children}")
