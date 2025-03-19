@@ -214,8 +214,10 @@ def optimize_portfolio(
 
     # Preparar dados
     returns = data.pct_change().dropna()
+
     market_returns = data[selected_tickers].pct_change().dropna().mean(axis=1).reindex(returns.index).fillna(method='ffill').fillna(method='bfill')
     benchmark_returns = market_returns.mean()
+    
     st.markdown(f"**Retorno do Benchmark:** {benchmark_returns:.2%}")
 
     # Dividir dados em treinamento e teste
@@ -317,6 +319,8 @@ def optimize_portfolio(
             elitism_count=elitism_count
         )
 
+    test_return, test_vol, test_sharpe = calculate_metrics(best_weights, test_data, test_cov_matrix, risk_free_rate)
+
     # Chamando o método display_final_results no final da função optimize_portfolio
     display_final_results(
         best_weights=best_weights,               # Pesos do melhor portfólio encontrado
@@ -330,8 +334,20 @@ def optimize_portfolio(
         returns=returns,                         # Retornos calculados a partir dos dados históricos
         evaluation_method=evaluation_method,     # Método de avaliação (ex.: "treynor")
         pareto_front_history=pareto_front_history,
-        best_history=best_history
+        best_history=best_history,
+        benchmark_returns=benchmark_returns
     )
+
+    # Retornar resultados
+    return {
+        "best_weights": best_weights,
+        "best_sharpe": best_sharpe,
+        "test_return": test_return,
+        "test_vol": test_vol,
+        "test_sharpe": test_sharpe,
+        "pareto_front_history": pareto_front_history,
+        "best_history": best_history
+    }
 
 def evaluate_population_step(population, train_data, train_cov_matrix, risk_free_rate, evaluation_method, market_returns, multiobjective):
     """

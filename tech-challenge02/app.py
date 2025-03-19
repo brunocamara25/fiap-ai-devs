@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import plotly.express as px
 from genetic_algorithm import optimize_portfolio
 
 # Configurações da página
@@ -71,32 +72,183 @@ with st.sidebar:
         max_weight = st.slider("Peso Máximo (%)", 20, 100, 50) / 100
         elitism_count = st.slider("Número de Indivíduos Elitistas", 1, 10, 1)
 
-    st.markdown("### ℹ️ Ajuda")
+# Divisão em abas
+tab1, tab2 = st.tabs(["📈 Portfólio", "📊 Benchmark"])
+
+# Aba de Portfólio
+with tab1:
+    st.header("🚀 Otimização de Portfólio")
+    if st.button("Otimizar Portfólio"):
+        optimize_portfolio(
+            selected_tickers,
+            start_date,
+            end_date,
+            investment,
+            population_size,
+            num_generations,
+            mutation_rate,
+            risk_free_rate,
+            min_weight,
+            max_weight,
+            init_strategy=init_strategy,
+            evaluation_method=evaluation_method,
+            selection_method=selection_method,
+            crossover_method=crossover_method,
+            mutation_distribution=mutation_distribution,
+            elitism_count=elitism_count,
+            multiobjective=multiobjective
+        )
+
+# Aba de Benchmark
+with tab2:
+    st.header("📊 Benchmark de Configurações")
     st.markdown("""
-    - **População**: Número de indivíduos na população.
-    - **Gerações**: Número de iterações do algoritmo.
-    - **Taxa de Mutação**: Probabilidade de mutação em cada indivíduo.
-    - **Taxa Livre de Risco**: Taxa de retorno sem risco usada no cálculo do Sharpe.
+    ### Como Usar o Benchmark
+    1. Insira diferentes configurações no formato JSON.
+    2. Clique em "Executar Benchmark" para comparar os resultados.
+    3. Cada aba mostrará os resultados de uma configuração específica.
     """)
 
-# Botão para rodar a otimização
-if st.button("🚀 Otimizar Portfólio"):
-    optimize_portfolio(
-        selected_tickers,
-        start_date,
-        end_date,
-        investment,
-        population_size,
-        num_generations,
-        mutation_rate,
-        risk_free_rate,
-        min_weight,
-        max_weight,
-        init_strategy=init_strategy,
-        evaluation_method=evaluation_method,
-        selection_method=selection_method,
-        crossover_method=crossover_method,
-        mutation_distribution=mutation_distribution,
-        elitism_count=elitism_count,
-        multiobjective=multiobjective
+    # Input for multiple configurations
+    benchmark_configs = st.text_area(
+        "Defina as configurações (JSON format)",
+        value="""
+        [
+            {
+                "population_size": 80,
+                "num_generations": 40,
+                "mutation_rate": 0.05,
+                "evaluation_method": "sharpe"
+            },
+            {
+                "population_size": 120,
+                "num_generations": 60,
+                "mutation_rate": 0.15,
+                "evaluation_method": "sortino"
+            },
+            {
+                "population_size": 150,
+                "num_generations": 100,
+                "mutation_rate": 0.1,
+                "evaluation_method": "treynor"
+            },
+            {
+                "population_size": 200,
+                "num_generations": 80,
+                "mutation_rate": 0.2,
+                "evaluation_method": "var"
+            },
+            {
+                "population_size": 100,
+                "num_generations": 50,
+                "mutation_rate": 0.1,
+                "evaluation_method": "sharpe",
+                "multiobjective": true
+            },
+            {
+                "population_size": 150,
+                "num_generations": 75,
+                "mutation_rate": 0.2,
+                "evaluation_method": "sortino",
+                "multiobjective": true
+            },
+            {
+                "population_size": 100,
+                "num_generations": 50,
+                "mutation_rate": 0.05,
+                "evaluation_method": "sharpe",
+                "init_strategy": "return_based"
+            },
+            {
+                "population_size": 120,
+                "num_generations": 60,
+                "mutation_rate": 0.1,
+                "evaluation_method": "sortino",
+                "init_strategy": "volatility_inverse"
+            },
+            {
+                "population_size": 80,
+                "num_generations": 40,
+                "mutation_rate": 0.2,
+                "evaluation_method": "treynor",
+                "selection_method": "tournament"
+            },
+            {
+                "population_size": 200,
+                "num_generations": 100,
+                "mutation_rate": 0.15,
+                "evaluation_method": "var",
+                "selection_method": "elitism"
+            }
+        ]
+        """
     )
+
+    # Parse configurations
+    try:
+        configs = pd.read_json(benchmark_configs)
+    except ValueError:
+        st.error("Erro ao processar as configurações. Certifique-se de que o JSON está correto.")
+        configs = None
+
+    if configs is not None:
+        for i, config in configs.iterrows():
+            if not (50 <= config["population_size"] <= 200):
+                st.error(f"Configuração {i+1}: 'population_size' deve estar entre 50 e 200.")
+            if not (10 <= config["num_generations"] <= 100):
+                st.error(f"Configuração {i+1}: 'num_generations' deve estar entre 10 e 100.")
+
+    if st.button("Executar Benchmark") and configs is not None:
+        progress_bar = st.progress(0)
+        results = []
+        tabs = st.tabs([f"Configuração {i+1}" for i in range(len(configs))])  # Criar abas para cada configuração
+    
+        for i, (tab, config) in enumerate(zip(tabs, configs.iterrows())):
+            with tab:
+                st.subheader(f"Configuração {i+1}")
+                st.json(config[1].to_dict())  # Exibir as configurações escolhidas
+    
+                result = optimize_portfolio(
+                    selected_tickers,
+                    start_date,
+                    end_date,
+                    investment,
+                    config[1]["population_size"],
+                    config[1]["num_generations"],
+                    config[1]["mutation_rate"],
+                    risk_free_rate,
+                    min_weight,
+                    max_weight,
+                    init_strategy=init_strategy,
+                    evaluation_method=config[1]["evaluation_method"],
+                    selection_method=selection_method,
+                    crossover_method=crossover_method,
+                    mutation_distribution=mutation_distribution,
+                    elitism_count=elitism_count,
+                    multiobjective=multiobjective
+                )
+                results.append(result)
+                st.write("Resultados:", result)  # Exibir os resultados da configuração atual
+                progress_bar.progress((i + 1) / len(configs))
+    
+        st.success("Benchmark concluído!")
+    
+        if results:
+            st.subheader("Resumo Geral do Benchmark")
+            summary_df = pd.DataFrame(results)
+            
+            # Adicionar uma coluna de identificação para as configurações
+            summary_df["Configuração"] = [f"Configuração {i+1}" for i in range(len(summary_df))]
+            
+            st.dataframe(summary_df)
+            
+            # Criar o gráfico de comparação
+            st.subheader("Gráfico de Comparação de Configurações")
+            fig = px.bar(
+                summary_df,
+                x="Configuração",
+                y="best_sharpe",  # Substitua por qualquer métrica que você queira comparar
+                title="Comparação de Configurações",
+                labels={"best_sharpe": "Índice Sharpe"}
+            )
+            st.plotly_chart(fig)

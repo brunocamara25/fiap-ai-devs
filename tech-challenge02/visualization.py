@@ -3,6 +3,7 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 import seaborn as sns
+import uuid
 from metrics import calculate_metrics, calculate_diversification, calculate_sortino_ratio, calculate_treynor_ratio, calculate_var
 
 def display_stock_prices(data):
@@ -105,7 +106,7 @@ def update_allocation_chart(allocation_chart, best_weights, selected_tickers):
             plt.close(fig)
 
 
-def display_final_results(best_weights, test_data, test_cov_matrix, risk_free_rate, investment, selected_tickers, data, train_cov_matrix, returns, evaluation_method, pareto_front_history, best_history):
+def display_final_results(best_weights, test_data, test_cov_matrix, risk_free_rate, investment, selected_tickers, data, train_cov_matrix, returns, evaluation_method, pareto_front_history, best_history, benchmark_returns):
     """Exibir os resultados finais do portfólio."""
     # Avaliar no conjunto de teste
     test_return, test_vol, test_sharpe = calculate_metrics(best_weights, test_data, test_cov_matrix, risk_free_rate)
@@ -139,7 +140,7 @@ def display_final_results(best_weights, test_data, test_cov_matrix, risk_free_ra
         'Valor Alocado ($)': [f"{weight * investment:,.2f}" for weight in best_weights],
         'Quantidade de Ações': [(weight * investment / latest_prices[ticker]).round(2) for weight, ticker in zip(best_weights, selected_tickers)]
     })
-    export_results(allocation_df)
+    export_results(allocation_df, benchmark_returns)
 
 
 def display_portfolio_metrics(final_return, final_vol, final_sharpe, investment, best_weights, selected_tickers, data, evaluation_method):
@@ -178,15 +179,14 @@ def display_portfolio_metrics(final_return, final_vol, final_sharpe, investment,
         ax.set_title("Distribuição do Portfólio")
         st.pyplot(fig)
     
+    # Após a otimização
+    highlight_best_portfolio(best_weights, selected_tickers, investment)
+    
+    
     # Exibir resultados finais
     st.header("📈 Resultados Finais")
     display_summary(final_return, final_vol, final_sharpe, investment, projected_values, evaluation_method)
     
-    # Após a otimização
-    highlight_best_portfolio(best_weights, selected_tickers, investment)
-    
-    # benchmark_history = [benchmark_returns] * len(best_history)  # Exemplo de benchmark constante
-    # plot_with_benchmark(best_history, benchmark_history, evaluation_method)
 
 def plot_pareto_front(pareto_front_history):
     st.subheader("Evolução do Pareto Front")
@@ -386,13 +386,20 @@ def plot_cumulative_returns(data):
     ax.set_title("Retornos Acumulados")
     ax.grid(True)
     st.pyplot(fig)
-
-def export_results(allocation_df):
+    
+def generate_unique_key(prefix="key"):
+    """Gera uma chave única com um prefixo."""
+    return f"{prefix}_{uuid.uuid4().hex}"
+    
+def export_results(allocation_df, benchmark_returns=None):
     """Permitir exportação dos resultados."""
+    if benchmark_returns is not None:
+        allocation_df['Benchmark (%)'] = [f"{benchmark_returns:.2%}"] * len(allocation_df)
     csv = allocation_df.to_csv(index=False)
     st.download_button(
         label="📥 Baixar Resultados",
         data=csv,
         file_name='resultados_portfolio.csv',
         mime='text/csv',
+        key=generate_unique_key("download_results")  # Chave única
     )
