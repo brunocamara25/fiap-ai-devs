@@ -40,48 +40,6 @@ O projeto foi modularizado para facilitar a manutenção e escalabilidade:
 - `metrics.py`: Cálculo de métricas financeiras como Índice Sharpe, Sortino, Treynor, etc.
 - `visualization.py`: Funções para exibição de gráficos e tabelas interativas.
 
-## Instalação# Otimizador de Portfólio com Algoritmo Genético
-
-Uma aplicação web em Streamlit que utiliza algoritmos genéticos para otimizar a alocação de portfólio de investimentos baseado no Índice Sharpe. Esta ferramenta ajuda investidores a encontrar pesos ótimos para o portfólio através da análise de dados históricos de ações e maximização dos retornos ajustados ao risco.
-
-## Funcionalidades
-
-- **
-Otimização de Portfólio
-**:
-  - Algoritmos genéticos para encontrar a melhor alocação de ativos.
-  - Suporte a multiobjetivo (retorno e risco).
-- **
-Configuração Personalizável
-**:
-  - Valor do investimento, período de análise e seleção de ações.
-  - Ajuste de parâmetros do algoritmo (população, gerações, taxa de mutação, etc.).
-- **
-Visualizações Interativas
-**:
-  - Gráficos de progresso da otimização.
-  - Alocação do portfólio em gráficos de pizza.
-  - Evolução do Pareto Front para análises multiobjetivo.
-- **
-Métricas Detalhadas
-**:
-  - Retorno esperado, volatilidade e Índice Sharpe.
-  - Projeções de investimento para diferentes horizontes temporais.
-- **
-Exportação de Resultados
-**:
-  - Baixe os resultados do portfólio em formato CSV.
-
-## Estrutura do Projeto
-
-O projeto foi modularizado para facilitar a manutenção e escalabilidade:
-
-- `app.py`: Arquivo principal que gerencia a interface do usuário com Streamlit.
-- `genetic_algorithm.py`: Implementação do algoritmo genético para otimização do portfólio.
-- `data.py`: Funções para download e tratamento de dados históricos de ações.
-- `metrics.py`: Cálculo de métricas financeiras como Índice Sharpe, Sortino, Treynor, etc.
-- `visualization.py`: Funções para exibição de gráficos e tabelas interativas.
-
 ## Instalação
 
 1. Clone o repositório:

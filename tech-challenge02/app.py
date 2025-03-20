@@ -113,74 +113,44 @@ with tab2:
     benchmark_configs = st.text_area(
         "Defina as configurações (JSON format)",
         value="""
-        [
-            {
-                "population_size": 80,
-                "num_generations": 40,
-                "mutation_rate": 0.05,
-                "evaluation_method": "sharpe"
-            },
-            {
-                "population_size": 120,
-                "num_generations": 60,
-                "mutation_rate": 0.15,
-                "evaluation_method": "sortino"
-            },
-            {
-                "population_size": 150,
-                "num_generations": 100,
-                "mutation_rate": 0.1,
-                "evaluation_method": "treynor"
-            },
-            {
-                "population_size": 200,
-                "num_generations": 80,
-                "mutation_rate": 0.2,
-                "evaluation_method": "var"
-            },
-            {
-                "population_size": 100,
-                "num_generations": 50,
-                "mutation_rate": 0.1,
-                "evaluation_method": "sharpe",
-                "multiobjective": true
-            },
-            {
-                "population_size": 150,
-                "num_generations": 75,
-                "mutation_rate": 0.2,
-                "evaluation_method": "sortino",
-                "multiobjective": true
-            },
-            {
-                "population_size": 100,
-                "num_generations": 50,
-                "mutation_rate": 0.05,
-                "evaluation_method": "sharpe",
-                "init_strategy": "return_based"
-            },
-            {
-                "population_size": 120,
-                "num_generations": 60,
-                "mutation_rate": 0.1,
-                "evaluation_method": "sortino",
-                "init_strategy": "volatility_inverse"
-            },
-            {
-                "population_size": 80,
-                "num_generations": 40,
-                "mutation_rate": 0.2,
-                "evaluation_method": "treynor",
-                "selection_method": "tournament"
-            },
-            {
-                "population_size": 200,
-                "num_generations": 100,
-                "mutation_rate": 0.15,
-                "evaluation_method": "var",
-                "selection_method": "elitism"
-            }
-        ]
+            [
+                {
+                    "population_size": 100,
+                    "num_generations": 50,
+                    "mutation_rate": 0.1,
+                    "evaluation_method": "sharpe",
+                    "init_strategy": "return_based",
+                    "selection_method": "tournament",
+                    "crossover_method": "single_point",
+                    "mutation_distribution": "normal",
+                    "elitism_count": 2,
+                    "multiobjective": false
+                },
+                {
+                    "population_size": 150,
+                    "num_generations": 75,
+                    "mutation_rate": 0.2,
+                    "evaluation_method": "sharpe",
+                    "init_strategy": "volatility_inverse",
+                    "selection_method": "elitism",
+                    "crossover_method": "arithmetic",
+                    "mutation_distribution": "uniform",
+                    "elitism_count": 3,
+                    "multiobjective": false
+                },
+                {
+                    "population_size": 120,
+                    "num_generations": 60,
+                    "mutation_rate": 0.15,
+                    "evaluation_method": "sharpe",
+                    "init_strategy": "random",
+                    "selection_method": "roulette",
+                    "crossover_method": "uniform",
+                    "mutation_distribution": "normal",
+                    "elitism_count": 1,
+                    "multiobjective": false
+                }
+            ]
         """
     )
 
@@ -209,23 +179,23 @@ with tab2:
                 st.json(config[1].to_dict())  # Exibir as configurações escolhidas
     
                 result = optimize_portfolio(
-                    selected_tickers,
-                    start_date,
-                    end_date,
-                    investment,
-                    config[1]["population_size"],
-                    config[1]["num_generations"],
-                    config[1]["mutation_rate"],
-                    risk_free_rate,
-                    min_weight,
-                    max_weight,
-                    init_strategy=init_strategy,
+                    selected_tickers=selected_tickers,
+                    start_date=start_date,
+                    end_date=end_date,
+                    investment=investment,
+                    population_size=config[1]["population_size"],
+                    num_generations=config[1]["num_generations"],
+                    mutation_rate=config[1]["mutation_rate"],
+                    risk_free_rate=risk_free_rate,
+                    min_weight=min_weight,
+                    max_weight=max_weight,
+                    init_strategy=config[1].get("init_strategy", "random"),  # Padrão: "random"
                     evaluation_method=config[1]["evaluation_method"],
-                    selection_method=selection_method,
-                    crossover_method=crossover_method,
-                    mutation_distribution=mutation_distribution,
-                    elitism_count=elitism_count,
-                    multiobjective=multiobjective
+                    selection_method=config[1].get("selection_method", "tournament"),  # Padrão: "tournament"
+                    crossover_method=config[1].get("crossover_method", "uniform"),  # Padrão: "uniform"
+                    mutation_distribution=config[1].get("mutation_distribution", "normal"),  # Padrão: "normal"
+                    elitism_count=config[1].get("elitism_count", 1),  # Padrão: 1
+                    multiobjective=config[1].get("multiobjective", False)
                 )
                 results.append(result)
                 st.write("Resultados:", result)  # Exibir os resultados da configuração atual
