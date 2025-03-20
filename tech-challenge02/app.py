@@ -1,19 +1,16 @@
-import time
-
-import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
 import streamlit as st
-import yfinance as yf
+import pandas as pd
+import plotly.express as px
+from genetic_algorithm import optimize_portfolio
 
-# Page config
+# Configurações da página
 st.set_page_config(
     page_title="Otimizador de Portfólio",
     page_icon="📈",
     layout="wide"
 )
 
-# Title and description
+# Título e descrição
 st.title("📊 Otimizador de Portfólio com Algoritmo Genético")
 st.markdown("""
 Este aplicativo usa um algoritmo genético para encontrar a alocação ideal de portfólio baseada no Índice Sharpe.
@@ -22,282 +19,206 @@ Você pode selecionar ações, definir seu valor de investimento e acompanhar o 
 
 # Sidebar
 with st.sidebar:
-    st.header("📝 Parâmetros")
-    
-    # Investment amount
-    investment = st.number_input(
-        "Valor do Investimento ($)",
-        min_value=1000,
-        max_value=10000000,
-        value=10000,
-        step=1000
-    )
-    
-    # Date range
-    st.subheader("Período")
-    start_date = st.date_input(
-        "Data Inicial",
-        value=pd.Timestamp("2020-01-01")
-    )
-    end_date = st.date_input(
-        "Data Final",
-        value=pd.Timestamp("2023-01-01")
-    )
-    
-    # Stock selection
-    st.subheader("Seleção de Ações")
-    default_tickers = ["AAPL", "GOOGL", "MSFT", "AMZN", "TSLA"]
-    custom_tickers = st.text_input(
-        "Digite códigos de ações adicionais (separados por vírgula)",
-        "META, NVDA"
-    ).replace(" ", "")
-    
-    all_tickers = default_tickers + [t.strip() for t in custom_tickers.split(",") if t.strip()]
-    selected_tickers = st.multiselect(
-        "Selecione ações para seu portfólio",
-        all_tickers,
-        default=default_tickers[:3]
-    )
-    
-    # Algorithm parameters
-    st.subheader("Parâmetros do Algoritmo")
-    population_size = st.slider("Tamanho da População", 50, 200, 100)
-    num_generations = st.slider("Número de Gerações", 10, 100, 50)
-    mutation_rate = st.slider("Taxa de Mutação", 0.0, 0.5, 0.1)
-    risk_free_rate = st.slider("Taxa Livre de Risco (%)", 0.0, 5.0, 2.0) / 100
+    st.sidebar.markdown("""
+    ### Tutorial
+    1. Selecione as ações e o período de análise.
+    2. Configure os parâmetros do algoritmo genético.
+    3. Clique em "Otimizar Portfólio" para iniciar.
+    """)
+    st.header("📝 Configurações Gerais")
+    with st.expander("📅 Parâmetros Gerais"):
+        investment = st.number_input("Valor do Investimento ($)", min_value=1000, max_value=10000000, value=10000, step=1000)
+        start_date = st.date_input("Data Inicial", value=pd.Timestamp("2020-01-01"))
+        end_date = st.date_input("Data Final", value=pd.Timestamp("2023-01-01"))
+        default_tickers = ["AAPL", "GOOGL", "MSFT", "AMZN", "TSLA"]
+        custom_tickers = st.text_input("Digite códigos de ações adicionais (separados por vírgula)", "META, NVDA").replace(" ", "")
+        all_tickers = default_tickers + [t.strip() for t in custom_tickers.split(",") if t.strip()]
+        selected_tickers = st.multiselect("Selecione ações para seu portfólio", all_tickers, default=default_tickers[:3])
 
-def download_data(tickers, start_date, end_date):
-    """Baixar dados das ações"""
+    with st.expander("⚙️ Parâmetros do Algoritmo Genético"):
+        population_size = st.slider("Tamanho da População", 50, 200, 100)
+        num_generations = st.slider("Número de Gerações", 10, 100, 50)
+        mutation_rate = st.slider("Taxa de Mutação", 0.0, 0.5, 0.1)
+        risk_free_rate = st.slider("Taxa Livre de Risco (%)", 0.0, 5.0, 2.0) / 100
+
+    with st.expander("🔧 Configurações Avançadas"):
+        multiobjective = st.checkbox("Ativar Multiobjetivo (Retorno e Risco)", value=False)
+        init_strategy = st.selectbox(
+            "Estratégia de Inicialização",
+            options=["random", "uniform", "return_based", "volatility_inverse"],
+            index=0
+        )
+        selection_method = st.selectbox(
+            "Método de Seleção",
+            options=["tournament", "roulette", "elitism"],
+            index=0
+        )
+        evaluation_method = st.selectbox(
+            "Método de Avaliação",
+            options=["sharpe", "sortino", "treynor", "var"],
+            index=0
+        )
+        crossover_method = st.selectbox(
+            "Método de Crossover",
+            options=["uniform", "single_point", "arithmetic"],
+            index=0
+        )
+        mutation_distribution = st.selectbox(
+            "Distribuição de Mutação",
+            options=["normal", "uniform"],
+            index=0
+        )
+        min_weight = st.slider("Peso Mínimo (%)", 0, 20, 5) / 100
+        max_weight = st.slider("Peso Máximo (%)", 20, 100, 50) / 100
+        elitism_count = st.slider("Número de Indivíduos Elitistas", 1, 10, 1)
+
+# Divisão em abas
+tab1, tab2 = st.tabs(["📈 Portfólio", "📊 Benchmark"])
+
+# Aba de Portfólio
+with tab1:
+    st.header("🚀 Otimização de Portfólio")
+    if st.button("Otimizar Portfólio"):
+        optimize_portfolio(
+            selected_tickers,
+            start_date,
+            end_date,
+            investment,
+            population_size,
+            num_generations,
+            mutation_rate,
+            risk_free_rate,
+            min_weight,
+            max_weight,
+            init_strategy=init_strategy,
+            evaluation_method=evaluation_method,
+            selection_method=selection_method,
+            crossover_method=crossover_method,
+            mutation_distribution=mutation_distribution,
+            elitism_count=elitism_count,
+            multiobjective=multiobjective
+        )
+
+# Aba de Benchmark
+with tab2:
+    st.header("📊 Benchmark de Configurações")
+    st.markdown("""
+    ### Como Usar o Benchmark
+    1. Insira diferentes configurações no formato JSON.
+    2. Clique em "Executar Benchmark" para comparar os resultados.
+    3. Cada aba mostrará os resultados de uma configuração específica.
+    """)
+
+    # Input for multiple configurations
+    benchmark_configs = st.text_area(
+        "Defina as configurações (JSON format)",
+        value="""
+            [
+                {
+                    "population_size": 100,
+                    "num_generations": 50,
+                    "mutation_rate": 0.1,
+                    "evaluation_method": "sharpe",
+                    "init_strategy": "return_based",
+                    "selection_method": "tournament",
+                    "crossover_method": "single_point",
+                    "mutation_distribution": "normal",
+                    "elitism_count": 2,
+                    "multiobjective": false
+                },
+                {
+                    "population_size": 150,
+                    "num_generations": 75,
+                    "mutation_rate": 0.2,
+                    "evaluation_method": "sharpe",
+                    "init_strategy": "volatility_inverse",
+                    "selection_method": "elitism",
+                    "crossover_method": "arithmetic",
+                    "mutation_distribution": "uniform",
+                    "elitism_count": 3,
+                    "multiobjective": false
+                },
+                {
+                    "population_size": 120,
+                    "num_generations": 60,
+                    "mutation_rate": 0.15,
+                    "evaluation_method": "sharpe",
+                    "init_strategy": "random",
+                    "selection_method": "roulette",
+                    "crossover_method": "uniform",
+                    "mutation_distribution": "normal",
+                    "elitism_count": 1,
+                    "multiobjective": false
+                }
+            ]
+        """
+    )
+
+    # Parse configurations
     try:
-        data = yf.download(tickers, start=start_date, end=end_date,auto_adjust=False)['Adj Close']
-        if isinstance(data, pd.Series):
-            data = pd.DataFrame(data)
-        return data
-    except Exception as e:
-        st.error(f"Erro ao baixar dados: {str(e)}")
-        return None
+        configs = pd.read_json(benchmark_configs)
+    except ValueError:
+        st.error("Erro ao processar as configurações. Certifique-se de que o JSON está correto.")
+        configs = None
 
-def calculate_metrics(weights, returns, cov_matrix, risk_free_rate):
-    """Calcular métricas do portfólio"""
-    portfolio_return = np.sum(returns.mean() * weights) * 252
-    portfolio_vol = np.sqrt(np.dot(weights.T, np.dot(cov_matrix * 252, weights)))
-    sharpe_ratio = (portfolio_return - risk_free_rate) / portfolio_vol
-    return portfolio_return, portfolio_vol, sharpe_ratio
+    if configs is not None:
+        for i, config in configs.iterrows():
+            if not (50 <= config["population_size"] <= 200):
+                st.error(f"Configuração {i+1}: 'population_size' deve estar entre 50 e 200.")
+            if not (10 <= config["num_generations"] <= 100):
+                st.error(f"Configuração {i+1}: 'num_generations' deve estar entre 10 e 100.")
 
-def create_individual(size):
-    """Criar pesos aleatórios para o portfólio"""
-    weights = np.random.random(size)
-    return weights / np.sum(weights)
-
-def optimize_portfolio():
-    if len(selected_tickers) < 2:
-        st.warning("Por favor, selecione pelo menos 2 ações.")
-        return
+    if st.button("Executar Benchmark") and configs is not None:
+        progress_bar = st.progress(0)
+        results = []
+        tabs = st.tabs([f"Configuração {i+1}" for i in range(len(configs))])  # Criar abas para cada configuração
     
-    # Download data
-    with st.spinner("Baixando dados das ações..."):
-        data = download_data(selected_tickers, start_date, end_date)
-        if data is None:
-            return
+        for i, (tab, config) in enumerate(zip(tabs, configs.iterrows())):
+            with tab:
+                st.subheader(f"Configuração {i+1}")
+                st.json(config[1].to_dict())  # Exibir as configurações escolhidas
     
-    # Calculate returns and covariance
-    returns = data.pct_change().dropna()
-    cov_matrix = returns.cov()
-    
-    # Display current stock prices
-    latest_prices = data.iloc[-1]
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.subheader("Preços Atuais das Ações")
-        price_df = pd.DataFrame({
-            'Ação': latest_prices.index,
-            'Preço': latest_prices.values
-        })
-        st.dataframe(price_df.style.format({'Preço': '${:.2f}'}))
-    
-    with col2:
-        st.subheader("Retorno das Ações")
-        returns_chart = st.empty()
-        fig_returns, ax = plt.subplots(figsize=(10, 6))
-        (returns + 1).cumprod().plot(ax=ax)
-        ax.set_title("Retornos Acumulados")
-        ax.grid(True)
-        returns_chart.pyplot(fig_returns)
-        plt.close(fig_returns)
-    
-    # Setup progress displays
-    progress_bar = st.progress(0)
-    status_text = st.empty()
-    metrics_text = st.empty()
-    
-    # Charts
-    col3, col4 = st.columns(2)
-    with col3:
-        progress_chart = st.empty()
-    with col4:
-        allocation_chart = st.empty()
-    
-    # Initialize population
-    population_size = 100
-    population = [create_individual(len(selected_tickers)) for _ in range(population_size)]
-    best_sharpe = float('-inf')
-    best_weights = None
-    best_history = []
-    
-    # Optimization
-    fig_progress, ax_progress = plt.subplots(figsize=(10, 6))
-    fig_allocation, ax_allocation = plt.subplots(figsize=(10, 6))
-    
-    try:
-        for generation in range(num_generations):
-            # Evaluate fitness
-            fitness_scores = []
-            for weights in population:
-                portfolio_return, portfolio_vol, sharpe_ratio = calculate_metrics(
-                    weights, returns, cov_matrix, risk_free_rate
+                result = optimize_portfolio(
+                    selected_tickers=selected_tickers,
+                    start_date=start_date,
+                    end_date=end_date,
+                    investment=investment,
+                    population_size=config[1]["population_size"],
+                    num_generations=config[1]["num_generations"],
+                    mutation_rate=config[1]["mutation_rate"],
+                    risk_free_rate=risk_free_rate,
+                    min_weight=min_weight,
+                    max_weight=max_weight,
+                    init_strategy=config[1].get("init_strategy", "random"),  # Padrão: "random"
+                    evaluation_method=config[1]["evaluation_method"],
+                    selection_method=config[1].get("selection_method", "tournament"),  # Padrão: "tournament"
+                    crossover_method=config[1].get("crossover_method", "uniform"),  # Padrão: "uniform"
+                    mutation_distribution=config[1].get("mutation_distribution", "normal"),  # Padrão: "normal"
+                    elitism_count=config[1].get("elitism_count", 1),  # Padrão: 1
+                    multiobjective=config[1].get("multiobjective", False)
                 )
-                fitness_scores.append(sharpe_ratio)
-            
-            # Update best solution
-            max_idx = np.argmax(fitness_scores)
-            if fitness_scores[max_idx] > best_sharpe:
-                best_sharpe = fitness_scores[max_idx]
-                best_weights = population[max_idx].copy()
-            best_history.append(best_sharpe)
-            
-            # Update progress
-            progress = (generation + 1) / num_generations
-            progress_bar.progress(progress)
-            status_text.text(f"Geração {generation + 1}/{num_generations}")
-            
-            # Update metrics
-            if best_weights is not None:
-                ret, vol, _ = calculate_metrics(best_weights, returns, cov_matrix, risk_free_rate)
-                metrics_text.markdown(f"""
-                **Melhor Portfólio Atual:**
-                - Retorno Anual Esperado: {ret:.2%}
-                - Volatilidade Anual Esperada: {vol:.2%}
-                - Índice Sharpe: {best_sharpe:.4f}
-                """)
-            
-            # Update charts
-            if generation % 2 == 0:
-                # Progress chart
-                ax_progress.clear()
-                ax_progress.plot(best_history, 'b-')
-                ax_progress.set_xlabel('Geração')
-                ax_progress.set_ylabel('Melhor Índice Sharpe')
-                ax_progress.set_title('Progresso da Otimização')
-                ax_progress.grid(True)
-                progress_chart.pyplot(fig_progress)
-                
-                # Allocation chart
-                ax_allocation.clear()
-                if best_weights is not None:
-                    ax_allocation.pie(best_weights, labels=selected_tickers, autopct='%1.1f%%')
-                    ax_allocation.set_title('Melhor Alocação de Portfólio Atual')
-                allocation_chart.pyplot(fig_allocation)
-            
-            # Selection
-            new_population = []
-            while len(new_population) < population_size:
-                # Tournament selection
-                tournament_size = 3
-                tournament = np.random.choice(population_size, tournament_size)
-                parent1 = population[tournament[np.argmax([fitness_scores[i] for i in tournament])]]
-                tournament = np.random.choice(population_size, tournament_size)
-                parent2 = population[tournament[np.argmax([fitness_scores[i] for i in tournament])]]
-                
-                # Crossover
-                if np.random.random() < 0.8:
-                    alpha = np.random.random()
-                    child = alpha * parent1 + (1 - alpha) * parent2
-                    child = child / np.sum(child)
-                else:
-                    child = parent1.copy()
-                
-                # Mutation
-                if np.random.random() < mutation_rate:
-                    mutation = np.random.normal(0, 0.1, len(selected_tickers))
-                    child = child + mutation
-                    child = np.clip(child, 0, 1)
-                    child = child / np.sum(child)
-                
-                new_population.append(child)
-            
-            population = new_population
+                results.append(result)
+                st.write("Resultados:", result)  # Exibir os resultados da configuração atual
+                progress_bar.progress((i + 1) / len(configs))
     
-    except Exception as e:
-        st.error(f"Erro de otimização: {str(e)}")
-        return
-    finally:
-        plt.close(fig_progress)
-        plt.close(fig_allocation)
+        st.success("Benchmark concluído!")
     
-    # Final Results
-    st.header("🎯 Portfólio Final")
-    
-    col5, col6 = st.columns(2)
-    
-    with col5:
-        st.subheader("Métricas do Portfólio")
-        final_return, final_vol, final_sharpe = calculate_metrics(
-            best_weights, returns, cov_matrix, risk_free_rate
-        )
-        
-        # Calculate projected returns for different time horizons
-        monthly_return = (1 + final_return) ** (1/12) - 1
-        projected_values = {
-            "1 mês": investment * (1 + monthly_return),
-            "3 meses": investment * (1 + monthly_return) ** 3,
-            "6 meses": investment * (1 + monthly_return) ** 6,
-            "1 ano": investment * (1 + final_return),
-            "2 anos": investment * (1 + final_return) ** 2,
-            "5 anos": investment * (1 + final_return) ** 5
-        }
-        
-        st.markdown(f"""
-        #### Métricas Atuais
-        - Retorno Anual Esperado: **{final_return:.2%}**
-        - Volatilidade Anual Esperada: **{final_vol:.2%}**
-        - Índice Sharpe: **{final_sharpe:.4f}**
-        
-        #### Valor Projetado do Investimento
-        Assumindo que a taxa de retorno esperada permaneça constante:
-        """)
-        
-        for period, value in projected_values.items():
-            profit = value - investment
-            profit_percent = (profit / investment) * 100
-            st.markdown(f"""
-            **{period}:**
-            - Valor: **${value:,.2f}**
-            - Lucro: **${profit:,.2f}** (*{profit_percent:+.1f}%*)
-            """)
+        if results:
+            st.subheader("Resumo Geral do Benchmark")
+            summary_df = pd.DataFrame(results)
             
-        st.warning("""
-        ⚠️ Nota: Estas projeções são baseadas em dados históricos e retornos esperados. 
-        Os retornos reais podem variar devido às condições do mercado e outros fatores.
-        O desempenho passado não garante resultados futuros.
-        """)
-    
-    with col6:
-        st.subheader("Alocação do Investimento")
-        allocation_df = pd.DataFrame({
-            'Ação': selected_tickers,
-            'Peso': best_weights,
-            'Valor': best_weights * investment,
-            'Ações': (best_weights * investment / latest_prices).round(2)
-        })
-        st.dataframe(
-            allocation_df.style.format({
-                'Peso': '{:.2%}',
-                'Valor': '${:,.2f}',
-                'Ações': '{:.2f}'
-            })
-        )
-
-# Run button
-if st.button("🚀 Otimizar Portfólio"):
-    optimize_portfolio()
+            # Adicionar uma coluna de identificação para as configurações
+            summary_df["Configuração"] = [f"Configuração {i+1}" for i in range(len(summary_df))]
+            
+            st.dataframe(summary_df)
+            
+            # Criar o gráfico de comparação
+            st.subheader("Gráfico de Comparação de Configurações")
+            fig = px.bar(
+                summary_df,
+                x="Configuração",
+                y="best_sharpe",  # Substitua por qualquer métrica que você queira comparar
+                title="Comparação de Configurações",
+                labels={"best_sharpe": "Índice Sharpe"}
+            )
+            st.plotly_chart(fig)
