@@ -16,7 +16,10 @@ import numpy as np
 
 # Configuração de logging
 logger = logging.getLogger(__name__)
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+)
 
 # Diretório de cache para dados financeiros
 CACHE_DIR = Path("data/cache")
@@ -144,4 +147,4 @@ def get_risk_free_rate() -> float:
         Taxa livre de risco anual.
     """
     # Taxa Selic média aproximada
-    return 0.100  # 10% ao ano
+    return 0.1  # 10% ao ano
