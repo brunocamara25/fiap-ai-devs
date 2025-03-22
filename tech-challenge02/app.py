@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from genetic_algorithm import optimize_portfolio
+from src.models.genetic_algorithm import optimize_portfolio
 
 # Configurações da página
 st.set_page_config(
