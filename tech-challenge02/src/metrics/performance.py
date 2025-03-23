@@ -1,110 +1,75 @@
 """
 Módulo com métricas de desempenho para avaliação de portfólios.
+
+Este módulo implementa métricas clássicas e modernas de avaliação de desempenho
+de portfólios, considerando diferentes aspectos de risco e retorno.
+
+Referências:
+    [1] Sharpe, W. F. (1994). The Sharpe Ratio. The Journal of Portfolio Management
+    [2] Sortino, F. A., & Price, L. N. (1994). Performance Measurement in a Downside Risk Framework
+    [3] Treynor, J. L. (1965). How to Rate Management of Investment Funds
 """
 import numpy as np
 import pandas as pd
 
 def calculate_metrics(weights, returns, cov_matrix, risk_free_rate):
-    """
-    Calcular métricas básicas do portfólio.
-    
-    Parâmetros:
-        weights (np.ndarray): Pesos do portfólio.
-        returns (pd.DataFrame): Retornos históricos dos ativos.
-        cov_matrix (pd.DataFrame): Matriz de covariância dos retornos.
-        risk_free_rate (float): Taxa livre de risco.
-        
-    Retorna:
-        tuple: (portfolio_return, portfolio_vol, sharpe_ratio) - Retorno, volatilidade e índice de Sharpe anualizados.
-    """
+
+    if not np.isclose(np.sum(weights), 1.0):
+        weights = weights / np.sum(weights)  # Normalização dos pesos
+
     portfolio_return = np.sum(returns.mean() * weights) * 252
     portfolio_vol = np.sqrt(np.dot(weights.T, np.dot(cov_matrix * 252, weights)))
-    sharpe_ratio = (portfolio_return - risk_free_rate) / portfolio_vol
+    sharpe_ratio = (portfolio_return - risk_free_rate) / portfolio_vol if portfolio_vol > 0 else 0
+    
     return portfolio_return, portfolio_vol, sharpe_ratio
 
+def calculate_information_ratio(weights, returns, benchmark_returns):
+
+    portfolio_returns = np.dot(returns, weights)
+    active_returns = portfolio_returns - benchmark_returns
+    
+    # Anualização
+    active_return = np.mean(active_returns) * 252
+    tracking_error = np.std(active_returns, ddof=1) * np.sqrt(252)
+    
+    return active_return / tracking_error if tracking_error > 0 else 0
+
 def calculate_sortino_ratio(weights, returns, risk_free_rate=0.0, target_return=0.0):
-    """
-    Calcula o Índice de Sortino para um portfólio.
-    
-    Parâmetros:
-        weights (np.ndarray): Pesos do portfólio.
-        returns (pd.DataFrame): Retornos históricos das ações.
-        risk_free_rate (float): Taxa livre de risco (padrão: 0.0).
-        target_return (float): Retorno alvo (padrão: 0.0).
-    
-    Retorna:
-        float: Índice de Sortino calculado.
-    """
-    # Retorno esperado do portfólio
-    portfolio_return = np.sum(returns.mean() * weights) * 252  # Anualizado
-    
-    # Retornos do portfólio
+
+    portfolio_return = np.sum(returns.mean() * weights) * 252
     portfolio_returns = np.dot(returns, weights)
     
-    # Desvio padrão dos retornos abaixo do retorno alvo (volatilidade negativa)
-    downside_deviation = np.sqrt(np.mean(np.minimum(0, portfolio_returns - target_return) ** 2))
+    # Desvio padrão dos retornos abaixo do target (downside risk)
+    downside_returns = np.minimum(portfolio_returns - target_return, 0)
+    downside_deviation = np.sqrt(np.mean(downside_returns ** 2)) * np.sqrt(252)
     
-    # Índice de Sortino
-    sortino_ratio = (portfolio_return - risk_free_rate) / downside_deviation if downside_deviation > 0 else 0
-    
-    return sortino_ratio
+    return (portfolio_return - risk_free_rate) / downside_deviation if downside_deviation > 0 else 0
 
-def calculate_treynor_ratio(weights, returns, cov_matrix, risk_free_rate, market_returns):
-    """
-    Calcula o Índice de Treynor para um portfólio.
+def calculate_calmar_ratio(weights, returns, risk_free_rate=0.0, window=252):
+
+    portfolio_return = np.sum(returns.mean() * weights) * 252
+    portfolio_returns = np.dot(returns, weights)
     
-    Parâmetros:
-        weights (np.ndarray): Pesos do portfólio.
-        returns (pd.DataFrame): Retornos históricos das ações.
-        cov_matrix (pd.DataFrame): Matriz de covariância.
-        risk_free_rate (float): Taxa livre de risco.
-        market_returns (pd.Series): Retornos históricos do mercado.
-        
-    Retorna:
-        float: Índice de Treynor calculado.
-    """
-    portfolio_return, _, _ = calculate_metrics(weights, returns, cov_matrix, risk_free_rate)
-    beta = calculate_beta(weights, returns, market_returns)
+    # Calcular drawdown máximo
+    cum_returns = (1 + portfolio_returns).cumprod()
+    rolling_max = cum_returns.rolling(window=window, min_periods=1).max()
+    drawdowns = (cum_returns - rolling_max) / rolling_max
+    max_drawdown = abs(drawdowns.min())
     
-    # Evitar divisão por zero caso beta seja zero ou muito pequeno
-    if abs(beta) < 1e-8:
-        return 0
-    
-    treynor_ratio = (portfolio_return - risk_free_rate) / beta
-    return treynor_ratio
+    return (portfolio_return - risk_free_rate) / max_drawdown if max_drawdown > 0 else 0
 
 def calculate_beta(weights, returns, market_returns):
-    """
-    Calcula o beta (sensibilidade ao mercado) de um portfólio.
-    
-    Parâmetros:
-        weights (np.ndarray): Pesos do portfólio.
-        returns (pd.DataFrame): Retornos históricos das ações.
-        market_returns (pd.Series): Retornos históricos do mercado.
-        
-    Retorna:
-        float: Beta do portfólio.
-    """
-    # Calcular os retornos do portfólio
+
     portfolio_returns = np.dot(returns, weights)
     
-    # Converter para Series e alinhar índices
-    portfolio_returns = pd.Series(portfolio_returns, index=returns.index)
-    market_returns = pd.Series(market_returns, index=returns.index).reindex(returns.index).fillna(method='ffill').fillna(method='bfill')
+    # Alinhar dados
+    aligned_data = pd.DataFrame({
+        'portfolio': portfolio_returns,
+        'market': market_returns
+    }).dropna()
     
-    # Remover valores ausentes
-    aligned_data = pd.concat([portfolio_returns, market_returns], axis=1).dropna()
-    portfolio_returns = aligned_data.iloc[:, 0]
-    market_returns = aligned_data.iloc[:, 1]
+    # Calcular beta usando covariância/variância
+    covariance = np.cov(aligned_data['portfolio'], aligned_data['market'])[0, 1]
+    market_variance = np.var(aligned_data['market'])
     
-    # Calcular a covariância e a variância do mercado
-    covariance = np.cov(portfolio_returns, market_returns)[0, 1]
-    market_variance = np.var(market_returns)
-    
-    # Evitar divisão por zero
-    if market_variance < 1e-8:
-        return 0
-    
-    # Calcular o beta
-    beta = covariance / market_variance
-    return beta 
+    return covariance / market_variance if market_variance > 0 else 0
