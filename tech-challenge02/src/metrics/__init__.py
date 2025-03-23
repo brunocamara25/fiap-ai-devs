@@ -35,7 +35,7 @@ __all__ = [
     'calculate_calmar_ratio',
     'calculate_beta',
     'calculate_treynor_ratio',
-    
+
     # Risk metrics
     'calculate_volatility',
     'calculate_var',
