@@ -1,13 +1,15 @@
 """
 Pacote models para modelos de otimização de portfólio.
+
+Este pacote inclui implementações de diversos algoritmos de otimização,
+com foco principal no algoritmo genético para seleção de portfólios.
 """
 from src.models.genetic_algorithm import (
-    create_individual,
-    evaluate_population,
-    select_pareto_front,
-    select_parents,
-    select_parents_from_pareto,
-    crossover,
-    mutate,
+    GeneticAlgorithm,
     optimize_portfolio
 )
+
+__all__ = [
+    'GeneticAlgorithm',
+    'optimize_portfolio'
+]
