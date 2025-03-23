@@ -4,10 +4,6 @@ Módulo com métricas de desempenho para avaliação de portfólios.
 Este módulo implementa métricas clássicas e modernas de avaliação de desempenho
 de portfólios, considerando diferentes aspectos de risco e retorno.
 
-Referências:
-    [1] Sharpe, W. F. (1994). The Sharpe Ratio. The Journal of Portfolio Management
-    [2] Sortino, F. A., & Price, L. N. (1994). Performance Measurement in a Downside Risk Framework
-    [3] Treynor, J. L. (1965). How to Rate Management of Investment Funds
 """
 import numpy as np
 import pandas as pd
@@ -73,3 +69,14 @@ def calculate_beta(weights, returns, market_returns):
     market_variance = np.var(aligned_data['market'])
     
     return covariance / market_variance if market_variance > 0 else 0
+
+def calculate_treynor_ratio(weights, returns, market_returns, risk_free_rate=0.0):
+
+    portfolio_return = np.sum(returns.mean() * weights) * 252
+    beta = calculate_beta(weights, returns, market_returns)
+    
+    # Evitar divisão por beta zero ou muito pequeno
+    if abs(beta) < 1e-6:
+        return float('inf') if portfolio_return > risk_free_rate else float('-inf')
+    
+    return (portfolio_return - risk_free_rate) / beta

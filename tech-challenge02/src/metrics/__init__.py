@@ -14,7 +14,8 @@ from src.metrics.performance import (
     calculate_sortino_ratio,
     calculate_calmar_ratio,
     calculate_information_ratio,
-    calculate_beta
+    calculate_beta,
+    calculate_treynor_ratio
 )
 
 from src.metrics.risk import (
@@ -33,6 +34,7 @@ __all__ = [
     'calculate_information_ratio',
     'calculate_calmar_ratio',
     'calculate_beta',
+    'calculate_treynor_ratio',
     
     # Risk metrics
     'calculate_volatility',
