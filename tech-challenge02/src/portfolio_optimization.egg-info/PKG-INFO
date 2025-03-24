@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: portfolio-optimization
+Version: 0.1.0
+Summary: Otimização de Portfólio de Investimento usando Algoritmo Genético
+Author: Seu Nome
+Author-email: seu.email@exemplo.com
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Financial and Insurance Industry
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.8
+Provides-Extra: dev

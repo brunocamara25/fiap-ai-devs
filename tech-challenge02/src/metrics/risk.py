@@ -96,17 +96,37 @@ def calculate_drawdown(weights, returns):
         returns (pd.DataFrame): Retornos históricos dos ativos.
         
     Retorna:
-        dict: Dicionário com 'max_drawdown' e 'avg_drawdown'.
+        dict: Dicionário com 'drawdown_series' (série completa), 'max_drawdown' e 'avg_drawdown'.
     """
-    portfolio_returns = np.dot(returns, weights)
+    if isinstance(returns, pd.DataFrame):
+        portfolio_returns = (returns * weights).sum(axis=1)
+    else:
+        portfolio_returns = np.dot(returns, weights)
+    
+    # Garantir que portfolio_returns é uma pandas Series
+    if not isinstance(portfolio_returns, pd.Series):
+        # Se tivermos índices no DataFrame original, usamos; caso contrário, criamos um índice numérico
+        if isinstance(returns, pd.DataFrame):
+            portfolio_returns = pd.Series(portfolio_returns, index=returns.index)
+        else:
+            portfolio_returns = pd.Series(portfolio_returns)
+    
+    # Calcular retornos cumulativos
     cum_returns = (1 + portfolio_returns).cumprod()
-    rolling_max = np.maximum.accumulate(cum_returns)
-    drawdowns = (cum_returns - rolling_max) / rolling_max
-
-    return {
-        'max_drawdown': drawdowns.min(),
-        'avg_drawdown': drawdowns[drawdowns < 0].mean() if any(drawdowns < 0) else 0
+    
+    # Calcular máximo acumulado (peak)
+    running_max = cum_returns.cummax()
+    
+    # Calcular drawdowns
+    drawdown = (cum_returns - running_max) / running_max
+    
+    result = {
+        'drawdown_series': drawdown,
+        'max_drawdown': abs(drawdown.min()),
+        'avg_drawdown': abs(drawdown.mean())
     }
+    
+    return result
 
 def calculate_diversification_ratio(weights, cov_matrix):
     """

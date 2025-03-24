@@ -20,7 +20,8 @@ setup(
         "tqdm>=4.66.1",
         "scipy>=1.10.1",
         "plotly>=5.14.1",
-        "streamlit>=1.27.0"
+        "streamlit>=1.27.0",
+        "pytest>=7.3.1"
     ],
     python_requires=">=3.8",
     classifiers=[

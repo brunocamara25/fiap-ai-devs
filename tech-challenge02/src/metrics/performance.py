@@ -51,8 +51,24 @@ def calculate_information_ratio(weights, returns, benchmark_returns):
     Retorna:
         float: Information Ratio do portfólio.
     """
-    portfolio_returns = np.dot(returns, weights)
-    active_returns = portfolio_returns - benchmark_returns
+    # Garantir que os índices estejam alinhados
+    portfolio_returns = (returns * weights).sum(axis=1)
+    
+    # Verificar se benchmark_returns é uma Series ou DataFrame
+    if isinstance(benchmark_returns, pd.DataFrame):
+        benchmark_col = benchmark_returns.columns[0]
+        benchmark_returns = benchmark_returns[benchmark_col]
+    
+    # Alinhar datas entre portfólio e benchmark
+    common_dates = portfolio_returns.index.intersection(benchmark_returns.index)
+    if len(common_dates) == 0:
+        return 0  # Sem datas comuns, retorna 0
+    
+    aligned_portfolio = portfolio_returns.loc[common_dates]
+    aligned_benchmark = benchmark_returns.loc[common_dates]
+    
+    # Cálculo com dados alinhados
+    active_returns = aligned_portfolio - aligned_benchmark
 
     # Anualização
     active_return = np.mean(active_returns) * 252
@@ -78,8 +94,13 @@ def calculate_sortino_ratio(weights, returns, risk_free_rate=0.0, target_return=
         float: Índice de Sortino anualizado.
     """
     portfolio_return = np.sum(returns.mean() * weights) * 252
-    portfolio_returns = np.dot(returns, weights)
-
+    
+    # Calcular retornos do portfólio
+    if isinstance(returns, pd.DataFrame):
+        portfolio_returns = (returns * weights).sum(axis=1)
+    else:
+        portfolio_returns = np.dot(returns, weights)
+    
     # Desvio padrão dos retornos abaixo do target (downside risk)
     downside_returns = np.minimum(portfolio_returns - target_return, 0)
     downside_deviation = np.sqrt(np.mean(downside_returns ** 2)) * np.sqrt(252)
@@ -101,45 +122,66 @@ def calculate_calmar_ratio(weights, returns, risk_free_rate=0.0, window=252):
         window (int): Janela de tempo em dias para cálculo (padrão: 252 dias).
     
     Retorna:
-        float: Calmar Ratio do portfólio.
+        float: Calmar Ratio anualizado.
     """
     portfolio_return = np.sum(returns.mean() * weights) * 252
-    portfolio_returns = np.dot(returns, weights)
-
-    # Calcular drawdown máximo
-    cum_returns = (1 + portfolio_returns).cumprod()
-    rolling_max = cum_returns.rolling(window=window, min_periods=1).max()
-    drawdowns = (cum_returns - rolling_max) / rolling_max
-    max_drawdown = abs(drawdowns.min())
-
+    
+    # Calcular retornos do portfólio
+    if isinstance(returns, pd.DataFrame):
+        portfolio_returns = (returns * weights).sum(axis=1)
+    else:
+        portfolio_returns = np.dot(returns, weights)
+    
+    # Garantir que portfolio_returns é uma pandas Series
+    if not isinstance(portfolio_returns, pd.Series):
+        # Se tivermos índices no DataFrame original, usamos; caso contrário, criamos um índice numérico
+        if isinstance(returns, pd.DataFrame):
+            portfolio_returns = pd.Series(portfolio_returns, index=returns.index)
+        else:
+            portfolio_returns = pd.Series(portfolio_returns)
+    
+    # Calcular preços cumulativos
+    cumulative_returns = (1 + portfolio_returns).cumprod()
+    rolling_max = cumulative_returns.rolling(window=window, min_periods=1).max()
+    drawdown = (cumulative_returns - rolling_max) / rolling_max
+    max_drawdown = abs(drawdown.min())
+    
     return (portfolio_return - risk_free_rate) / max_drawdown if max_drawdown > 0 else 0
 
 def calculate_beta(weights, returns, market_returns):
     """
-    Calcula o beta (sensibilidade ao mercado) de um portfólio.
+    Calcula o beta (β) do portfólio em relação ao mercado.
     
-    O beta mede a volatilidade relativa de um portfólio em relação ao mercado:
+    O beta mede a volatilidade de um ativo ou portfólio em relação ao mercado:
     \[ \beta_p = \frac{Cov(R_p, R_m)}{Var(R_m)} \]
     
     Parâmetros:
         weights (np.ndarray): Pesos do portfólio.
         returns (pd.DataFrame): Retornos históricos das ações.
         market_returns (pd.Series): Retornos históricos do mercado.
-        
+    
     Retorna:
         float: Beta do portfólio.
     """
-    portfolio_returns = np.dot(returns, weights)
-
-    # Alinhar dados
-    aligned_data = pd.DataFrame({
-        'portfolio': portfolio_returns,
-        'market': market_returns
-    }).dropna()
-
-    # Calcular beta usando covariância/variância
-    covariance = np.cov(aligned_data['portfolio'], aligned_data['market'])[0, 1]
-    market_variance = np.var(aligned_data['market'])
+    # Garantir que os índices estejam alinhados
+    portfolio_returns = (returns * weights).sum(axis=1)
+    
+    # Verificar se market_returns é uma Series ou DataFrame
+    if isinstance(market_returns, pd.DataFrame):
+        market_col = market_returns.columns[0]
+        market_returns = market_returns[market_col]
+    
+    # Alinhar datas entre portfólio e mercado
+    common_dates = portfolio_returns.index.intersection(market_returns.index)
+    if len(common_dates) == 0:
+        return 1.0  # Sem datas comuns, retorna beta neutro (1.0)
+    
+    aligned_portfolio = portfolio_returns.loc[common_dates]
+    aligned_market = market_returns.loc[common_dates]
+    
+    # Calcular beta usando covariância/variância com dados alinhados
+    covariance = np.cov(aligned_portfolio, aligned_market)[0, 1]
+    market_variance = np.var(aligned_market)
 
     return covariance / market_variance if market_variance > 0 else 0
 

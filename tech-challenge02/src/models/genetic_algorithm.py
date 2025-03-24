@@ -41,6 +41,10 @@ class GeneticAlgorithm:
         evaluation_method (str): Método de avaliação ('sharpe', 'sortino', etc.).
         elitism_count (int): Número de melhores indivíduos a preservar entre gerações.
         multiobjective (bool): Se True, usa otimização multi-objetivo.
+        init_strategy (str): Estratégia de inicialização da população.
+        selection_method (str): Método de seleção de pais.
+        crossover_method (str): Método de cruzamento genético.
+        mutation_distribution (str): Distribuição usada para mutação.
     """
 
     def __init__(
@@ -52,7 +56,11 @@ class GeneticAlgorithm:
         max_weight: float = 0.5,
         evaluation_method: str = "sharpe",
         elitism_count: int = 2,
-        multiobjective: bool = False
+        multiobjective: bool = False,
+        init_strategy: str = "random",
+        selection_method: str = "tournament",
+        crossover_method: str = "uniform",
+        mutation_distribution: str = "normal"
     ):
         """
         Inicializa o algoritmo genético com os parâmetros fornecidos.
@@ -66,6 +74,10 @@ class GeneticAlgorithm:
             evaluation_method: Método de avaliação ('sharpe', 'sortino', etc.).
             elitism_count: Número de melhores indivíduos a preservar entre gerações.
             multiobjective: Se True, usa otimização multi-objetivo.
+            init_strategy: Estratégia de inicialização ('random', 'uniform', etc.).
+            selection_method: Método de seleção ('tournament', 'roulette', etc.).
+            crossover_method: Método de cruzamento ('uniform', 'single_point', etc.).
+            mutation_distribution: Distribuição para mutação ('normal', 'uniform').
         """
         self.population_size = population_size
         self.num_generations = num_generations
@@ -75,6 +87,10 @@ class GeneticAlgorithm:
         self.evaluation_method = evaluation_method
         self.elitism_count = elitism_count
         self.multiobjective = multiobjective
+        self.init_strategy = init_strategy
+        self.selection_method = selection_method
+        self.crossover_method = crossover_method
+        self.mutation_distribution = mutation_distribution
 
         # Atributos que serão inicializados durante a otimização
         self.population = None
@@ -86,7 +102,7 @@ class GeneticAlgorithm:
 
     def create_individual(self, size: int) -> np.ndarray:
         """
-        Cria um indivíduo (pesos do portfólio) aleatório.
+        Cria um indivíduo (pesos do portfólio) baseado na estratégia de inicialização.
         
         Args:
             size: Número de ativos no portfólio.
@@ -94,7 +110,23 @@ class GeneticAlgorithm:
         Returns:
             np.ndarray: Pesos normalizados do portfólio.
         """
-        weights = np.random.random(size)
+        if self.init_strategy == "uniform":
+            # Inicializar com pesos uniformes
+            weights = np.ones(size) / size
+        elif self.init_strategy == "random":
+            # Inicializar com pesos aleatórios
+            weights = np.random.random(size)
+        elif self.init_strategy == "return_based":
+            # Inicialização baseada em retornos (seria implementada com dados reais)
+            # Placeholder: inicializa como random por enquanto
+            weights = np.random.random(size)
+        elif self.init_strategy == "volatility_inverse":
+            # Inicialização inversa à volatilidade (seria implementada com dados reais)
+            # Placeholder: inicializa como random por enquanto
+            weights = np.random.random(size)
+        else:
+            # Padrão: pesos aleatórios
+            weights = np.random.random(size)
 
         # Aplicar restrições de peso mínimo e máximo
         weights = enforce_weights_within_bounds(weights, self.min_weight, self.max_weight)
@@ -222,7 +254,7 @@ class GeneticAlgorithm:
         fitness_scores: List[float]
     ) -> Tuple[np.ndarray, np.ndarray]:
         """
-        Seleciona dois pais da população usando seleção por torneio.
+        Seleciona dois pais da população usando o método de seleção especificado.
         
         Args:
             population: Lista de indivíduos.
@@ -231,61 +263,129 @@ class GeneticAlgorithm:
         Returns:
             Tuple[np.ndarray, np.ndarray]: Dois indivíduos selecionados como pais.
         """
-        # Seleção por torneio
-        tournament_size = 3
-
-        # Primeiro pai
-        tournament = np.random.choice(len(population), tournament_size)
-        idx_best = np.argmax([fitness_scores[i] for i in tournament])
-        parent1 = population[tournament[idx_best]]
-
-        # Segundo pai
-        tournament = np.random.choice(len(population), tournament_size)
-        idx_best = np.argmax([fitness_scores[i] for i in tournament])
-        parent2 = population[tournament[idx_best]]
+        if self.selection_method == "tournament":
+            # Seleção por torneio
+            tournament_size = 3
+            
+            # Primeiro pai
+            tournament = np.random.choice(len(population), tournament_size)
+            idx_best = np.argmax([fitness_scores[i] for i in tournament])
+            parent1 = population[tournament[idx_best]]
+            
+            # Segundo pai
+            tournament = np.random.choice(len(population), tournament_size)
+            idx_best = np.argmax([fitness_scores[i] for i in tournament])
+            parent2 = population[tournament[idx_best]]
+            
+        elif self.selection_method == "roulette":
+            # Seleção por roleta (seleção proporcional ao fitness)
+            # Ajustar scores para serem positivos
+            adjusted_scores = np.array(fitness_scores) - min(fitness_scores) + 1e-10
+            probabilities = adjusted_scores / sum(adjusted_scores)
+            
+            # Selecionar dois pais baseados nas probabilidades
+            selected_indices = np.random.choice(len(population), 2, p=probabilities, replace=False)
+            parent1, parent2 = population[selected_indices[0]], population[selected_indices[1]]
+            
+        elif self.selection_method == "elitism":
+            # Seleção elitista (os dois melhores indivíduos)
+            sorted_indices = np.argsort(fitness_scores)[::-1]  # Ordenar em ordem decrescente
+            parent1, parent2 = population[sorted_indices[0]], population[sorted_indices[1]]
+            
+        else:
+            # Padrão: seleção por torneio
+            tournament_size = 3
+            
+            # Primeiro pai
+            tournament = np.random.choice(len(population), tournament_size)
+            idx_best = np.argmax([fitness_scores[i] for i in tournament])
+            parent1 = population[tournament[idx_best]]
+            
+            # Segundo pai
+            tournament = np.random.choice(len(population), tournament_size)
+            idx_best = np.argmax([fitness_scores[i] for i in tournament])
+            parent2 = population[tournament[idx_best]]
 
         return parent1, parent2
 
     def crossover(self, parent1: np.ndarray, parent2: np.ndarray) -> np.ndarray:
         """
-        Realiza o crossover entre dois pais para gerar um filho.
+        Realiza o cruzamento entre dois pais para gerar um filho usando o método especificado.
         
         Args:
-            parent1: Pesos do primeiro pai.
-            parent2: Pesos do segundo pai.
+            parent1: Primeiro pai (vetor de pesos).
+            parent2: Segundo pai (vetor de pesos).
             
         Returns:
-            np.ndarray: Pesos do filho gerado.
+            np.ndarray: Filho gerado pelo cruzamento.
         """
-        # Crossover uniforme
-        mask = np.random.randint(0, 2, len(parent1)).astype(bool)
-        child = np.where(mask, parent1, parent2)
-
-        # Aplicar restrições aos pesos
-        return enforce_weights_within_bounds(child, self.min_weight, self.max_weight)
+        if self.crossover_method == "uniform":
+            # Crossover uniforme (cada gene tem 50% de chance de vir de cada pai)
+            mask = np.random.random(len(parent1)) > 0.5
+            child = np.where(mask, parent1, parent2)
+            
+        elif self.crossover_method == "single_point":
+            # Crossover de ponto único
+            crossover_point = np.random.randint(1, len(parent1))
+            child = np.concatenate([parent1[:crossover_point], parent2[crossover_point:]])
+            
+        elif self.crossover_method == "arithmetic":
+            # Crossover aritmético (média ponderada dos pais)
+            alpha = np.random.random()  # Peso aleatório
+            child = alpha * parent1 + (1 - alpha) * parent2
+            
+        else:
+            # Padrão: crossover uniforme
+            mask = np.random.random(len(parent1)) > 0.5
+            child = np.where(mask, parent1, parent2)
+        
+        # Normalizar pesos se necessário
+        if not np.isclose(np.sum(child), 1.0):
+            child = enforce_weights_sum_to_one(child)
+            
+        # Aplicar restrições de peso mínimo e máximo
+        child = enforce_weights_within_bounds(child, self.min_weight, self.max_weight)
+        
+        return child
 
     def mutate(self, child: np.ndarray) -> np.ndarray:
         """
-        Aplica mutação a um indivíduo.
+        Aplica mutação a um indivíduo usando a distribuição especificada.
         
         Args:
-            child: Pesos do indivíduo.
+            child: Indivíduo (vetor de pesos) a ser mutado.
             
         Returns:
-            np.ndarray: Pesos do indivíduo após a mutação.
+            np.ndarray: Indivíduo mutado.
         """
-        if np.random.random() < self.mutation_rate:
-            # Escolher um gene aleatório para mutação
-            gene_idx = np.random.randint(0, len(child))
-
-            # Aplicar mutação gaussiana
-            mutation_strength = 0.1  # Pode variar entre 0.05 e 0.2
-            child[gene_idx] += np.random.normal(0, mutation_strength)
-
-            # Aplicar restrições aos pesos
-            child = enforce_weights_within_bounds(child, self.min_weight, self.max_weight)
-
-        return child
+        mutated_child = child.copy()
+        
+        # Determinar quais genes (pesos) sofrerão mutação
+        mutation_mask = np.random.random(len(child)) < self.mutation_rate
+        
+        if np.any(mutation_mask):
+            if self.mutation_distribution == "normal":
+                # Mutação normal (adiciona ruído gaussiano)
+                mutation = np.random.normal(0, 0.1, len(child))
+                mutated_child[mutation_mask] += mutation[mutation_mask]
+                
+            elif self.mutation_distribution == "uniform":
+                # Mutação uniforme (substitui por valor aleatório)
+                mutation = np.random.random(len(child))
+                mutated_child[mutation_mask] = mutation[mutation_mask]
+                
+            else:
+                # Padrão: mutação normal
+                mutation = np.random.normal(0, 0.1, len(child))
+                mutated_child[mutation_mask] += mutation[mutation_mask]
+            
+            # Garantir que os pesos somem 1
+            mutated_child = enforce_weights_sum_to_one(mutated_child)
+            
+            # Aplicar restrições de peso mínimo e máximo
+            mutated_child = enforce_weights_within_bounds(mutated_child, self.min_weight, self.max_weight)
+        
+        return mutated_child
 
     def optimize(
         self,
@@ -405,7 +505,9 @@ class GeneticAlgorithm:
 def optimize_portfolio(
     selected_tickers, start_date, end_date, investment, population_size=100, num_generations=50,
     mutation_rate=0.1, risk_free_rate=0.01, min_weight=0.01, max_weight=0.4,
-    evaluation_method="sharpe", multiobjective=True
+    evaluation_method="sharpe", multiobjective=True,
+    init_strategy="random", selection_method="tournament", crossover_method="uniform",
+    mutation_distribution="normal", elitism_count=2
 ):
     """
     Função principal para otimização de portfólio usando o algoritmo genético.
@@ -426,20 +528,25 @@ def optimize_portfolio(
         max_weight: Peso máximo permitido para cada ativo.
         evaluation_method: Método de avaliação dos portfólios.
         multiobjective: Se True, usa otimização multi-objetivo.
+        init_strategy: Estratégia de inicialização ("random", "uniform", etc.)
+        selection_method: Método de seleção ("tournament", "roulette", etc.)
+        crossover_method: Método de crossover ("uniform", "single_point", etc.)
+        mutation_distribution: Distribuição para mutação ("normal", "uniform", etc.)
+        elitism_count: Número de indivíduos elitistas a preservar entre gerações.
         
     Returns:
-        Tuple: (melhores_pesos, melhor_fitness, historico_pareto_front)
+        Tuple: (melhores_pesos, melhor_fitness, historico_pareto_front, retornos, matriz_cov)
     """
     # Verificar seleção mínima de ações
     if len(selected_tickers) < 2:
         st.warning("Por favor, selecione pelo menos 2 ações.")
-        return None, None, None
+        return None, None, None, None, None
 
     # Baixar dados
     with st.spinner("Baixando dados das ações..."):
         data = download_data(selected_tickers, start_date, end_date)
         if data is None:
-            return None, None, None
+            return None, None, None, None, None
 
     # Preparar dados
     returns = data.pct_change().dropna()
@@ -509,7 +616,12 @@ def optimize_portfolio(
         min_weight=min_weight,
         max_weight=max_weight,
         evaluation_method=evaluation_method,
-        multiobjective=multiobjective
+        multiobjective=multiobjective,
+        elitism_count=elitism_count,
+        init_strategy=init_strategy,
+        selection_method=selection_method,
+        crossover_method=crossover_method,
+        mutation_distribution=mutation_distribution
     )
 
     # Executar otimização
@@ -557,4 +669,10 @@ def optimize_portfolio(
     with col2:
         st.bar_chart(weights_df.set_index("Ativo")["Peso"])
 
-    return best_weights, best_fitness, pareto_front_history
+    return (
+        ga.best_individual,
+        ga.best_fitness,
+        ga.pareto_front_history if multiobjective else None,
+        train_data,  # Mesmos dados usados para otimização
+        train_cov_matrix  # Matriz de covariância usada na otimização
+    )

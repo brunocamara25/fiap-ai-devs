@@ -111,43 +111,102 @@ class Portfolio:
         """
         return dict(zip(self.assets, self.weights))
 
-    def get_performance_metrics(self) -> Dict[str, float]:
+    def get_volatility(self) -> float:
         """
-        Calcula e retorna as principais métricas de desempenho do portfólio.
+        Calcula a volatilidade anualizada do portfólio.
         
         Returns
         -------
-        Dict[str, float]
-            Dicionário com as métricas calculadas.
+        float
+            Volatilidade anualizada do portfólio.
         """
-        portfolio_return, portfolio_vol, sharpe_ratio = calculate_metrics(
-            self.weights, self.returns, self.cov_matrix, self.risk_free_rate
-        )
+        vol = np.sqrt(np.dot(self.weights.T, np.dot(self.cov_matrix * 252, self.weights)))
+        return vol
 
+    def get_return(self) -> float:
+        """
+        Calcula o retorno anualizado esperado do portfólio.
+        
+        Returns
+        -------
+        float
+            Retorno anualizado esperado do portfólio.
+        """
+        return np.sum(self.returns.mean() * self.weights) * 252
+        
+    def get_sharpe_ratio(self, risk_free_rate: float = 0.0) -> float:
+        """
+        Calcula o índice de Sharpe do portfólio.
+        
+        Parameters
+        ----------
+        risk_free_rate : float, optional
+            Taxa livre de risco anualizada, by default 0.0
+        
+        Returns
+        -------
+        float
+            Índice de Sharpe do portfólio.
+        """
+        ret = self.get_return()
+        vol = self.get_volatility()
+        if vol == 0:
+            return 0
+        return (ret - risk_free_rate) / vol
+
+    def get_performance_metrics(self, benchmark_returns=None, risk_free_rate=0.0):
+        """
+        Calcula métricas de performance do portfólio.
+        
+        Parâmetros:
+            benchmark_returns (pd.Series): Retornos do benchmark (opcional).
+            risk_free_rate (float): Taxa livre de risco (padrão: 0.0).
+            
+        Retorna:
+            dict: Dicionário com métricas de performance:
+                - return: Retorno anualizado do portfólio.
+                - sharpe: Índice de Sharpe do portfólio.
+                - sortino: Índice de Sortino do portfólio.
+                - information_ratio: Information Ratio (se benchmark fornecido).
+                - treynor: Índice de Treynor (se benchmark fornecido).
+                - calmar: Índice de Calmar do portfólio.
+        """
+        from src.metrics.performance import (
+            calculate_sortino_ratio, calculate_information_ratio,
+            calculate_treynor_ratio, calculate_calmar_ratio
+        )
+        
+        # Métricas básicas
+        ret = self.get_return()
+        sharpe = self.get_sharpe_ratio(risk_free_rate)
+        
+        # Métricas adicionais que não dependem do benchmark
+        sortino = calculate_sortino_ratio(self.weights, self.returns, risk_free_rate)
+        calmar = calculate_calmar_ratio(self.weights, self.returns, risk_free_rate)
+        
+        # Construir dicionário de resultados
         metrics = {
-            'return': portfolio_return,
-            'volatility': portfolio_vol,
-            'sharpe': sharpe_ratio
+            'return': ret,
+            'sharpe': sharpe,
+            'sortino': sortino,
+            'calmar': calmar
         }
-
-        # Calcular métricas adicionais se possível
-        if self.market_returns is not None:
-            metrics['treynor'] = calculate_treynor_ratio(
-                self.weights, self.returns, self.market_returns, 
-                self.risk_free_rate
-            )
-            metrics['information_ratio'] = calculate_information_ratio(
-                self.weights, self.returns, self.market_returns
-            )
-
-        metrics['sortino'] = calculate_sortino_ratio(
-            self.weights, self.returns, self.risk_free_rate
-        )
-
-        metrics['calmar'] = calculate_calmar_ratio(
-            self.weights, self.returns, self.risk_free_rate
-        )
-
+        
+        # Métricas que dependem do benchmark
+        if benchmark_returns is not None:
+            # Métricas que dependem do benchmark
+            try:
+                information_ratio = calculate_information_ratio(self.weights, self.returns, benchmark_returns)
+                treynor = calculate_treynor_ratio(self.weights, self.returns, benchmark_returns, risk_free_rate)
+                
+                metrics['information_ratio'] = information_ratio
+                metrics['treynor'] = treynor
+            except Exception as e:
+                # Em caso de erro, registra e define valores padrão
+                print(f"Aviso: Não foi possível calcular métricas de benchmark: {e}")
+                metrics['information_ratio'] = 0
+                metrics['treynor'] = 0
+        
         return metrics
 
     def get_risk_metrics(self) -> Dict[str, float]:
