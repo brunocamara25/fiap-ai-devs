@@ -499,101 +499,73 @@ def plot_ga_evolution(best_history, interactive=True):
 
         return fig
 
-def plot_pareto_front(pareto_front, risk_free_rate=0.0, interactive=True):
+def plot_pareto_front(pareto_front_history, risk_free_rate=0.0, interactive=True):
     """
-    Plota a fronteira de Pareto (fronteira eficiente).
-    
+    Plota a evolução da fronteira de Pareto (fronteira eficiente).
+
     Parameters
     ----------
-    pareto_front : list
-        Lista de tuplas (weights, (return, risk))
+    pareto_front_history : list
+        Lista de listas de tuplas (weights, (return, risk)).
     risk_free_rate : float, optional
-        Taxa livre de risco
+        Taxa livre de risco.
     interactive : bool, optional
-        Se True, usa Plotly para gráfico interativo
-        
+        Se True, usa Plotly para gráfico interativo.
+
     Returns
     -------
     fig
-        Figura de matplotlib ou plotly
+        Figura de matplotlib ou plotly.
     """
-    # Extrair retornos e volatilidades
-    vols = [score[1] for _, score in pareto_front]
-    rets = [score[0] for _, score in pareto_front]
-
-    # Calcular Sharpe para cada portfólio
-    sharpes = [(r - risk_free_rate) / v if v > 0 else 0 for r, v in zip(rets, vols)]
-
-    # Encontrar o portfólio com maior Sharpe
-    max_sharpe_idx = np.argmax(sharpes)
-    max_sharpe_ret = rets[max_sharpe_idx]
-    max_sharpe_vol = vols[max_sharpe_idx]
-
     if interactive:
+        import plotly.graph_objects as go
         fig = go.Figure()
 
-        # Adicionar pontos da fronteira de Pareto
-        fig.add_trace(go.Scatter(
-            x=vols,
-            y=rets,
-            mode='markers+lines',
-            marker=dict(
-                size=8,
-                color=sharpes,
-                colorscale='Viridis',
-                colorbar=dict(title='Índice Sharpe')
-            ),
-            line=dict(color='rgba(0,0,0,0.3)'),
-            hovertemplate="Volatilidade: %{x:.2%}<br>Retorno: %{y:.2%}<extra></extra>",
-            name='Fronteira Eficiente'
-        ))
+        for generation, pareto_front in enumerate(pareto_front_history):
+            # Extract returns and risks from the current generation's pareto front
+            rets = [score[0] for _, score in pareto_front]
+            vols = [score[1] for _, score in pareto_front]
+            sharpes = [(r - risk_free_rate) / v if v > 0 else 0 for r, v in zip(rets, vols)]
 
-        # Adicionar portfólio de máximo Sharpe
-        fig.add_trace(go.Scatter(
-            x=[max_sharpe_vol],
-            y=[max_sharpe_ret],
-            mode='markers',
-            marker=dict(
-                color='green',
-                size=12,
-                symbol='star'
-            ),
-            hovertemplate="Máximo Sharpe<br>Retorno: %{y:.2%}<br>Volatilidade: %{x:.2%}<extra></extra>",
-            name='Máximo Sharpe'
-        ))
-
-        # Adicionar Capital Market Line (CML)
-        if risk_free_rate > 0:
-            x_cml = [0, max_sharpe_vol * 1.5]
-            slope = (max_sharpe_ret - risk_free_rate) / max_sharpe_vol
-            y_cml = [risk_free_rate, risk_free_rate + slope * x_cml[1]]
-
+            # Add scatter plot for the current generation
             fig.add_trace(go.Scatter(
-                x=x_cml,
-                y=y_cml,
-                mode='lines',
-                line=dict(color='black', dash='dash'),
-                name='CML'
+                x=vols,
+                y=rets,
+                mode='markers+lines',
+                name=f'Geração {generation + 1}',
+                marker=dict(size=8, color=sharpes, colorscale='Viridis', colorbar=dict(title='Índice Sharpe')),
+                line=dict(dash='dash'),
+                hovertemplate="Volatilidade: %{x:.2%}<br>Retorno: %{y:.2%}<br>Sharpe: %{marker.color:.2f}<extra></extra>"
             ))
 
         fig.update_layout(
-            title='Fronteira Eficiente',
-            xaxis_title='Volatilidade Anualizada',
-            yaxis_title='Retorno Anualizado',
+            title='Evolução do Pareto Front',
+            xaxis_title='Risco (Volatilidade)',
+            yaxis_title='Retorno',
             xaxis=dict(tickformat='.1%'),
-            yaxis=dict(tickformat='.1%')
+            yaxis=dict(tickformat='.1%'),
+            legend_title='Gerações'
         )
-
         return fig
     else:
         fig, ax = plt.subplots(figsize=(10, 6))
-        scatter = ax.scatter(vols, rets, c=sharpes, cmap='viridis', s=50, alpha=0.7)
-        plt.colorbar(scatter, label='Índice Sharpe')
-        plt.title('Fronteira Eficiente', fontsize=14)
-        plt.xlabel('Volatilidade Anualizada')
-        plt.ylabel('Retorno Anualizado')
-        plt.grid(True, alpha=0.3)
-        plt.tight_layout()
+
+        for generation, pareto_front in enumerate(pareto_front_history):
+            # Extract returns and risks from the current generation's pareto front
+            rets = [score[0] for _, score in pareto_front]
+            vols = [score[1] for _, score in pareto_front]
+            sharpes = [(r - risk_free_rate) / v if v > 0 else 0 for r, v in zip(rets, vols)]
+
+            # Add scatter plot for the current generation
+            scatter = ax.scatter(vols, rets, label=f'Geração {generation + 1}', alpha=0.6, c=sharpes, cmap='viridis')
+
+        ax.set_xlabel('Risco (Volatilidade)')
+        ax.set_ylabel('Retorno')
+        ax.set_title('Evolução do Pareto Front')
+        ax.legend()
+        ax.grid(True)
+        cbar = plt.colorbar(scatter, ax=ax)
+        cbar.set_label('Índice Sharpe')
 
         return fig
 
