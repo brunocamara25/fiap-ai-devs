@@ -318,17 +318,18 @@ else:
                 st.stop()
             
             # Desempacotar os resultados da otimização
-            best_weights, best_fitness, pareto_front, returns_data, cov_matrix_data = result
+            best_weights, best_fitness, pareto_front, returns_data, cov_matrix_data, train_metrics = result
         
         # Exibir resultados
         st.success("✅ Otimização concluída com sucesso!")
         
         # Criar tabs para diferentes visualizações
-        tab1, tab2, tab3, tab4 = st.tabs([
+        tab1, tab2, tab3, tab4, tab5 = st.tabs([
             "Resumo do Portfólio", 
             "Análise de Risco", 
             "Evolução do Algoritmo", 
-            "Dados e Exportação"
+            "Dados e Exportação",
+            "Comparação In-Sample vs Out-of-Sample"
         ])
         
         with tab1:
@@ -518,6 +519,172 @@ else:
                 save_portfolio_config(config_dict),
                 unsafe_allow_html=True
             )
+        with tab5:
+            st.header("Comparação In-Sample vs Out-of-Sample")
+            
+            # Adicionar explicação visual da divisão dos dados
+            st.markdown("### Divisão dos Dados")
+            
+            # Criar uma representação visual da divisão dos dados
+            total_width = 100
+            train_width = 70
+            test_width = 30
+            
+            # Criar um gráfico de barras horizontais para mostrar a divisão
+            data_split = pd.DataFrame({
+                'Conjunto': ['Treinamento (In-Sample)', 'Teste (Out-of-Sample)'],
+                'Percentual': [train_width, test_width]
+            })
+            
+            fig_split = px.bar(
+                data_split,
+                y='Conjunto',
+                x='Percentual',
+                orientation='h',
+                color='Conjunto',
+                color_discrete_map={
+                    'Treinamento (In-Sample)': '#2E86C1', 
+                    'Teste (Out-of-Sample)': '#28B463'
+                },
+                title='Divisão dos Dados Históricos',
+                labels={'Percentual': 'Percentual dos Dados (%)', 'Conjunto': ''}
+            )
+            
+            fig_split.update_layout(
+                showlegend=False,
+                xaxis=dict(range=[0, 100])
+            )
+            
+            # Adicionar anotações explicativas
+            fig_split.add_annotation(
+                x=35, y='Treinamento (In-Sample)',
+                text="Usado para otimização",
+                showarrow=False,
+                font=dict(color="white", size=14)
+            )
+            
+            fig_split.add_annotation(
+                x=15, y='Teste (Out-of-Sample)',
+                text="Validação",
+                showarrow=False,
+                font=dict(color="white", size=14)
+            )
+            
+            st.plotly_chart(fig_split, use_container_width=True)
+            
+            st.markdown("""
+            Esta aba apresenta uma comparação entre as métricas calculadas com os dados de treinamento 
+            (usados para otimização) e com todos os dados do período selecionado. 
+            
+            Diferenças significativas podem indicar:
+            - **Overfitting**: Quando o desempenho in-sample é muito superior ao out-of-sample
+            - **Mudanças de regime**: Quando o comportamento do mercado mudou significativamente no período
+            - **Robustez do modelo**: Pequenas diferenças indicam maior capacidade de generalização
+            """)
+            
+            # Criar colunas para comparação
+            col1, col2 = st.columns(2)
+            
+            with col1:
+                st.markdown("### Dados de Treinamento (70%)")
+                st.markdown(f"**Retorno Anualizado:** {train_metrics['return']:.2%}")
+                st.markdown(f"**Volatilidade:** {train_metrics['volatility']:.2%}")
+                st.markdown(f"**Índice de Sharpe:** {train_metrics['sharpe']:.2f}")
+                
+                # Adicionar uma explicação
+                st.info("Métricas calculadas com os dados usados para otimização (in-sample)")
+            
+            with col2:
+                st.markdown("### Período Completo (100%)")
+                st.markdown(f"**Retorno Anualizado:** {perf_metrics['return']:.2%}")
+                st.markdown(f"**Volatilidade:** {portfolio.get_volatility():.2%}")
+                st.markdown(f"**Índice de Sharpe:** {perf_metrics['sharpe']:.2f}")
+                
+                # Adicionar uma explicação
+                st.info("Métricas calculadas com todos os dados do período selecionado (inclui dados não usados na otimização)")
+            
+            # Cálculo da diferença percentual para cada métrica
+            diff_return = (perf_metrics['return'] - train_metrics['return']) / train_metrics['return'] * 100
+            diff_vol = (portfolio.get_volatility() - train_metrics['volatility']) / train_metrics['volatility'] * 100
+            diff_sharpe = (perf_metrics['sharpe'] - train_metrics['sharpe']) / train_metrics['sharpe'] * 100 if train_metrics['sharpe'] != 0 else 0
+            
+            # Exibir as diferenças
+            st.subheader("Análise das Diferenças")
+            
+            metrics_diff = pd.DataFrame({
+                'Métrica': ['Retorno', 'Volatilidade', 'Sharpe'],
+                'In-Sample': [f"{train_metrics['return']:.2%}", f"{train_metrics['volatility']:.2%}", f"{train_metrics['sharpe']:.2f}"],
+                'Out-of-Sample': [f"{perf_metrics['return']:.2%}", f"{portfolio.get_volatility():.2%}", f"{perf_metrics['sharpe']:.2f}"],
+                'Diferença (%)': [f"{diff_return:.2f}%", f"{diff_vol:.2f}%", f"{diff_sharpe:.2f}%"]
+            })
+            
+            st.dataframe(metrics_diff, hide_index=True)
+            
+            # Adicionar gráfico de comparação
+            st.subheader("Visualização Comparativa")
+            
+            # Preparar dados para o gráfico
+            chart_data = pd.DataFrame({
+                'Métrica': ['Retorno', 'Volatilidade', 'Sharpe'] * 2,
+                'Tipo': ['In-Sample'] * 3 + ['Out-of-Sample'] * 3,
+                'Valor': [
+                    train_metrics['return'], 
+                    train_metrics['volatility'], 
+                    train_metrics['sharpe'], 
+                    perf_metrics['return'], 
+                    portfolio.get_volatility(), 
+                    perf_metrics['sharpe']
+                ]
+            })
+            
+            # Criar gráfico com plotly
+            fig = px.bar(
+                chart_data, 
+                x='Métrica', 
+                y='Valor', 
+                color='Tipo', 
+                barmode='group',
+                title='Comparação In-Sample vs Out-of-Sample',
+                labels={'Valor': 'Valor da Métrica', 'Tipo': 'Conjunto de Dados'},
+                color_discrete_map={'In-Sample': '#2E86C1', 'Out-of-Sample': '#28B463'}
+            )
+            
+            # Formatar eixo Y para percentual para Retorno e Volatilidade
+            fig.update_layout(
+                yaxis=dict(
+                    tickformat='.2%',
+                ),
+                legend=dict(
+                    orientation='h',
+                    yanchor='bottom',
+                    y=1.02,
+                    xanchor='right',
+                    x=1
+                )
+            )
+            
+            st.plotly_chart(fig, use_container_width=True)
+            
+            # Interpretação das diferenças
+            st.markdown("### Interpretação")
+            
+            if abs(diff_return) > 20 or abs(diff_vol) > 20 or abs(diff_sharpe) > 20:
+                st.warning("""
+                **Diferenças significativas detectadas!** 
+                
+                Isso pode indicar que o portfólio otimizado pode não ter o mesmo desempenho no futuro
+                que teve durante o período de treinamento. Considere:
+                - Usar um período histórico mais longo
+                - Testar diferentes métodos de avaliação
+                - Aumentar a diversificação do portfólio
+                """)
+            else:
+                st.success("""
+                **O modelo parece robusto!** 
+                
+                As diferenças entre as métricas in-sample e out-of-sample são relativamente pequenas,
+                o que sugere que o portfólio otimizado tem boa capacidade de generalização.
+                """)
     else:
         # Mensagem inicial antes da otimização
         st.info("👈 Selecione os ativos e parâmetros desejados na barra lateral e clique em 'Otimizar Portfólio' para começar.")

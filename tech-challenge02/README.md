@@ -4,34 +4,24 @@ Uma aplicação web em Streamlit que utiliza algoritmos genéticos para otimizar
 
 ## Funcionalidades
 
-- **
-Otimização de Portfólio
-**:
+- Otimização de Portfólio:
   - Algoritmos genéticos para encontrar a melhor alocação de ativos.
   - Suporte a multiobjetivo (retorno e risco).
-- **
-Configuração Personalizável
-**:
+- Configuração Personalizável:
   - Valor do investimento, período de análise e seleção de ações.
   - Ajuste de parâmetros do algoritmo (população, gerações, taxa de mutação, etc.).
   - Suporte a diferentes estratégias de inicialização e métodos de seleção.
-- **
-Visualizações Interativas
-**:
+- Visualizações Interativas:
   - Gráficos de progresso da otimização.
   - Alocação do portfólio em gráficos de pizza.
   - Evolução do Pareto Front para análises multiobjetivo.
   - Gráficos de correlação e fronteira eficiente.
-- **
-Métricas Detalhadas
-**:
+- Métricas Detalhadas:
   - Retorno esperado, volatilidade e Índice Sharpe.
   - Projeções de investimento para diferentes horizontes temporais.
   - Análise de risco com Value at Risk (VaR) e Conditional VaR (CVaR).
-- **
-Exportação de Resultados
-**:
-  - Baixe os resultados do portfólio em formato CSV e JSON.
+- Exportação de Resultados:
+  - Baixe os resultados do portfólio em formato CSV.
 
 ## Estrutura do Projeto
 

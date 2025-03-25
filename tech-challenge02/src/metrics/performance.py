@@ -13,9 +13,14 @@ def calculate_metrics(weights, returns, cov_matrix, risk_free_rate):
     Calcular métricas básicas do portfólio.
     
     A função calcula as métricas fundamentais de um portfólio:
-    - Retorno anualizado: r'[ R_p = \sum_{i=1}^{n} w_i \mu_i \times 252 ]'
-    - Volatilidade anualizada: r'[ \sigma_p = \sqrt{w^T \Sigma w \times 252} ]'
-    - Índice de Sharpe: r'[ SR = \frac{R_p - R_f}{\sigma_p} ]'
+    - Retorno anualizado: Média ponderada dos retornos dos ativos multiplicada por 252
+      Fórmula: R_portfólio = (soma dos pesos × retornos médios) × 252
+    
+    - Volatilidade anualizada: Raiz quadrada da variância do portfólio anualizada
+      Fórmula: Volatilidade = raiz(pesos × matriz covariância × pesos × 252)
+    
+    - Índice de Sharpe: Retorno excedente dividido pela volatilidade
+      Fórmula: Sharpe = (Retorno do portfólio - Taxa livre de risco) / Volatilidade
     
     Parâmetros:
         weights (np.ndarray): Pesos do portfólio.
@@ -40,8 +45,11 @@ def calculate_information_ratio(weights, returns, benchmark_returns):
     """
     Calcula o Information Ratio do portfólio.
     
-    O Information Ratio mede o retorno ativo (excess return) por unidade de risco ativo:
-    \[ IR = \frac{R_p - R_b}{\sigma_{p-b}} \]
+    O Information Ratio mede quanto o portfólio supera o benchmark por unidade de risco:
+    Fórmula: IR = (Retorno do portfólio - Retorno do benchmark) / Tracking Error
+    
+    Onde o Tracking Error é o desvio padrão da diferença entre os retornos do 
+    portfólio e do benchmark.
     
     Parâmetros:
         weights (np.ndarray): Pesos do portfólio.
@@ -80,9 +88,11 @@ def calculate_sortino_ratio(weights, returns, risk_free_rate=0.0, target_return=
     """
     Calcula o Índice de Sortino para um portfólio.
     
-    O Índice de Sortino é uma modificação do Índice de Sharpe que considera apenas
-    a volatilidade negativa (downside risk):
-    \[ Sortino = \frac{R_p - R_f}{\sigma_d} \]
+    O Índice de Sortino é similar ao Sharpe, mas considera apenas o risco de queda:
+    Fórmula: Sortino = (Retorno do portfólio - Taxa livre de risco) / Downside Deviation
+    
+    Onde Downside Deviation mede apenas a volatilidade dos retornos negativos 
+    (abaixo do retorno alvo), ignorando os retornos positivos.
     
     Parâmetros:
         weights (np.ndarray): Pesos do portfólio.
@@ -111,9 +121,10 @@ def calculate_calmar_ratio(weights, returns, risk_free_rate=0.0, window=252):
     """
     Calcula o Calmar Ratio do portfólio.
     
-    O Calmar Ratio é definido como a razão entre o retorno excedente anualizado
-    e o máximo drawdown absoluto:
-    \[ Calmar = \frac{R_p - R_f}{|MaxDD|} \]
+    O Calmar Ratio relaciona o retorno com o máximo drawdown (maior queda):
+    Fórmula: Calmar = (Retorno do portfólio - Taxa livre de risco) / Máximo Drawdown
+    
+    Um Calmar Ratio maior indica melhor retorno por unidade de risco de queda extrema.
     
     Parâmetros:
         weights (np.ndarray): Pesos do portfólio.
@@ -152,8 +163,15 @@ def calculate_beta(weights, returns, market_returns):
     """
     Calcula o beta (β) do portfólio em relação ao mercado.
     
-    O beta mede a volatilidade de um ativo ou portfólio em relação ao mercado:
-    \[ \beta_p = \frac{Cov(R_p, R_m)}{Var(R_m)} \]
+    O beta mede a sensibilidade do portfólio às movimentações do mercado:
+    
+    Fórmula: Beta = Covariância(retornos do portfólio, retornos do mercado) / Variância(retornos do mercado)
+    
+    Interpretação:
+    - Beta = 1.0: O portfólio tende a se mover na mesma proporção que o mercado
+    - Beta > 1.0: O portfólio é mais volátil que o mercado (ex: beta 1.2 significa 20% mais volátil)
+    - Beta < 1.0: O portfólio é menos volátil que o mercado
+    - Beta negativo: O portfólio tende a se mover na direção oposta ao mercado
     
     Parâmetros:
         weights (np.ndarray): Pesos do portfólio.
@@ -189,11 +207,16 @@ def calculate_treynor_ratio(weights, returns, market_returns, risk_free_rate=0.0
     """
     Calcula o Índice de Treynor para um portfólio.
     
-    O Índice de Treynor mede o excesso de retorno por unidade de risco sistemático (beta):
-    \[ Treynor = \frac{R_p - R_f}{\beta_p} \]
+    O Índice de Treynor mede o retorno excedente por unidade de risco sistemático (beta):
     
-    Esta métrica é especialmente útil para avaliar portfólios bem diversificados,
-    onde o risco não-sistemático foi minimizado.
+    Fórmula: Treynor = (Retorno do portfólio - Taxa livre de risco) / Beta
+    
+    Esta métrica é importante para:
+    - Avaliar portfólios bem diversificados (onde o risco não-sistemático foi minimizado)
+    - Comparar desempenho considerando apenas o risco não-diversificável
+    - Identificar portfólios que geram mais retorno por unidade de risco de mercado
+    
+    Um Treynor maior indica melhor desempenho ajustado ao risco sistemático.
     
     Parâmetros:
         weights (np.ndarray): Pesos do portfólio.
