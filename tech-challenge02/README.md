@@ -14,31 +14,36 @@ Configuração Personalizável
 **:
   - Valor do investimento, período de análise e seleção de ações.
   - Ajuste de parâmetros do algoritmo (população, gerações, taxa de mutação, etc.).
+  - Suporte a diferentes estratégias de inicialização e métodos de seleção.
 - **
 Visualizações Interativas
 **:
   - Gráficos de progresso da otimização.
   - Alocação do portfólio em gráficos de pizza.
   - Evolução do Pareto Front para análises multiobjetivo.
+  - Gráficos de correlação e fronteira eficiente.
 - **
 Métricas Detalhadas
 **:
   - Retorno esperado, volatilidade e Índice Sharpe.
   - Projeções de investimento para diferentes horizontes temporais.
+  - Análise de risco com Value at Risk (VaR) e Conditional VaR (CVaR).
 - **
 Exportação de Resultados
 **:
-  - Baixe os resultados do portfólio em formato CSV.
+  - Baixe os resultados do portfólio em formato CSV e JSON.
 
 ## Estrutura do Projeto
 
 O projeto foi modularizado para facilitar a manutenção e escalabilidade:
 
 - `app.py`: Arquivo principal que gerencia a interface do usuário com Streamlit.
-- `genetic_algorithm.py`: Implementação do algoritmo genético para otimização do portfólio.
-- `data.py`: Funções para download e tratamento de dados históricos de ações.
-- `metrics.py`: Cálculo de métricas financeiras como Índice Sharpe, Sortino, Treynor, etc.
-- `visualization.py`: Funções para exibição de gráficos e tabelas interativas.
+- `src/metrics/performance.py`: Cálculo de métricas de desempenho como Índice Sharpe, Sortino e Treynor.
+- `src/metrics/risk.py`: Cálculo de métricas de risco como Value at Risk (VaR) e Conditional VaR (CVaR).
+- `src/data/loader.py`: Funções para download e tratamento de dados históricos de ações.
+- `src/models/genetic_algorithm.py`: Implementação detalhada do algoritmo genético.
+- `src/visualization/plots.py`: Funções para exibição de gráficos e tabelas interativas.
+- `config.py`: Configurações globais e parâmetros padrão do projeto.
 
 ## Instalação
 
@@ -56,7 +61,7 @@ source venv/bin/activate  # No Windows use: venv\Scripts\activate
 
 3. Instale as dependências necessárias:
 ```bash
-pip install streamlit yfinance pandas numpy matplotlib scipy plotly seaborn
+pip install -r requirements.txt
 ```
 
 ## Como Usar
@@ -85,6 +90,7 @@ streamlit run app.py
 - **Método de Seleção**: Estratégia para selecionar pais (ex.: torneio, roleta, elitismo).
 - **Método de Crossover**: Estratégia para combinar pais (ex.: uniforme, ponto único, aritmético).
 - **Distribuição de Mutação**: Tipo de distribuição para mutação (ex.: normal, uniforme).
+- **Estratégia de Inicialização**: Métodos para inicializar os pesos do portfólio (ex.: aleatória, uniforme, diversificada).
 
 ---
 
