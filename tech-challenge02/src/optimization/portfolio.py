@@ -115,10 +115,15 @@ class Portfolio:
         """
         Calcula a volatilidade anualizada do portfólio.
         
+        A volatilidade mede o risco total do portfólio, considerando as correlações
+        entre os ativos e suas volatilidades individuais.
+        
+        Fórmula: Volatilidade = raiz(pesos × matriz covariância × pesos × 252)
+        
         Returns
         -------
         float
-            Volatilidade anualizada do portfólio.
+            Volatilidade anualizada do portfólio (expressa como decimal, ex: 0.15 = 15%).
         """
         vol = np.sqrt(np.dot(self.weights.T, np.dot(self.cov_matrix * 252, self.weights)))
         return vol
@@ -127,16 +132,32 @@ class Portfolio:
         """
         Calcula o retorno anualizado esperado do portfólio.
         
+        O retorno esperado é a média ponderada dos retornos históricos médios 
+        de cada ativo, multiplicada por 252 para anualização.
+        
+        Fórmula: Retorno Anualizado = (soma dos pesos × retornos médios) × 252
+        
         Returns
         -------
         float
-            Retorno anualizado esperado do portfólio.
+            Retorno anualizado esperado do portfólio (expresso como decimal, ex: 0.10 = 10%).
         """
         return np.sum(self.returns.mean() * self.weights) * 252
         
     def get_sharpe_ratio(self, risk_free_rate: float = 0.0) -> float:
         """
         Calcula o índice de Sharpe do portfólio.
+        
+        O índice de Sharpe é a principal métrica de eficiência risco-retorno,
+        medindo o retorno excedente por unidade de risco total.
+        
+        Fórmula: Sharpe = (Retorno do portfólio - Taxa livre de risco) / Volatilidade
+        
+        Interpretação:
+        - <0.5: Desempenho ruim
+        - 0.5-1.0: Desempenho aceitável
+        - 1.0-2.0: Desempenho bom
+        - >2.0: Desempenho excelente
         
         Parameters
         ----------
@@ -158,18 +179,23 @@ class Portfolio:
         """
         Calcula métricas de performance do portfólio.
         
+        Produz um conjunto completo de métricas para avaliar o desempenho do portfólio
+        sob diferentes perspectivas (risco total, risco de queda, risco sistemático).
+        
+        Métricas calculadas:
+        - Retorno anualizado: Retorno esperado do portfólio em base anual
+        - Sharpe: Retorno excedente por unidade de risco total
+        - Sortino: Retorno excedente por unidade de risco de queda
+        - Calmar: Retorno excedente por unidade de drawdown máximo
+        - Information Ratio: Retorno ativo por unidade de risco ativo (vs benchmark)
+        - Treynor: Retorno excedente por unidade de risco sistemático (beta)
+        
         Parâmetros:
             benchmark_returns (pd.Series): Retornos do benchmark (opcional).
             risk_free_rate (float): Taxa livre de risco (padrão: 0.0).
             
         Retorna:
-            dict: Dicionário com métricas de performance:
-                - return: Retorno anualizado do portfólio.
-                - sharpe: Índice de Sharpe do portfólio.
-                - sortino: Índice de Sortino do portfólio.
-                - information_ratio: Information Ratio (se benchmark fornecido).
-                - treynor: Índice de Treynor (se benchmark fornecido).
-                - calmar: Índice de Calmar do portfólio.
+            dict: Dicionário com métricas de performance.
         """
         from src.metrics.performance import (
             calculate_sortino_ratio, calculate_information_ratio,
@@ -211,7 +237,24 @@ class Portfolio:
 
     def get_risk_metrics(self) -> Dict[str, float]:
         """
-        Calcula e retorna as principais métricas de risco do portfólio.
+        Calcula métricas de risco do portfólio.
+        
+        Esta função calcula um conjunto abrangente de métricas de risco
+        para avaliar diferentes aspectos do risco do portfólio:
+        
+        Métricas calculadas:
+        - volatility: Dispersão total dos retornos (risco total)
+        - var_95: Value at Risk com 95% de confiança (perda potencial) 
+        - cvar_95: Conditional VaR/Expected Shortfall (média das piores perdas)
+        - max_drawdown: Maior queda histórica de pico a vale
+        - skewness: Assimetria da distribuição de retornos (valores negativos indicam risco de cauda)
+        - kurtosis: "Peso" das caudas da distribuição (valores altos indicam maior risco de eventos extremos)
+        - diversification_ratio: Grau de diversificação efetiva do portfólio
+        
+        Interpretação:
+        - Menores valores de volatilidade, VaR, CVaR e drawdown são desejáveis
+        - Assimetria positiva é preferível (mais ganhos extremos que perdas extremas)
+        - Diversification ratio maior indica melhor diluição de risco
         
         Returns
         -------

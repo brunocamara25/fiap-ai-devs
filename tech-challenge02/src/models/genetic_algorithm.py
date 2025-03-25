@@ -629,6 +629,15 @@ def optimize_portfolio(
         train_data, train_cov_matrix, risk_free_rate, market_returns, update_callback
     )
 
+    # Calcular as métricas com dados de treinamento para retornar
+    train_metrics = {}
+    portfolio_return, portfolio_volatility, sharpe = calculate_metrics(
+        best_weights, train_data, train_cov_matrix, risk_free_rate
+    )
+    train_metrics['return'] = portfolio_return
+    train_metrics['volatility'] = portfolio_volatility
+    train_metrics['sharpe'] = sharpe
+
     # Exibir resultados finais
     st.header("🏆 Resultados Finais")
 
@@ -674,5 +683,6 @@ def optimize_portfolio(
         ga.best_fitness,
         ga.pareto_front_history if multiobjective else None,
         train_data,  # Mesmos dados usados para otimização
-        train_cov_matrix  # Matriz de covariância usada na otimização
+        train_cov_matrix,  # Matriz de covariância usada na otimização
+        train_metrics  # Métricas calculadas com dados de treinamento
     )
