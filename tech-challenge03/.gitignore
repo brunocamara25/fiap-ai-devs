@@ -1,0 +1,43 @@
+# Ignore o ambiente virtual
+venv/
+.env/
+*.env
+/venv/
+data/
+
+# Ignore a pasta source
+/source/
+
+# Ignore arquivos de compilação
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+
+# Ignore logs e arquivos temporários
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Ignore arquivos de IDEs
+.idea/
+.vscode/
+*.iml
+
+# Ignore arquivos de build
+build/
+dist/
+*.egg-info/
+
+# Ignore arquivos de teste
+.coverage
+.tox/
+.nox/
+pytest_cache/
+htmlcov/
+
+# Ignore arquivos de sistema
+.DS_Store
+Thumbs.db
