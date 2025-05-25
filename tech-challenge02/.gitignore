@@ -3,6 +3,7 @@ venv/
 .env/
 *.env
 /venv/
+data/
 
 # Ignore a pasta source
 /source/
