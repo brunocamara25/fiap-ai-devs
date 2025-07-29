@@ -1,0 +1,1664 @@
+frame_number,timestamp,faces_count,emotions,activities,anomaly_count,anomaly_types
+0,0.0,2,"neutral, sad",em_pe,0,
+2,0.06666666666666667,2,"happy, sad",em_pe,1,careta_exagerada
+4,0.13333333333333333,3,"neutral, sad, sad",em_pe,2,"careta_exagerada, careta_exagerada"
+6,0.2,4,"neutral, sad, neutral, fear",em_pe,1,careta_exagerada
+8,0.26666666666666666,4,"neutral, neutral, angry, sad",em_pe,0,
+10,0.3333333333333333,3,"neutral, neutral, neutral",em_pe,1,careta_exagerada
+12,0.4,3,"sad, sad, neutral",em_pe,2,"careta_exagerada, careta_exagerada"
+14,0.4666666666666667,3,"neutral, sad, neutral",em_pe,1,careta_exagerada
+16,0.5333333333333333,4,"neutral, angry, neutral, sad",em_pe,1,elemento_grafico
+18,0.6,4,"neutral, sad, neutral, sad",em_pe,0,
+20,0.6666666666666666,4,"neutral, neutral, sad, sad",em_pe,0,
+22,0.7333333333333333,4,"neutral, neutral, neutral, sad",em_pe,0,
+24,0.8,3,"neutral, neutral, fear",em_pe,1,careta_exagerada
+26,0.8666666666666667,3,"neutral, neutral, angry",em_pe,3,"careta_exagerada, careta_exagerada, elemento_grafico"
+28,0.9333333333333333,3,"neutral, sad, angry","em_pe, gesticulando",0,
+30,1.0,4,"neutral, neutral, angry, fear","em_pe, usando_celular",2,"careta_exagerada, elemento_grafico"
+32,1.0666666666666667,4,"neutral, neutral, angry, sad","em_pe, usando_celular",3,"careta_exagerada, careta_exagerada, careta_exagerada"
+34,1.1333333333333333,4,"neutral, sad, sad, angry","em_pe, gesticulando, usando_celular",0,
+36,1.2,4,"neutral, sad, sad, surprise","em_pe, usando_celular",0,
+38,1.2666666666666666,4,"neutral, neutral, surprise, sad","em_pe, usando_celular",2,"careta_exagerada, elemento_grafico"
+40,1.3333333333333333,4,"neutral, sad, sad, surprise","em_pe, gesticulando",1,careta_exagerada
+42,1.4,3,"neutral, sad, surprise","em_pe, usando_celular",2,"careta_exagerada, careta_exagerada"
+44,1.4666666666666666,4,"neutral, sad, surprise, sad",em_pe,2,"careta_exagerada, careta_exagerada"
+46,1.5333333333333334,3,"sad, sad, surprise","em_pe, gesticulando, usando_celular",2,"careta_exagerada, elemento_grafico"
+48,1.6,2,"sad, neutral","em_pe, usando_celular",0,
+50,1.6666666666666667,3,"neutral, sad, surprise","em_pe, usando_celular",2,"careta_exagerada, elemento_grafico"
+52,1.7333333333333334,3,"neutral, sad, angry","em_pe, usando_celular",2,"careta_exagerada, elemento_grafico"
+54,1.8,3,"sad, neutral, angry","caminhando, usando_celular",1,elemento_grafico
+56,1.8666666666666667,3,"neutral, neutral, angry","em_pe, gesticulando, usando_celular",2,"careta_exagerada, elemento_grafico"
+58,1.9333333333333333,3,"neutral, sad, angry","caminhando, usando_celular",0,
+60,2.0,3,"neutral, neutral, happy","em_pe, gesticulando, usando_celular",2,"careta_exagerada, elemento_grafico"
+62,2.066666666666667,4,"neutral, neutral, angry, sad","em_pe, gesticulando, usando_celular",1,careta_exagerada
+64,2.1333333333333333,4,"neutral, neutral, sad, angry","em_pe, gesticulando",2,"careta_exagerada, elemento_grafico"
+66,2.2,3,"neutral, neutral, sad","em_pe, usando_celular",1,careta_exagerada
+68,2.2666666666666666,3,"neutral, sad, happy","em_pe, gesticulando, usando_celular",1,elemento_grafico
+70,2.3333333333333335,2,"sad, neutral","em_pe, gesticulando, usando_celular",0,
+72,2.4,2,"neutral, sad",em_pe,2,"careta_exagerada, elemento_grafico"
+74,2.466666666666667,2,"neutral, sad","em_pe, gesticulando",2,"careta_exagerada, elemento_grafico"
+76,2.533333333333333,2,"neutral, sad","em_pe, usando_celular",2,"careta_exagerada, elemento_grafico"
+78,2.6,2,"neutral, sad","em_pe, gesticulando, usando_celular",1,careta_exagerada
+80,2.6666666666666665,3,"neutral, sad, happy","em_pe, usando_celular",2,"careta_exagerada, careta_exagerada"
+82,2.7333333333333334,2,"neutral, sad","em_pe, usando_celular",0,
+84,2.8,3,"neutral, sad, sad",em_pe,2,"careta_exagerada, elemento_grafico"
+86,2.8666666666666667,2,"neutral, sad",em_pe,3,"careta_exagerada, careta_exagerada, elemento_grafico"
+88,2.933333333333333,3,"neutral, happy, sad","em_pe, usando_celular",2,"careta_exagerada, elemento_grafico"
+90,3.0,3,"neutral, neutral, sad","em_pe, gesticulando, usando_celular",3,"careta_exagerada, careta_exagerada, elemento_grafico"
+92,3.066666666666667,2,"neutral, sad","em_pe, usando_celular",2,"careta_exagerada, elemento_grafico"
+94,3.1333333333333333,4,"neutral, sad, sad, happy","em_pe, usando_celular",3,"careta_exagerada, careta_exagerada, elemento_grafico"
+96,3.2,3,"neutral, sad, happy","em_pe, gesticulando, usando_celular",2,"careta_exagerada, elemento_grafico"
+98,3.2666666666666666,4,"sad, sad, neutral, sad","em_pe, usando_celular",2,"careta_exagerada, elemento_grafico"
+100,3.3333333333333335,3,"sad, neutral, sad","em_pe, usando_celular",2,"careta_exagerada, elemento_grafico"
+102,3.4,3,"neutral, neutral, sad","em_pe, usando_celular",1,elemento_grafico
+104,3.466666666666667,3,"angry, neutral, sad","em_pe, usando_celular",2,"careta_exagerada, elemento_grafico"
+106,3.533333333333333,4,"angry, neutral, sad, sad",caminhando,1,elemento_grafico
+108,3.6,4,"sad, neutral, angry, happy","caminhando, usando_celular",2,"careta_exagerada, elemento_grafico"
+110,3.6666666666666665,3,"neutral, angry, sad","em_pe, usando_celular",2,"careta_exagerada, elemento_grafico"
+112,3.7333333333333334,3,"sad, angry, neutral","sentado, gesticulando, usando_celular",2,"careta_exagerada, elemento_grafico"
+114,3.8,2,"neutral, fear",usando_celular,1,elemento_grafico
+116,3.8666666666666667,3,"sad, neutral, neutral","em_pe, gesticulando, usando_celular",1,elemento_grafico
+118,3.933333333333333,2,"fear, sad","caminhando, gesticulando, usando_celular",1,elemento_grafico
+120,4.0,1,fear,"caminhando, usando_celular",1,elemento_grafico
+122,4.066666666666666,2,"sad, sad","em_pe, usando_celular",1,elemento_grafico
+124,4.133333333333334,2,"neutral, sad","caminhando, gesticulando, usando_celular",1,elemento_grafico
+126,4.2,2,"neutral, fear","caminhando, usando_celular",1,elemento_grafico
+128,4.266666666666667,1,neutral,"em_pe, usando_celular",2,"careta_exagerada, elemento_grafico"
+130,4.333333333333333,1,neutral,"caminhando, usando_celular",2,"careta_exagerada, elemento_grafico"
+132,4.4,0,,"caminhando, usando_celular",1,elemento_grafico
+134,4.466666666666667,0,,"em_pe, usando_celular",1,elemento_grafico
+136,4.533333333333333,0,,"em_pe, gesticulando, usando_celular",1,elemento_grafico
+138,4.6,0,,usando_celular,1,elemento_grafico
+140,4.666666666666667,0,,"sentado, gesticulando, usando_celular",1,elemento_grafico
+142,4.733333333333333,1,sad,usando_celular,1,elemento_grafico
+144,4.8,0,,usando_celular,1,elemento_grafico
+146,4.866666666666666,0,,usando_celular,1,elemento_grafico
+148,4.933333333333334,0,,usando_celular,1,elemento_grafico
+150,5.0,0,,usando_celular,1,elemento_grafico
+152,5.066666666666666,0,,usando_celular,1,elemento_grafico
+154,5.133333333333334,0,,usando_celular,1,elemento_grafico
+156,5.2,1,neutral,usando_celular,1,elemento_grafico
+158,5.266666666666667,1,neutral,usando_celular,1,elemento_grafico
+160,5.333333333333333,1,sad,usando_celular,1,elemento_grafico
+162,5.4,1,neutral,usando_celular,1,elemento_grafico
+164,5.466666666666667,1,neutral,usando_celular,1,elemento_grafico
+166,5.533333333333333,1,neutral,usando_celular,2,"careta_exagerada, elemento_grafico"
+168,5.6,1,neutral,usando_celular,1,elemento_grafico
+170,5.666666666666667,0,,"sentado, usando_celular",1,elemento_grafico
+172,5.733333333333333,0,,usando_celular,1,elemento_grafico
+174,5.8,0,,usando_celular,1,elemento_grafico
+176,5.866666666666666,0,,usando_celular,1,elemento_grafico
+178,5.933333333333334,0,,usando_celular,1,elemento_grafico
+180,6.0,1,happy,correndo,1,movimento_brusco
+182,6.066666666666666,1,happy,caminhando,0,
+184,6.133333333333334,1,happy,,0,
+186,6.2,1,neutral,caminhando,0,
+188,6.266666666666667,1,neutral,dancando,0,
+190,6.333333333333333,1,neutral,"caminhando, dancando, gesticulando",0,
+192,6.4,1,neutral,"caminhando, dancando, gesticulando",0,
+194,6.466666666666667,1,happy,"caminhando, dancando",0,
+196,6.533333333333333,1,happy,"caminhando, dancando, usando_celular",0,
+198,6.6,1,happy,"caminhando, dancando",0,
+200,6.666666666666667,1,happy,"caminhando, dancando",0,
+202,6.733333333333333,1,happy,"caminhando, dancando, gesticulando",1,careta_exagerada
+204,6.8,1,happy,"em_pe, usando_celular",1,careta_exagerada
+206,6.866666666666666,1,happy,"caminhando, dancando",0,
+208,6.933333333333334,1,happy,caminhando,1,careta_exagerada
+210,7.0,1,happy,"caminhando, usando_celular",0,
+212,7.066666666666666,1,happy,"caminhando, usando_celular",0,
+214,7.133333333333334,1,happy,caminhando,0,
+216,7.2,1,neutral,caminhando,0,
+218,7.266666666666667,1,neutral,"caminhando, gesticulando",0,
+220,7.333333333333333,1,happy,"caminhando, gesticulando",0,
+222,7.4,1,happy,"caminhando, dancando, gesticulando",0,
+224,7.466666666666667,1,happy,"em_pe, gesticulando",1,careta_exagerada
+226,7.533333333333333,1,happy,"em_pe, dancando, gesticulando",1,careta_exagerada
+228,7.6,1,happy,"em_pe, gesticulando",1,careta_exagerada
+230,7.666666666666667,1,happy,caminhando,1,careta_exagerada
+232,7.733333333333333,1,happy,caminhando,0,
+234,7.8,1,happy,em_pe,1,careta_exagerada
+236,7.866666666666666,1,happy,"caminhando, gesticulando",0,
+238,7.933333333333334,1,happy,caminhando,1,careta_exagerada
+240,8.0,1,happy,caminhando,1,careta_exagerada
+242,8.066666666666666,1,happy,em_pe,1,careta_exagerada
+244,8.133333333333333,1,happy,caminhando,1,careta_exagerada
+246,8.2,1,happy,em_pe,1,careta_exagerada
+248,8.266666666666667,1,neutral,caminhando,0,
+250,8.333333333333334,1,neutral,caminhando,0,
+252,8.4,1,neutral,caminhando,0,
+254,8.466666666666667,1,neutral,em_pe,0,
+256,8.533333333333333,1,neutral,"em_pe, gesticulando",0,
+258,8.6,1,neutral,em_pe,0,
+260,8.666666666666666,1,neutral,"em_pe, gesticulando",0,
+262,8.733333333333333,1,neutral,em_pe,1,careta_exagerada
+264,8.8,1,neutral,em_pe,0,
+266,8.866666666666667,1,happy,em_pe,0,
+268,8.933333333333334,1,happy,em_pe,1,careta_exagerada
+270,9.0,1,happy,"em_pe, gesticulando",1,careta_exagerada
+272,9.066666666666666,1,happy,em_pe,0,
+274,9.133333333333333,1,happy,em_pe,1,careta_exagerada
+276,9.2,1,happy,"em_pe, gesticulando",1,careta_exagerada
+278,9.266666666666667,1,happy,"em_pe, gesticulando",1,careta_exagerada
+280,9.333333333333334,1,happy,"em_pe, gesticulando",1,careta_exagerada
+282,9.4,1,happy,em_pe,1,careta_exagerada
+284,9.466666666666667,1,happy,em_pe,1,careta_exagerada
+286,9.533333333333333,1,happy,em_pe,1,careta_exagerada
+288,9.6,1,happy,em_pe,1,careta_exagerada
+290,9.666666666666666,1,happy,em_pe,1,careta_exagerada
+292,9.733333333333333,1,happy,em_pe,1,careta_exagerada
+294,9.8,1,happy,"em_pe, gesticulando",1,careta_exagerada
+296,9.866666666666667,1,happy,em_pe,1,careta_exagerada
+298,9.933333333333334,1,happy,em_pe,1,careta_exagerada
+300,10.0,1,happy,"caminhando, gesticulando",0,
+302,10.066666666666666,1,happy,em_pe,0,
+304,10.133333333333333,1,happy,caminhando,1,careta_exagerada
+306,10.2,1,happy,em_pe,1,careta_exagerada
+308,10.266666666666667,1,neutral,em_pe,0,
+310,10.333333333333334,1,happy,"em_pe, gesticulando",0,
+312,10.4,1,happy,em_pe,1,careta_exagerada
+314,10.466666666666667,1,happy,em_pe,0,
+316,10.533333333333333,1,neutral,caminhando,1,careta_exagerada
+318,10.6,1,neutral,caminhando,1,careta_exagerada
+320,10.666666666666666,1,neutral,em_pe,0,
+322,10.733333333333333,1,neutral,em_pe,1,careta_exagerada
+324,10.8,1,neutral,em_pe,0,
+326,10.866666666666667,1,neutral,"em_pe, gesticulando",0,
+328,10.933333333333334,1,neutral,em_pe,1,careta_exagerada
+330,11.0,1,neutral,em_pe,1,careta_exagerada
+332,11.066666666666666,1,neutral,"em_pe, gesticulando",1,careta_exagerada
+334,11.133333333333333,1,neutral,em_pe,1,careta_exagerada
+336,11.2,1,neutral,em_pe,0,
+338,11.266666666666667,1,neutral,em_pe,1,careta_exagerada
+340,11.333333333333334,1,neutral,em_pe,0,
+342,11.4,1,neutral,em_pe,0,
+344,11.466666666666667,1,neutral,"em_pe, gesticulando",0,
+346,11.533333333333333,1,neutral,"em_pe, gesticulando",1,careta_exagerada
+348,11.6,1,neutral,"em_pe, gesticulando",1,careta_exagerada
+350,11.666666666666666,1,neutral,em_pe,1,careta_exagerada
+352,11.733333333333333,1,sad,em_pe,0,
+354,11.8,1,neutral,em_pe,0,
+356,11.866666666666667,1,neutral,"em_pe, gesticulando",0,
+358,11.933333333333334,1,neutral,em_pe,1,careta_exagerada
+360,12.0,0,,,1,movimento_brusco
+362,12.066666666666666,0,,,0,
+364,12.133333333333333,0,,,0,
+366,12.2,0,,,0,
+368,12.266666666666667,0,,,0,
+370,12.333333333333334,0,,,0,
+372,12.4,0,,,0,
+374,12.466666666666667,0,,,0,
+376,12.533333333333333,0,,,0,
+378,12.6,0,,,0,
+380,12.666666666666666,0,,,1,elemento_grafico
+382,12.733333333333333,0,,,0,
+384,12.8,0,,,0,
+386,12.866666666666667,0,,,0,
+388,12.933333333333334,0,,,0,
+390,13.0,0,,,0,
+392,13.066666666666666,0,,,0,
+394,13.133333333333333,0,,,1,elemento_grafico
+396,13.2,0,,,1,elemento_grafico
+398,13.266666666666667,0,,,0,
+400,13.333333333333334,0,,,0,
+402,13.4,0,,,1,elemento_grafico
+404,13.466666666666667,0,,,1,elemento_grafico
+406,13.533333333333333,0,,,1,elemento_grafico
+408,13.6,0,,,1,elemento_grafico
+410,13.666666666666666,0,,,1,elemento_grafico
+412,13.733333333333333,0,,,1,elemento_grafico
+414,13.8,0,,,1,elemento_grafico
+416,13.866666666666667,0,,,1,elemento_grafico
+418,13.933333333333334,0,,,1,elemento_grafico
+420,14.0,0,,,1,elemento_grafico
+422,14.066666666666666,0,,,1,elemento_grafico
+424,14.133333333333333,0,,,1,elemento_grafico
+426,14.2,0,,,1,elemento_grafico
+428,14.266666666666667,0,,,1,elemento_grafico
+430,14.333333333333334,0,,,1,elemento_grafico
+432,14.4,0,,,1,elemento_grafico
+434,14.466666666666667,0,,,1,elemento_grafico
+436,14.533333333333333,0,,,1,elemento_grafico
+438,14.6,0,,,1,elemento_grafico
+440,14.666666666666666,0,,,1,elemento_grafico
+442,14.733333333333333,0,,,1,elemento_grafico
+444,14.8,0,,,1,elemento_grafico
+446,14.866666666666667,0,,,1,elemento_grafico
+448,14.933333333333334,0,,,1,elemento_grafico
+450,15.0,0,,,1,elemento_grafico
+452,15.066666666666666,0,,,1,elemento_grafico
+454,15.133333333333333,0,,,1,elemento_grafico
+456,15.2,0,,,1,elemento_grafico
+458,15.266666666666667,0,,,1,elemento_grafico
+460,15.333333333333334,0,,,1,elemento_grafico
+462,15.4,0,,,1,elemento_grafico
+464,15.466666666666667,0,,,1,elemento_grafico
+466,15.533333333333333,0,,,1,elemento_grafico
+468,15.6,0,,,1,elemento_grafico
+470,15.666666666666666,0,,,1,elemento_grafico
+472,15.733333333333333,0,,,1,elemento_grafico
+474,15.8,0,,,1,elemento_grafico
+476,15.866666666666667,0,,,1,elemento_grafico
+478,15.933333333333334,0,,,1,elemento_grafico
+480,16.0,0,,,1,elemento_grafico
+482,16.066666666666666,0,,,1,elemento_grafico
+484,16.133333333333333,0,,,1,elemento_grafico
+486,16.2,0,,,1,elemento_grafico
+488,16.266666666666666,0,,,1,elemento_grafico
+490,16.333333333333332,0,,,1,elemento_grafico
+492,16.4,0,,,1,elemento_grafico
+494,16.466666666666665,0,,,1,elemento_grafico
+496,16.533333333333335,0,,,1,elemento_grafico
+498,16.6,0,,,1,elemento_grafico
+500,16.666666666666668,0,,,1,elemento_grafico
+502,16.733333333333334,0,,,1,elemento_grafico
+504,16.8,0,,,1,elemento_grafico
+506,16.866666666666667,0,,,1,elemento_grafico
+508,16.933333333333334,0,,,1,elemento_grafico
+510,17.0,0,,,1,elemento_grafico
+512,17.066666666666666,0,,,1,elemento_grafico
+514,17.133333333333333,0,,,1,elemento_grafico
+516,17.2,0,,,1,elemento_grafico
+518,17.266666666666666,0,,,1,elemento_grafico
+520,17.333333333333332,0,,,1,elemento_grafico
+522,17.4,0,,,1,elemento_grafico
+524,17.466666666666665,0,,,1,elemento_grafico
+526,17.533333333333335,0,,,1,elemento_grafico
+528,17.6,0,,,1,elemento_grafico
+530,17.666666666666668,0,,,1,elemento_grafico
+532,17.733333333333334,0,,,1,elemento_grafico
+534,17.8,0,,,1,elemento_grafico
+536,17.866666666666667,0,,,1,elemento_grafico
+538,17.933333333333334,0,,,1,elemento_grafico
+540,18.0,0,,correndo,1,movimento_brusco
+542,18.066666666666666,0,,caminhando,0,
+544,18.133333333333333,0,,"caminhando, gesticulando",0,
+546,18.2,0,,caminhando,0,
+548,18.266666666666666,0,,caminhando,0,
+550,18.333333333333332,1,sad,"caminhando, dancando",1,careta_exagerada
+552,18.4,0,,dancando,0,
+554,18.466666666666665,1,surprise,"caminhando, dancando",0,
+556,18.533333333333335,1,surprise,"caminhando, dancando",0,
+558,18.6,1,angry,"caminhando, dancando",0,
+560,18.666666666666668,1,happy,"caminhando, dancando, gesticulando",1,careta_exagerada
+562,18.733333333333334,1,angry,caminhando,0,
+564,18.8,1,fear,caminhando,0,
+566,18.866666666666667,1,fear,caminhando,0,
+568,18.933333333333334,1,angry,caminhando,1,careta_exagerada
+570,19.0,1,angry,caminhando,0,
+572,19.066666666666666,1,sad,caminhando,0,
+574,19.133333333333333,1,angry,"caminhando, gesticulando",1,careta_exagerada
+576,19.2,1,neutral,"caminhando, gesticulando",0,
+578,19.266666666666666,1,sad,caminhando,0,
+580,19.333333333333332,1,happy,"caminhando, gesticulando",0,
+582,19.4,2,"neutral, sad",caminhando,0,
+584,19.466666666666665,1,neutral,caminhando,0,
+586,19.533333333333335,1,fear,caminhando,0,
+588,19.6,1,fear,"caminhando, gesticulando",1,careta_exagerada
+590,19.666666666666668,0,,caminhando,0,
+592,19.733333333333334,0,,caminhando,0,
+594,19.8,0,,caminhando,0,
+596,19.866666666666667,0,,gesticulando,0,
+598,19.933333333333334,1,sad,caminhando,0,
+600,20.0,1,happy,"caminhando, gesticulando",0,
+602,20.066666666666666,1,neutral,"caminhando, gesticulando",1,careta_exagerada
+604,20.133333333333333,1,sad,"caminhando, gesticulando",0,
+606,20.2,1,sad,"caminhando, gesticulando",0,
+608,20.266666666666666,1,fear,caminhando,0,
+610,20.333333333333332,1,angry,caminhando,0,
+612,20.4,1,happy,caminhando,1,careta_exagerada
+614,20.466666666666665,1,neutral,caminhando,0,
+616,20.533333333333335,1,angry,gesticulando,0,
+618,20.6,1,angry,gesticulando,0,
+620,20.666666666666668,1,sad,,1,careta_exagerada
+622,20.733333333333334,1,sad,sentado,1,careta_exagerada
+624,20.8,1,sad,"sentado, gesticulando",1,careta_exagerada
+626,20.866666666666667,1,sad,,0,
+628,20.933333333333334,1,sad,,0,
+630,21.0,1,neutral,gesticulando,0,
+632,21.066666666666666,1,sad,em_pe,0,
+634,21.133333333333333,1,happy,em_pe,0,
+636,21.2,1,neutral,"caminhando, gesticulando",0,
+638,21.266666666666666,1,neutral,gesticulando,0,
+640,21.333333333333332,1,neutral,,1,careta_exagerada
+642,21.4,1,neutral,,0,
+644,21.466666666666665,1,neutral,caminhando,0,
+646,21.533333333333335,1,sad,"caminhando, gesticulando",0,
+648,21.6,1,happy,em_pe,0,
+650,21.666666666666668,1,sad,em_pe,0,
+652,21.733333333333334,1,sad,caminhando,1,careta_exagerada
+654,21.8,1,neutral,"caminhando, gesticulando",0,
+656,21.866666666666667,1,neutral,caminhando,0,
+658,21.933333333333334,1,sad,caminhando,1,careta_exagerada
+660,22.0,1,sad,caminhando,1,careta_exagerada
+662,22.066666666666666,1,sad,,0,
+664,22.133333333333333,1,angry,sentado,0,
+666,22.2,1,sad,dancando,0,
+668,22.266666666666666,1,angry,"caminhando, dancando, gesticulando",0,
+670,22.333333333333332,1,angry,caminhando,0,
+672,22.4,1,angry,caminhando,0,
+674,22.466666666666665,1,fear,caminhando,0,
+676,22.533333333333335,1,sad,"caminhando, gesticulando",1,careta_exagerada
+678,22.6,1,sad,"caminhando, gesticulando",0,
+680,22.666666666666668,0,,caminhando,0,
+682,22.733333333333334,0,,"caminhando, gesticulando",0,
+684,22.8,0,,caminhando,0,
+686,22.866666666666667,0,,em_pe,0,
+688,22.933333333333334,0,,"em_pe, gesticulando",0,
+690,23.0,0,,"em_pe, dancando, gesticulando",0,
+692,23.066666666666666,0,,"em_pe, dancando",0,
+694,23.133333333333333,0,,"em_pe, gesticulando",0,
+696,23.2,0,,caminhando,0,
+698,23.266666666666666,0,,em_pe,0,
+700,23.333333333333332,0,,"caminhando, gesticulando",0,
+702,23.4,0,,"caminhando, gesticulando",0,
+704,23.466666666666665,0,,caminhando,0,
+706,23.533333333333335,0,,caminhando,0,
+708,23.6,1,neutral,"caminhando, gesticulando",0,
+710,23.666666666666668,1,happy,"caminhando, gesticulando",0,
+712,23.733333333333334,1,happy,"caminhando, gesticulando",0,
+714,23.8,1,angry,caminhando,0,
+716,23.866666666666667,1,sad,caminhando,0,
+718,23.933333333333334,1,fear,"caminhando, gesticulando",1,careta_exagerada
+720,24.0,1,sad,correndo,2,"elemento_grafico, movimento_brusco"
+722,24.066666666666666,1,neutral,"em_pe, dancando",1,elemento_grafico
+724,24.133333333333333,1,neutral,"em_pe, dancando",1,elemento_grafico
+726,24.2,1,neutral,"em_pe, dancando, gesticulando",1,elemento_grafico
+728,24.266666666666666,1,neutral,"em_pe, dancando",2,"careta_exagerada, elemento_grafico"
+730,24.333333333333332,1,neutral,em_pe,1,elemento_grafico
+732,24.4,1,neutral,em_pe,1,elemento_grafico
+734,24.466666666666665,1,sad,"em_pe, gesticulando",1,elemento_grafico
+736,24.533333333333335,1,sad,em_pe,1,elemento_grafico
+738,24.6,1,sad,em_pe,1,elemento_grafico
+740,24.666666666666668,1,sad,em_pe,1,elemento_grafico
+742,24.733333333333334,1,sad,em_pe,1,elemento_grafico
+744,24.8,1,neutral,"em_pe, gesticulando",1,elemento_grafico
+746,24.866666666666667,1,sad,em_pe,1,elemento_grafico
+748,24.933333333333334,1,neutral,em_pe,1,elemento_grafico
+750,25.0,1,neutral,em_pe,1,elemento_grafico
+752,25.066666666666666,1,neutral,em_pe,2,"careta_exagerada, elemento_grafico"
+754,25.133333333333333,1,neutral,"em_pe, gesticulando",2,"careta_exagerada, elemento_grafico"
+756,25.2,1,neutral,"em_pe, gesticulando",1,elemento_grafico
+758,25.266666666666666,1,neutral,em_pe,1,elemento_grafico
+760,25.333333333333332,1,neutral,em_pe,2,"careta_exagerada, elemento_grafico"
+762,25.4,1,neutral,em_pe,2,"careta_exagerada, elemento_grafico"
+764,25.466666666666665,1,neutral,em_pe,2,"careta_exagerada, elemento_grafico"
+766,25.533333333333335,1,neutral,em_pe,1,elemento_grafico
+768,25.6,1,neutral,em_pe,1,elemento_grafico
+770,25.666666666666668,1,neutral,"em_pe, gesticulando",1,elemento_grafico
+772,25.733333333333334,1,neutral,em_pe,1,elemento_grafico
+774,25.8,1,neutral,em_pe,1,elemento_grafico
+776,25.866666666666667,1,neutral,em_pe,1,elemento_grafico
+778,25.933333333333334,1,neutral,em_pe,1,elemento_grafico
+780,26.0,1,neutral,em_pe,1,elemento_grafico
+782,26.066666666666666,1,neutral,"em_pe, gesticulando",1,elemento_grafico
+784,26.133333333333333,1,neutral,em_pe,1,elemento_grafico
+786,26.2,1,neutral,"em_pe, gesticulando",1,elemento_grafico
+788,26.266666666666666,1,neutral,em_pe,1,elemento_grafico
+790,26.333333333333332,1,neutral,em_pe,1,elemento_grafico
+792,26.4,1,neutral,"em_pe, gesticulando",1,elemento_grafico
+794,26.466666666666665,1,neutral,em_pe,1,elemento_grafico
+796,26.533333333333335,1,neutral,em_pe,1,elemento_grafico
+798,26.6,1,neutral,em_pe,1,elemento_grafico
+800,26.666666666666668,1,neutral,"em_pe, gesticulando",1,elemento_grafico
+802,26.733333333333334,1,neutral,em_pe,1,elemento_grafico
+804,26.8,1,neutral,"em_pe, gesticulando",1,elemento_grafico
+806,26.866666666666667,1,neutral,em_pe,1,elemento_grafico
+808,26.933333333333334,1,neutral,"em_pe, gesticulando",1,elemento_grafico
+810,27.0,1,neutral,em_pe,1,elemento_grafico
+812,27.066666666666666,1,neutral,em_pe,1,elemento_grafico
+814,27.133333333333333,1,neutral,em_pe,1,elemento_grafico
+816,27.2,1,neutral,em_pe,1,elemento_grafico
+818,27.266666666666666,1,neutral,em_pe,1,elemento_grafico
+820,27.333333333333332,1,neutral,"em_pe, gesticulando",1,elemento_grafico
+822,27.4,1,neutral,em_pe,1,elemento_grafico
+824,27.466666666666665,1,neutral,em_pe,1,elemento_grafico
+826,27.533333333333335,1,neutral,em_pe,2,"careta_exagerada, elemento_grafico"
+828,27.6,1,neutral,em_pe,2,"careta_exagerada, elemento_grafico"
+830,27.666666666666668,1,neutral,em_pe,1,elemento_grafico
+832,27.733333333333334,1,neutral,em_pe,1,elemento_grafico
+834,27.8,1,neutral,em_pe,1,elemento_grafico
+836,27.866666666666667,1,neutral,em_pe,1,elemento_grafico
+838,27.933333333333334,1,neutral,em_pe,1,elemento_grafico
+840,28.0,1,neutral,"em_pe, gesticulando",1,elemento_grafico
+842,28.066666666666666,1,neutral,em_pe,1,elemento_grafico
+844,28.133333333333333,1,neutral,"em_pe, gesticulando",1,elemento_grafico
+846,28.2,1,neutral,em_pe,1,elemento_grafico
+848,28.266666666666666,1,neutral,em_pe,1,elemento_grafico
+850,28.333333333333332,1,neutral,"em_pe, gesticulando",1,elemento_grafico
+852,28.4,1,neutral,em_pe,1,elemento_grafico
+854,28.466666666666665,1,neutral,em_pe,1,elemento_grafico
+856,28.533333333333335,1,neutral,"em_pe, gesticulando",1,elemento_grafico
+858,28.6,1,sad,"em_pe, gesticulando",1,elemento_grafico
+860,28.666666666666668,1,neutral,"em_pe, gesticulando",1,elemento_grafico
+862,28.733333333333334,1,neutral,em_pe,1,elemento_grafico
+864,28.8,1,neutral,em_pe,1,elemento_grafico
+866,28.866666666666667,1,neutral,em_pe,1,elemento_grafico
+868,28.933333333333334,1,sad,"em_pe, gesticulando",1,elemento_grafico
+870,29.0,1,sad,em_pe,1,elemento_grafico
+872,29.066666666666666,1,sad,em_pe,1,elemento_grafico
+874,29.133333333333333,1,sad,"em_pe, gesticulando",1,elemento_grafico
+876,29.2,1,sad,em_pe,1,elemento_grafico
+878,29.266666666666666,1,sad,"em_pe, gesticulando",0,
+880,29.333333333333332,1,sad,em_pe,1,elemento_grafico
+882,29.4,1,sad,em_pe,1,elemento_grafico
+884,29.466666666666665,1,sad,em_pe,1,elemento_grafico
+886,29.533333333333335,1,sad,"em_pe, gesticulando",1,elemento_grafico
+888,29.6,1,sad,"em_pe, gesticulando",1,elemento_grafico
+890,29.666666666666668,1,sad,em_pe,1,elemento_grafico
+892,29.733333333333334,1,neutral,em_pe,1,elemento_grafico
+894,29.8,1,sad,em_pe,1,elemento_grafico
+896,29.866666666666667,1,sad,em_pe,1,elemento_grafico
+898,29.933333333333334,1,sad,"em_pe, gesticulando",1,elemento_grafico
+900,30.0,1,surprise,correndo,3,"careta_exagerada, elemento_grafico, movimento_brusco"
+902,30.066666666666666,1,surprise,"em_pe, gesticulando",2,"careta_exagerada, elemento_grafico"
+904,30.133333333333333,1,surprise,em_pe,1,elemento_grafico
+906,30.2,1,surprise,"em_pe, gesticulando",2,"careta_exagerada, elemento_grafico"
+908,30.266666666666666,1,surprise,"em_pe, gesticulando",1,elemento_grafico
+910,30.333333333333332,1,surprise,em_pe,1,elemento_grafico
+912,30.4,1,surprise,em_pe,2,"careta_exagerada, elemento_grafico"
+914,30.466666666666665,1,surprise,em_pe,2,"careta_exagerada, elemento_grafico"
+916,30.533333333333335,1,surprise,"em_pe, gesticulando",2,"careta_exagerada, elemento_grafico"
+918,30.6,1,surprise,em_pe,1,elemento_grafico
+920,30.666666666666668,1,surprise,em_pe,1,elemento_grafico
+922,30.733333333333334,1,surprise,em_pe,2,"careta_exagerada, elemento_grafico"
+924,30.8,1,surprise,em_pe,1,elemento_grafico
+926,30.866666666666667,1,surprise,caminhando,2,"careta_exagerada, elemento_grafico"
+928,30.933333333333334,1,surprise,caminhando,1,elemento_grafico
+930,31.0,1,surprise,caminhando,1,elemento_grafico
+932,31.066666666666666,1,surprise,"caminhando, gesticulando",1,elemento_grafico
+934,31.133333333333333,1,surprise,caminhando,2,"careta_exagerada, elemento_grafico"
+936,31.2,1,surprise,caminhando,2,"careta_exagerada, elemento_grafico"
+938,31.266666666666666,1,surprise,caminhando,1,elemento_grafico
+940,31.333333333333332,1,surprise,"caminhando, gesticulando",1,elemento_grafico
+942,31.4,1,surprise,caminhando,1,elemento_grafico
+944,31.466666666666665,1,surprise,"em_pe, gesticulando",1,elemento_grafico
+946,31.533333333333335,1,surprise,em_pe,1,elemento_grafico
+948,31.6,1,surprise,em_pe,1,elemento_grafico
+950,31.666666666666668,1,surprise,em_pe,1,elemento_grafico
+952,31.733333333333334,1,surprise,em_pe,1,elemento_grafico
+954,31.8,1,surprise,"em_pe, gesticulando",1,elemento_grafico
+956,31.866666666666667,1,surprise,em_pe,1,elemento_grafico
+958,31.933333333333334,1,surprise,em_pe,1,elemento_grafico
+960,32.0,1,surprise,"em_pe, gesticulando",1,elemento_grafico
+962,32.06666666666667,1,surprise,em_pe,1,elemento_grafico
+964,32.13333333333333,1,surprise,em_pe,1,elemento_grafico
+966,32.2,1,surprise,em_pe,1,elemento_grafico
+968,32.266666666666666,1,surprise,em_pe,1,elemento_grafico
+970,32.333333333333336,1,surprise,em_pe,1,elemento_grafico
+972,32.4,1,surprise,"em_pe, gesticulando",1,elemento_grafico
+974,32.46666666666667,1,surprise,em_pe,2,"careta_exagerada, elemento_grafico"
+976,32.53333333333333,1,surprise,em_pe,1,elemento_grafico
+978,32.6,1,surprise,em_pe,1,elemento_grafico
+980,32.666666666666664,1,surprise,em_pe,2,"careta_exagerada, elemento_grafico"
+982,32.733333333333334,1,surprise,em_pe,1,elemento_grafico
+984,32.8,1,surprise,em_pe,2,"careta_exagerada, elemento_grafico"
+986,32.86666666666667,1,surprise,em_pe,2,"careta_exagerada, elemento_grafico"
+988,32.93333333333333,1,surprise,em_pe,2,"careta_exagerada, elemento_grafico"
+990,33.0,1,surprise,em_pe,1,elemento_grafico
+992,33.06666666666667,1,surprise,em_pe,1,elemento_grafico
+994,33.13333333333333,1,surprise,em_pe,1,elemento_grafico
+996,33.2,1,surprise,em_pe,1,elemento_grafico
+998,33.266666666666666,1,surprise,"em_pe, gesticulando",1,elemento_grafico
+1000,33.333333333333336,1,surprise,em_pe,2,"careta_exagerada, elemento_grafico"
+1002,33.4,1,surprise,"em_pe, gesticulando",1,elemento_grafico
+1004,33.46666666666667,1,surprise,em_pe,1,elemento_grafico
+1006,33.53333333333333,1,surprise,em_pe,1,elemento_grafico
+1008,33.6,1,surprise,em_pe,2,"careta_exagerada, elemento_grafico"
+1010,33.666666666666664,1,surprise,em_pe,1,elemento_grafico
+1012,33.733333333333334,1,surprise,em_pe,2,"careta_exagerada, elemento_grafico"
+1014,33.8,1,surprise,"em_pe, gesticulando",1,elemento_grafico
+1016,33.86666666666667,1,surprise,em_pe,2,"careta_exagerada, elemento_grafico"
+1018,33.93333333333333,1,surprise,em_pe,1,elemento_grafico
+1020,34.0,1,surprise,"em_pe, gesticulando",2,"careta_exagerada, elemento_grafico"
+1022,34.06666666666667,1,surprise,"em_pe, gesticulando",1,elemento_grafico
+1024,34.13333333333333,1,surprise,em_pe,2,"careta_exagerada, elemento_grafico"
+1026,34.2,1,surprise,"em_pe, gesticulando",1,elemento_grafico
+1028,34.266666666666666,1,surprise,em_pe,1,elemento_grafico
+1030,34.333333333333336,1,surprise,"em_pe, gesticulando",1,elemento_grafico
+1032,34.4,1,surprise,em_pe,2,"careta_exagerada, elemento_grafico"
+1034,34.46666666666667,1,surprise,em_pe,1,elemento_grafico
+1036,34.53333333333333,1,surprise,em_pe,1,elemento_grafico
+1038,34.6,1,surprise,em_pe,1,elemento_grafico
+1040,34.666666666666664,1,surprise,"em_pe, gesticulando",1,elemento_grafico
+1042,34.733333333333334,1,surprise,em_pe,1,elemento_grafico
+1044,34.8,1,surprise,em_pe,1,elemento_grafico
+1046,34.86666666666667,1,surprise,em_pe,1,elemento_grafico
+1048,34.93333333333333,1,surprise,em_pe,1,elemento_grafico
+1050,35.0,1,surprise,"em_pe, gesticulando",1,elemento_grafico
+1052,35.06666666666667,1,surprise,"em_pe, gesticulando",1,elemento_grafico
+1054,35.13333333333333,1,surprise,"em_pe, gesticulando",1,elemento_grafico
+1056,35.2,1,surprise,em_pe,1,elemento_grafico
+1058,35.266666666666666,1,surprise,em_pe,1,elemento_grafico
+1060,35.333333333333336,1,surprise,em_pe,1,elemento_grafico
+1062,35.4,1,surprise,em_pe,1,elemento_grafico
+1064,35.46666666666667,1,surprise,em_pe,1,elemento_grafico
+1066,35.53333333333333,1,fear,em_pe,1,elemento_grafico
+1068,35.6,1,fear,em_pe,1,elemento_grafico
+1070,35.666666666666664,1,fear,em_pe,1,elemento_grafico
+1072,35.733333333333334,1,fear,"em_pe, gesticulando",1,elemento_grafico
+1074,35.8,1,surprise,em_pe,1,elemento_grafico
+1076,35.86666666666667,1,surprise,"em_pe, gesticulando",2,"careta_exagerada, elemento_grafico"
+1078,35.93333333333333,1,surprise,em_pe,1,elemento_grafico
+1080,36.0,1,sad,,2,"elemento_grafico, movimento_brusco"
+1082,36.06666666666667,1,sad,,1,elemento_grafico
+1084,36.13333333333333,1,sad,deitado,0,
+1086,36.2,1,sad,"deitado, gesticulando",0,
+1088,36.266666666666666,1,neutral,deitado,0,
+1090,36.333333333333336,1,sad,deitado,0,
+1092,36.4,1,sad,"deitado, gesticulando",0,
+1094,36.46666666666667,1,sad,deitado,1,careta_exagerada
+1096,36.53333333333333,1,sad,deitado,0,
+1098,36.6,1,sad,deitado,0,
+1100,36.666666666666664,1,happy,"deitado, gesticulando",0,
+1102,36.733333333333334,1,happy,deitado,0,
+1104,36.8,1,happy,deitado,0,
+1106,36.86666666666667,1,neutral,"deitado, gesticulando",0,
+1108,36.93333333333333,1,neutral,"deitado, gesticulando",0,
+1110,37.0,1,happy,deitado,0,
+1112,37.06666666666667,1,happy,deitado,0,
+1114,37.13333333333333,1,happy,deitado,0,
+1116,37.2,1,sad,"deitado, gesticulando",0,
+1118,37.266666666666666,1,sad,deitado,0,
+1120,37.333333333333336,1,happy,"deitado, gesticulando",0,
+1122,37.4,1,sad,deitado,0,
+1124,37.46666666666667,1,sad,"deitado, gesticulando",0,
+1126,37.53333333333333,1,sad,deitado,0,
+1128,37.6,1,sad,"deitado, gesticulando",0,
+1130,37.666666666666664,1,sad,"deitado, gesticulando",0,
+1132,37.733333333333334,1,happy,deitado,0,
+1134,37.8,1,happy,deitado,0,
+1136,37.86666666666667,1,happy,deitado,0,
+1138,37.93333333333333,1,happy,"deitado, gesticulando",1,careta_exagerada
+1140,38.0,1,happy,"deitado, gesticulando",0,
+1142,38.06666666666667,1,neutral,deitado,0,
+1144,38.13333333333333,1,sad,deitado,0,
+1146,38.2,1,sad,deitado,0,
+1148,38.266666666666666,1,sad,deitado,0,
+1150,38.333333333333336,1,neutral,deitado,0,
+1152,38.4,1,sad,"deitado, gesticulando",0,
+1154,38.46666666666667,1,sad,deitado,0,
+1156,38.53333333333333,1,neutral,deitado,0,
+1158,38.6,1,neutral,deitado,0,
+1160,38.666666666666664,1,neutral,,0,
+1162,38.733333333333334,1,sad,,0,
+1164,38.8,1,sad,gesticulando,0,
+1166,38.86666666666667,1,sad,,0,
+1168,38.93333333333333,1,sad,,0,
+1170,39.0,1,neutral,gesticulando,0,
+1172,39.06666666666667,1,sad,,0,
+1174,39.13333333333333,1,sad,,1,careta_exagerada
+1176,39.2,1,happy,deitado,0,
+1178,39.266666666666666,1,sad,deitado,0,
+1180,39.333333333333336,1,sad,deitado,0,
+1182,39.4,1,sad,deitado,0,
+1184,39.46666666666667,1,neutral,deitado,0,
+1186,39.53333333333333,1,sad,deitado,0,
+1188,39.6,1,neutral,deitado,0,
+1190,39.666666666666664,1,neutral,deitado,0,
+1192,39.733333333333334,1,neutral,deitado,0,
+1194,39.8,1,sad,"deitado, gesticulando",0,
+1196,39.86666666666667,1,happy,deitado,0,
+1198,39.93333333333333,1,sad,deitado,0,
+1200,40.0,1,sad,deitado,0,
+1202,40.06666666666667,1,sad,"deitado, gesticulando",0,
+1204,40.13333333333333,1,neutral,deitado,0,
+1206,40.2,1,sad,deitado,0,
+1208,40.266666666666666,1,sad,,0,
+1210,40.333333333333336,1,neutral,,0,
+1212,40.4,1,happy,gesticulando,1,careta_exagerada
+1214,40.46666666666667,1,happy,gesticulando,0,
+1216,40.53333333333333,1,happy,"deitado, gesticulando",0,
+1218,40.6,1,angry,deitado,0,
+1220,40.666666666666664,1,angry,"deitado, gesticulando",0,
+1222,40.733333333333334,1,sad,deitado,1,careta_exagerada
+1224,40.8,1,angry,deitado,0,
+1226,40.86666666666667,1,fear,"deitado, gesticulando",0,
+1228,40.93333333333333,1,angry,"deitado, gesticulando",0,
+1230,41.0,1,fear,deitado,0,
+1232,41.06666666666667,1,fear,deitado,1,careta_exagerada
+1234,41.13333333333333,1,fear,deitado,2,"careta_exagerada, careta_exagerada"
+1236,41.2,1,fear,deitado,1,careta_exagerada
+1238,41.266666666666666,1,fear,"deitado, gesticulando",1,careta_exagerada
+1240,41.333333333333336,1,fear,deitado,1,careta_exagerada
+1242,41.4,1,angry,deitado,1,careta_exagerada
+1244,41.46666666666667,1,angry,deitado,0,
+1246,41.53333333333333,1,angry,deitado,1,careta_exagerada
+1248,41.6,1,fear,deitado,0,
+1250,41.666666666666664,1,neutral,deitado,0,
+1252,41.733333333333334,1,fear,deitado,0,
+1254,41.8,1,fear,"deitado, gesticulando",2,"careta_exagerada, careta_exagerada"
+1256,41.86666666666667,1,fear,deitado,2,"careta_exagerada, careta_exagerada"
+1258,41.93333333333333,1,fear,deitado,0,
+1260,42.0,1,sad,deitado,2,"elemento_grafico, movimento_brusco"
+1262,42.06666666666667,1,fear,"deitado, gesticulando",3,"careta_exagerada, careta_exagerada, elemento_grafico"
+1264,42.13333333333333,1,angry,deitado,1,elemento_grafico
+1266,42.2,1,sad,"deitado, gesticulando",1,elemento_grafico
+1268,42.266666666666666,1,sad,deitado,1,elemento_grafico
+1270,42.333333333333336,1,sad,deitado,2,"careta_exagerada, elemento_grafico"
+1272,42.4,1,angry,deitado,1,elemento_grafico
+1274,42.46666666666667,1,sad,deitado,2,"careta_exagerada, elemento_grafico"
+1276,42.53333333333333,1,angry,deitado,1,elemento_grafico
+1278,42.6,1,angry,deitado,2,"careta_exagerada, elemento_grafico"
+1280,42.666666666666664,1,sad,deitado,1,elemento_grafico
+1282,42.733333333333334,1,angry,deitado,2,"careta_exagerada, elemento_grafico"
+1284,42.8,1,neutral,deitado,2,"careta_exagerada, elemento_grafico"
+1286,42.86666666666667,1,sad,"deitado, gesticulando",2,"careta_exagerada, elemento_grafico"
+1288,42.93333333333333,1,sad,,1,elemento_grafico
+1290,43.0,1,fear,,1,elemento_grafico
+1292,43.06666666666667,1,angry,,1,elemento_grafico
+1294,43.13333333333333,1,fear,gesticulando,2,"careta_exagerada, elemento_grafico"
+1296,43.2,1,fear,,2,"careta_exagerada, elemento_grafico"
+1298,43.266666666666666,1,sad,"deitado, gesticulando",1,elemento_grafico
+1300,43.333333333333336,1,sad,,1,elemento_grafico
+1302,43.4,1,happy,,2,"careta_exagerada, elemento_grafico"
+1304,43.46666666666667,1,sad,"deitado, gesticulando",1,elemento_grafico
+1306,43.53333333333333,1,sad,,2,"careta_exagerada, elemento_grafico"
+1308,43.6,1,happy,,1,elemento_grafico
+1310,43.666666666666664,1,fear,,1,elemento_grafico
+1312,43.733333333333334,1,happy,,1,elemento_grafico
+1314,43.8,1,sad,,1,elemento_grafico
+1316,43.86666666666667,1,happy,gesticulando,1,elemento_grafico
+1318,43.93333333333333,1,neutral,gesticulando,1,elemento_grafico
+1320,44.0,1,sad,,1,elemento_grafico
+1322,44.06666666666667,1,fear,gesticulando,1,elemento_grafico
+1324,44.13333333333333,1,fear,,3,"careta_exagerada, careta_exagerada, elemento_grafico"
+1326,44.2,1,fear,gesticulando,3,"careta_exagerada, careta_exagerada, elemento_grafico"
+1328,44.266666666666666,1,sad,,1,elemento_grafico
+1330,44.333333333333336,1,sad,,1,elemento_grafico
+1332,44.4,1,sad,,1,elemento_grafico
+1334,44.46666666666667,1,sad,,2,"careta_exagerada, elemento_grafico"
+1336,44.53333333333333,1,fear,em_pe,1,elemento_grafico
+1338,44.6,1,angry,em_pe,1,elemento_grafico
+1340,44.666666666666664,1,angry,"em_pe, gesticulando",1,elemento_grafico
+1342,44.733333333333334,1,fear,"em_pe, gesticulando",1,elemento_grafico
+1344,44.8,1,angry,"em_pe, gesticulando",2,"careta_exagerada, elemento_grafico"
+1346,44.86666666666667,1,disgust,gesticulando,2,"careta_exagerada, elemento_grafico"
+1348,44.93333333333333,1,sad,em_pe,1,elemento_grafico
+1350,45.0,1,fear,em_pe,3,"careta_exagerada, careta_exagerada, elemento_grafico"
+1352,45.06666666666667,1,fear,"em_pe, gesticulando",1,elemento_grafico
+1354,45.13333333333333,1,sad,em_pe,1,elemento_grafico
+1356,45.2,1,fear,"em_pe, gesticulando",3,"careta_exagerada, careta_exagerada, elemento_grafico"
+1358,45.266666666666666,1,neutral,"em_pe, gesticulando",1,elemento_grafico
+1360,45.333333333333336,1,sad,"em_pe, gesticulando",1,elemento_grafico
+1362,45.4,1,happy,em_pe,2,"careta_exagerada, elemento_grafico"
+1364,45.46666666666667,1,happy,em_pe,1,elemento_grafico
+1366,45.53333333333333,1,angry,em_pe,1,elemento_grafico
+1368,45.6,1,sad,em_pe,1,elemento_grafico
+1370,45.666666666666664,1,fear,em_pe,1,elemento_grafico
+1372,45.733333333333334,1,fear,"em_pe, gesticulando",3,"careta_exagerada, careta_exagerada, elemento_grafico"
+1374,45.8,1,sad,"em_pe, gesticulando",2,"careta_exagerada, elemento_grafico"
+1376,45.86666666666667,1,fear,em_pe,3,"careta_exagerada, careta_exagerada, elemento_grafico"
+1378,45.93333333333333,1,sad,em_pe,2,"careta_exagerada, elemento_grafico"
+1380,46.0,1,sad,"em_pe, gesticulando",1,elemento_grafico
+1382,46.06666666666667,2,"sad, neutral",em_pe,2,"careta_exagerada, elemento_grafico"
+1384,46.13333333333333,1,sad,"em_pe, gesticulando",2,"careta_exagerada, elemento_grafico"
+1386,46.2,1,fear,em_pe,3,"careta_exagerada, careta_exagerada, elemento_grafico"
+1388,46.266666666666666,1,fear,em_pe,3,"careta_exagerada, careta_exagerada, elemento_grafico"
+1390,46.333333333333336,1,sad,em_pe,1,elemento_grafico
+1392,46.4,1,fear,em_pe,3,"careta_exagerada, careta_exagerada, elemento_grafico"
+1394,46.46666666666667,1,sad,"em_pe, gesticulando",1,elemento_grafico
+1396,46.53333333333333,1,sad,em_pe,2,"careta_exagerada, elemento_grafico"
+1398,46.6,1,fear,em_pe,3,"careta_exagerada, careta_exagerada, elemento_grafico"
+1400,46.666666666666664,1,fear,"em_pe, gesticulando",1,elemento_grafico
+1402,46.733333333333334,1,fear,caminhando,1,elemento_grafico
+1404,46.8,1,fear,em_pe,2,"careta_exagerada, elemento_grafico"
+1406,46.86666666666667,1,happy,caminhando,1,elemento_grafico
+1408,46.93333333333333,1,sad,caminhando,1,elemento_grafico
+1410,47.0,1,sad,em_pe,1,elemento_grafico
+1412,47.06666666666667,1,sad,"em_pe, gesticulando",1,elemento_grafico
+1414,47.13333333333333,1,sad,em_pe,1,elemento_grafico
+1416,47.2,1,sad,em_pe,1,elemento_grafico
+1418,47.266666666666666,1,neutral,em_pe,1,elemento_grafico
+1420,47.333333333333336,1,sad,em_pe,2,"careta_exagerada, elemento_grafico"
+1422,47.4,1,sad,em_pe,1,elemento_grafico
+1424,47.46666666666667,1,sad,em_pe,2,"careta_exagerada, elemento_grafico"
+1426,47.53333333333333,1,sad,"em_pe, gesticulando",1,elemento_grafico
+1428,47.6,1,sad,"em_pe, gesticulando",1,elemento_grafico
+1430,47.666666666666664,1,sad,em_pe,2,"careta_exagerada, elemento_grafico"
+1432,47.733333333333334,1,sad,"em_pe, gesticulando",2,"careta_exagerada, elemento_grafico"
+1434,47.8,1,sad,em_pe,1,elemento_grafico
+1436,47.86666666666667,1,sad,caminhando,2,"careta_exagerada, elemento_grafico"
+1438,47.93333333333333,1,happy,,2,"careta_exagerada, elemento_grafico"
+1440,48.0,1,happy,correndo,2,"elemento_grafico, movimento_brusco"
+1442,48.06666666666667,1,happy,"em_pe, dancando",1,elemento_grafico
+1444,48.13333333333333,1,fear,"em_pe, dancando, gesticulando",2,"careta_exagerada, elemento_grafico"
+1446,48.2,1,neutral,"em_pe, dancando",1,elemento_grafico
+1448,48.266666666666666,1,neutral,"em_pe, dancando",1,elemento_grafico
+1450,48.333333333333336,1,fear,"em_pe, gesticulando",2,"careta_exagerada, elemento_grafico"
+1452,48.4,1,neutral,"em_pe, gesticulando",1,elemento_grafico
+1454,48.46666666666667,1,neutral,em_pe,1,elemento_grafico
+1456,48.53333333333333,1,happy,em_pe,1,elemento_grafico
+1458,48.6,1,neutral,em_pe,1,elemento_grafico
+1460,48.666666666666664,1,happy,"em_pe, gesticulando",2,"careta_exagerada, elemento_grafico"
+1462,48.733333333333334,1,happy,em_pe,2,"careta_exagerada, elemento_grafico"
+1464,48.8,1,happy,em_pe,2,"careta_exagerada, elemento_grafico"
+1466,48.86666666666667,1,happy,em_pe,2,"careta_exagerada, elemento_grafico"
+1468,48.93333333333333,1,happy,em_pe,2,"careta_exagerada, elemento_grafico"
+1470,49.0,1,happy,em_pe,2,"careta_exagerada, elemento_grafico"
+1472,49.06666666666667,1,happy,em_pe,2,"careta_exagerada, elemento_grafico"
+1474,49.13333333333333,1,happy,"em_pe, gesticulando",2,"careta_exagerada, elemento_grafico"
+1476,49.2,1,happy,em_pe,2,"careta_exagerada, elemento_grafico"
+1478,49.266666666666666,1,happy,em_pe,2,"careta_exagerada, elemento_grafico"
+1480,49.333333333333336,1,happy,em_pe,2,"careta_exagerada, elemento_grafico"
+1482,49.4,1,happy,caminhando,2,"careta_exagerada, elemento_grafico"
+1484,49.46666666666667,1,happy,caminhando,2,"careta_exagerada, elemento_grafico"
+1486,49.53333333333333,1,happy,"em_pe, gesticulando",2,"careta_exagerada, elemento_grafico"
+1488,49.6,1,happy,em_pe,2,"careta_exagerada, elemento_grafico"
+1490,49.666666666666664,1,happy,caminhando,2,"careta_exagerada, elemento_grafico"
+1492,49.733333333333334,1,angry,"caminhando, gesticulando",1,elemento_grafico
+1494,49.8,1,happy,caminhando,1,elemento_grafico
+1496,49.86666666666667,1,happy,caminhando,1,elemento_grafico
+1498,49.93333333333333,1,neutral,caminhando,1,elemento_grafico
+1500,50.0,1,happy,"caminhando, gesticulando",1,elemento_grafico
+1502,50.06666666666667,1,happy,caminhando,1,elemento_grafico
+1504,50.13333333333333,1,happy,caminhando,1,elemento_grafico
+1506,50.2,1,happy,caminhando,1,elemento_grafico
+1508,50.266666666666666,1,happy,"em_pe, gesticulando",1,elemento_grafico
+1510,50.333333333333336,1,happy,em_pe,2,"careta_exagerada, elemento_grafico"
+1512,50.4,1,happy,em_pe,2,"careta_exagerada, elemento_grafico"
+1514,50.46666666666667,1,happy,em_pe,2,"careta_exagerada, elemento_grafico"
+1516,50.53333333333333,1,angry,em_pe,1,elemento_grafico
+1518,50.6,1,happy,em_pe,2,"careta_exagerada, elemento_grafico"
+1520,50.666666666666664,1,happy,caminhando,2,"careta_exagerada, elemento_grafico"
+1522,50.733333333333334,1,happy,caminhando,2,"careta_exagerada, elemento_grafico"
+1524,50.8,1,happy,caminhando,2,"careta_exagerada, elemento_grafico"
+1526,50.86666666666667,1,happy,caminhando,1,elemento_grafico
+1528,50.93333333333333,1,fear,"caminhando, gesticulando",1,elemento_grafico
+1530,51.0,1,fear,caminhando,1,elemento_grafico
+1532,51.06666666666667,1,happy,caminhando,1,elemento_grafico
+1534,51.13333333333333,1,happy,caminhando,1,elemento_grafico
+1536,51.2,1,happy,"caminhando, gesticulando",2,"careta_exagerada, elemento_grafico"
+1538,51.266666666666666,1,happy,"caminhando, gesticulando",2,"careta_exagerada, elemento_grafico"
+1540,51.333333333333336,1,happy,caminhando,2,"careta_exagerada, elemento_grafico"
+1542,51.4,1,angry,em_pe,1,elemento_grafico
+1544,51.46666666666667,1,angry,em_pe,1,elemento_grafico
+1546,51.53333333333333,1,happy,caminhando,2,"careta_exagerada, elemento_grafico"
+1548,51.6,1,happy,"em_pe, gesticulando",2,"careta_exagerada, elemento_grafico"
+1550,51.666666666666664,1,happy,caminhando,1,elemento_grafico
+1552,51.733333333333334,1,neutral,"caminhando, gesticulando",1,elemento_grafico
+1554,51.8,1,neutral,"em_pe, gesticulando",1,elemento_grafico
+1556,51.86666666666667,1,neutral,em_pe,2,"careta_exagerada, elemento_grafico"
+1558,51.93333333333333,1,sad,em_pe,1,elemento_grafico
+1560,52.0,1,neutral,em_pe,2,"careta_exagerada, elemento_grafico"
+1562,52.06666666666667,1,fear,em_pe,2,"careta_exagerada, elemento_grafico"
+1564,52.13333333333333,1,fear,"em_pe, gesticulando",1,elemento_grafico
+1566,52.2,1,angry,"em_pe, gesticulando",1,elemento_grafico
+1568,52.266666666666666,1,neutral,caminhando,1,elemento_grafico
+1570,52.333333333333336,1,happy,em_pe,1,elemento_grafico
+1572,52.4,1,happy,em_pe,1,elemento_grafico
+1574,52.46666666666667,1,angry,"caminhando, gesticulando",2,"careta_exagerada, elemento_grafico"
+1576,52.53333333333333,1,angry,caminhando,1,elemento_grafico
+1578,52.6,1,happy,em_pe,1,elemento_grafico
+1580,52.666666666666664,1,neutral,"em_pe, gesticulando",1,elemento_grafico
+1582,52.733333333333334,1,angry,em_pe,2,"careta_exagerada, elemento_grafico"
+1584,52.8,1,neutral,em_pe,1,elemento_grafico
+1586,52.86666666666667,1,sad,caminhando,1,elemento_grafico
+1588,52.93333333333333,1,happy,em_pe,1,elemento_grafico
+1590,53.0,1,happy,em_pe,1,elemento_grafico
+1592,53.06666666666667,1,happy,caminhando,1,elemento_grafico
+1594,53.13333333333333,1,happy,em_pe,1,elemento_grafico
+1596,53.2,1,happy,em_pe,1,elemento_grafico
+1598,53.266666666666666,1,disgust,em_pe,1,elemento_grafico
+1600,53.333333333333336,1,neutral,em_pe,1,elemento_grafico
+1602,53.4,1,disgust,em_pe,1,elemento_grafico
+1604,53.46666666666667,1,neutral,em_pe,1,elemento_grafico
+1606,53.53333333333333,1,neutral,caminhando,1,elemento_grafico
+1608,53.6,1,neutral,caminhando,1,elemento_grafico
+1610,53.666666666666664,1,happy,caminhando,1,elemento_grafico
+1612,53.733333333333334,1,happy,em_pe,1,elemento_grafico
+1614,53.8,1,happy,"em_pe, gesticulando",1,elemento_grafico
+1616,53.86666666666667,1,happy,em_pe,2,"careta_exagerada, elemento_grafico"
+1618,53.93333333333333,1,happy,caminhando,1,elemento_grafico
+1620,54.0,1,neutral,correndo,3,"careta_exagerada, elemento_grafico, movimento_brusco"
+1622,54.06666666666667,1,neutral,"em_pe, dancando",2,"careta_exagerada, elemento_grafico"
+1624,54.13333333333333,1,neutral,"em_pe, dancando",2,"careta_exagerada, elemento_grafico"
+1626,54.2,1,neutral,"em_pe, gesticulando",2,"careta_exagerada, elemento_grafico"
+1628,54.266666666666666,1,neutral,"em_pe, gesticulando",1,careta_exagerada
+1630,54.333333333333336,1,neutral,"em_pe, gesticulando",2,"careta_exagerada, elemento_grafico"
+1632,54.4,1,neutral,em_pe,2,"careta_exagerada, elemento_grafico"
+1634,54.46666666666667,1,neutral,em_pe,2,"careta_exagerada, elemento_grafico"
+1636,54.53333333333333,1,neutral,em_pe,2,"careta_exagerada, elemento_grafico"
+1638,54.6,1,neutral,em_pe,1,careta_exagerada
+1640,54.666666666666664,1,neutral,"em_pe, gesticulando",1,careta_exagerada
+1642,54.733333333333334,1,neutral,em_pe,1,careta_exagerada
+1644,54.8,1,neutral,em_pe,1,careta_exagerada
+1646,54.86666666666667,1,neutral,em_pe,0,
+1648,54.93333333333333,1,angry,em_pe,0,
+1650,55.0,1,neutral,em_pe,0,
+1652,55.06666666666667,1,neutral,"em_pe, gesticulando",0,
+1654,55.13333333333333,1,neutral,em_pe,0,
+1656,55.2,1,neutral,em_pe,1,careta_exagerada
+1658,55.266666666666666,1,neutral,"em_pe, gesticulando",0,
+1660,55.333333333333336,1,neutral,em_pe,1,careta_exagerada
+1662,55.4,1,neutral,"em_pe, gesticulando",1,careta_exagerada
+1664,55.46666666666667,1,neutral,"em_pe, gesticulando",0,
+1666,55.53333333333333,1,neutral,"em_pe, gesticulando",2,"careta_exagerada, elemento_grafico"
+1668,55.6,1,neutral,em_pe,1,careta_exagerada
+1670,55.666666666666664,1,neutral,"em_pe, gesticulando",1,careta_exagerada
+1672,55.733333333333334,1,neutral,em_pe,1,careta_exagerada
+1674,55.8,1,neutral,em_pe,2,"careta_exagerada, elemento_grafico"
+1676,55.86666666666667,1,neutral,em_pe,2,"careta_exagerada, elemento_grafico"
+1678,55.93333333333333,1,neutral,"em_pe, gesticulando",2,"careta_exagerada, elemento_grafico"
+1680,56.0,1,neutral,em_pe,2,"careta_exagerada, elemento_grafico"
+1682,56.06666666666667,1,neutral,em_pe,2,"careta_exagerada, elemento_grafico"
+1684,56.13333333333333,1,neutral,em_pe,2,"careta_exagerada, elemento_grafico"
+1686,56.2,1,neutral,"em_pe, gesticulando",2,"careta_exagerada, elemento_grafico"
+1688,56.266666666666666,1,neutral,"em_pe, gesticulando",2,"careta_exagerada, elemento_grafico"
+1690,56.333333333333336,1,neutral,em_pe,2,"careta_exagerada, elemento_grafico"
+1692,56.4,1,neutral,em_pe,2,"careta_exagerada, elemento_grafico"
+1694,56.46666666666667,1,neutral,em_pe,2,"careta_exagerada, elemento_grafico"
+1696,56.53333333333333,1,neutral,em_pe,2,"careta_exagerada, elemento_grafico"
+1698,56.6,1,neutral,"em_pe, gesticulando",1,elemento_grafico
+1700,56.666666666666664,1,surprise,em_pe,1,elemento_grafico
+1702,56.733333333333334,1,neutral,em_pe,0,
+1704,56.8,1,happy,em_pe,0,
+1706,56.86666666666667,1,happy,em_pe,0,
+1708,56.93333333333333,1,happy,"em_pe, gesticulando",0,
+1710,57.0,0,,"correndo, gesticulando",8,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, movimento_brusco"
+1712,57.06666666666667,0,,em_pe,7,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1714,57.13333333333333,0,,,7,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1716,57.2,0,,,7,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1718,57.266666666666666,0,,,7,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1720,57.333333333333336,0,,,7,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1722,57.4,0,,,7,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1724,57.46666666666667,0,,,9,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1726,57.53333333333333,0,,dancando,7,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1728,57.6,0,,dancando,6,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1730,57.666666666666664,0,,dancando,6,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1732,57.733333333333334,0,,,6,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1734,57.8,0,,,7,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1736,57.86666666666667,0,,,8,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1738,57.93333333333333,0,,,6,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1740,58.0,0,,,5,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1742,58.06666666666667,0,,,4,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1744,58.13333333333333,0,,,5,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1746,58.2,0,,,5,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1748,58.266666666666666,0,,,5,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1750,58.333333333333336,0,,,7,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1752,58.4,0,,,5,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1754,58.46666666666667,0,,,5,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1756,58.53333333333333,0,,,7,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1758,58.6,0,,,5,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1760,58.666666666666664,0,,,6,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1762,58.733333333333334,0,,,7,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1764,58.8,0,,,5,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1766,58.86666666666667,1,sad,,6,"careta_exagerada, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1768,58.93333333333333,0,,,5,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1770,59.0,0,,,6,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1772,59.06666666666667,1,sad,,5,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1774,59.13333333333333,0,,,5,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1776,59.2,0,,,5,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1778,59.266666666666666,0,,,5,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1780,59.333333333333336,0,,,7,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1782,59.4,0,,,6,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1784,59.46666666666667,1,sad,,7,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1786,59.53333333333333,0,,,5,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1788,59.6,0,,,7,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1790,59.666666666666664,0,,,5,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1792,59.733333333333334,0,,,5,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1794,59.8,0,,,7,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1796,59.86666666666667,0,,,6,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1798,59.93333333333333,0,,,5,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1800,60.0,0,,,4,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1802,60.06666666666667,0,,,4,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1804,60.13333333333333,0,,,4,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1806,60.2,0,,,6,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1808,60.266666666666666,0,,,6,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1810,60.333333333333336,0,,,6,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1812,60.4,0,,,4,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1814,60.46666666666667,0,,,4,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1816,60.53333333333333,0,,,5,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1818,60.6,0,,,5,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1820,60.666666666666664,0,,,6,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1822,60.733333333333334,0,,,4,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1824,60.8,0,,,4,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1826,60.86666666666667,0,,,4,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1828,60.93333333333333,0,,,4,"elemento_grafico, elemento_grafico, elemento_grafico, elemento_grafico"
+1830,61.0,0,,gesticulando,2,"elemento_grafico, movimento_brusco"
+1832,61.06666666666667,0,,"dancando, gesticulando",1,elemento_grafico
+1834,61.13333333333333,0,,dancando,1,elemento_grafico
+1836,61.2,0,,dancando,1,elemento_grafico
+1838,61.266666666666666,0,,gesticulando,1,elemento_grafico
+1840,61.333333333333336,0,,,1,elemento_grafico
+1842,61.4,0,,gesticulando,1,elemento_grafico
+1844,61.46666666666667,0,,gesticulando,1,elemento_grafico
+1846,61.53333333333333,0,,,1,elemento_grafico
+1848,61.6,0,,gesticulando,1,elemento_grafico
+1850,61.666666666666664,0,,gesticulando,1,elemento_grafico
+1852,61.733333333333334,0,,,1,elemento_grafico
+1854,61.8,0,,,1,elemento_grafico
+1856,61.86666666666667,0,,,1,elemento_grafico
+1858,61.93333333333333,0,,gesticulando,1,elemento_grafico
+1860,62.0,0,,,1,elemento_grafico
+1862,62.06666666666667,0,,,1,elemento_grafico
+1864,62.13333333333333,0,,sentado,1,elemento_grafico
+1866,62.2,0,,,1,elemento_grafico
+1868,62.266666666666666,0,,sentado,1,elemento_grafico
+1870,62.333333333333336,0,,"sentado, gesticulando",1,elemento_grafico
+1872,62.4,0,,sentado,1,elemento_grafico
+1874,62.46666666666667,0,,sentado,1,elemento_grafico
+1876,62.53333333333333,0,,"sentado, gesticulando",1,elemento_grafico
+1878,62.6,0,,"sentado, gesticulando",1,elemento_grafico
+1880,62.666666666666664,0,,"sentado, gesticulando",1,elemento_grafico
+1882,62.733333333333334,0,,,1,elemento_grafico
+1884,62.8,0,,,1,elemento_grafico
+1886,62.86666666666667,0,,,1,elemento_grafico
+1888,62.93333333333333,0,,,1,elemento_grafico
+1890,63.0,0,,,1,elemento_grafico
+1892,63.06666666666667,0,,,1,elemento_grafico
+1894,63.13333333333333,0,,gesticulando,1,elemento_grafico
+1896,63.2,0,,,1,elemento_grafico
+1898,63.266666666666666,0,,gesticulando,1,elemento_grafico
+1900,63.333333333333336,0,,gesticulando,1,elemento_grafico
+1902,63.4,0,,gesticulando,1,elemento_grafico
+1904,63.46666666666667,0,,,1,elemento_grafico
+1906,63.53333333333333,0,,,1,elemento_grafico
+1908,63.6,0,,,1,elemento_grafico
+1910,63.666666666666664,0,,gesticulando,1,elemento_grafico
+1912,63.733333333333334,0,,gesticulando,1,elemento_grafico
+1914,63.8,0,,,1,elemento_grafico
+1916,63.86666666666667,0,,gesticulando,1,elemento_grafico
+1918,63.93333333333333,0,,gesticulando,1,elemento_grafico
+1920,64.0,0,,,1,elemento_grafico
+1922,64.06666666666666,0,,gesticulando,1,elemento_grafico
+1924,64.13333333333334,0,,,1,elemento_grafico
+1926,64.2,0,,,1,elemento_grafico
+1928,64.26666666666667,0,,,1,elemento_grafico
+1930,64.33333333333333,0,,gesticulando,1,elemento_grafico
+1932,64.4,0,,,1,elemento_grafico
+1934,64.46666666666667,0,,,1,elemento_grafico
+1936,64.53333333333333,0,,,1,elemento_grafico
+1938,64.6,0,,,1,elemento_grafico
+1940,64.66666666666667,0,,,1,elemento_grafico
+1942,64.73333333333333,0,,,1,elemento_grafico
+1944,64.8,0,,gesticulando,1,elemento_grafico
+1946,64.86666666666666,0,,gesticulando,1,elemento_grafico
+1948,64.93333333333334,0,,,1,elemento_grafico
+1950,65.0,0,,,1,elemento_grafico
+1952,65.06666666666666,0,,,1,elemento_grafico
+1954,65.13333333333334,0,,gesticulando,1,elemento_grafico
+1956,65.2,0,,gesticulando,1,elemento_grafico
+1958,65.26666666666667,0,,,1,elemento_grafico
+1960,65.33333333333333,0,,,1,elemento_grafico
+1962,65.4,0,,,1,elemento_grafico
+1964,65.46666666666667,0,,,1,elemento_grafico
+1966,65.53333333333333,0,,,1,elemento_grafico
+1968,65.6,0,,,1,elemento_grafico
+1970,65.66666666666667,0,,,1,elemento_grafico
+1972,65.73333333333333,0,,,1,elemento_grafico
+1974,65.8,0,,,1,elemento_grafico
+1976,65.86666666666666,0,,,1,elemento_grafico
+1978,65.93333333333334,0,,,1,elemento_grafico
+1980,66.0,0,,,1,elemento_grafico
+1982,66.06666666666666,0,,,1,elemento_grafico
+1984,66.13333333333334,0,,,1,elemento_grafico
+1986,66.2,0,,,1,elemento_grafico
+1988,66.26666666666667,0,,,1,elemento_grafico
+1990,66.33333333333333,0,,,1,elemento_grafico
+1992,66.4,0,,,1,elemento_grafico
+1994,66.46666666666667,0,,,1,elemento_grafico
+1996,66.53333333333333,0,,,1,elemento_grafico
+1998,66.6,0,,,1,elemento_grafico
+2000,66.66666666666667,0,,,1,elemento_grafico
+2002,66.73333333333333,0,,,1,elemento_grafico
+2004,66.8,0,,,1,elemento_grafico
+2006,66.86666666666666,0,,gesticulando,1,elemento_grafico
+2008,66.93333333333334,0,,,1,elemento_grafico
+2010,67.0,0,,,2,"elemento_grafico, movimento_brusco"
+2012,67.06666666666666,0,,,1,elemento_grafico
+2014,67.13333333333334,0,,,1,elemento_grafico
+2016,67.2,0,,,1,elemento_grafico
+2018,67.26666666666667,0,,,1,elemento_grafico
+2020,67.33333333333333,0,,,1,elemento_grafico
+2022,67.4,0,,,1,elemento_grafico
+2024,67.46666666666667,0,,,1,elemento_grafico
+2026,67.53333333333333,0,,gesticulando,1,elemento_grafico
+2028,67.6,0,,,1,elemento_grafico
+2030,67.66666666666667,0,,gesticulando,1,elemento_grafico
+2032,67.73333333333333,0,,,1,elemento_grafico
+2034,67.8,0,,,1,elemento_grafico
+2036,67.86666666666666,0,,,1,elemento_grafico
+2038,67.93333333333334,0,,,1,elemento_grafico
+2040,68.0,0,,gesticulando,1,elemento_grafico
+2042,68.06666666666666,0,,,1,elemento_grafico
+2044,68.13333333333334,0,,,1,elemento_grafico
+2046,68.2,0,,gesticulando,1,elemento_grafico
+2048,68.26666666666667,0,,,1,elemento_grafico
+2050,68.33333333333333,0,,,1,elemento_grafico
+2052,68.4,0,,gesticulando,1,elemento_grafico
+2054,68.46666666666667,0,,,1,elemento_grafico
+2056,68.53333333333333,0,,,1,elemento_grafico
+2058,68.6,0,,,1,elemento_grafico
+2060,68.66666666666667,0,,gesticulando,1,elemento_grafico
+2062,68.73333333333333,0,,gesticulando,1,elemento_grafico
+2064,68.8,0,,,1,elemento_grafico
+2066,68.86666666666666,0,,,1,elemento_grafico
+2068,68.93333333333334,0,,,1,elemento_grafico
+2070,69.0,0,,,1,elemento_grafico
+2072,69.06666666666666,0,,gesticulando,1,elemento_grafico
+2074,69.13333333333334,0,,gesticulando,1,elemento_grafico
+2076,69.2,0,,,1,elemento_grafico
+2078,69.26666666666667,0,,,1,elemento_grafico
+2080,69.33333333333333,0,,,1,elemento_grafico
+2082,69.4,0,,,1,elemento_grafico
+2084,69.46666666666667,0,,,1,elemento_grafico
+2086,69.53333333333333,0,,,1,elemento_grafico
+2088,69.6,0,,,1,elemento_grafico
+2090,69.66666666666667,0,,gesticulando,1,elemento_grafico
+2092,69.73333333333333,0,,gesticulando,1,elemento_grafico
+2094,69.8,0,,,1,elemento_grafico
+2096,69.86666666666666,0,,,1,elemento_grafico
+2098,69.93333333333334,0,,,1,elemento_grafico
+2100,70.0,0,,,1,elemento_grafico
+2102,70.06666666666666,0,,,1,elemento_grafico
+2104,70.13333333333334,0,,gesticulando,1,elemento_grafico
+2106,70.2,0,,,1,elemento_grafico
+2108,70.26666666666667,0,,gesticulando,1,elemento_grafico
+2110,70.33333333333333,0,,gesticulando,1,elemento_grafico
+2112,70.4,0,,,1,elemento_grafico
+2114,70.46666666666667,0,,,1,elemento_grafico
+2116,70.53333333333333,0,,gesticulando,1,elemento_grafico
+2118,70.6,0,,gesticulando,1,elemento_grafico
+2120,70.66666666666667,0,,,1,elemento_grafico
+2122,70.73333333333333,0,,,1,elemento_grafico
+2124,70.8,0,,,1,elemento_grafico
+2126,70.86666666666666,0,,,1,elemento_grafico
+2128,70.93333333333334,0,,,1,elemento_grafico
+2130,71.0,0,,,1,elemento_grafico
+2132,71.06666666666666,0,,,1,elemento_grafico
+2134,71.13333333333334,0,,,1,elemento_grafico
+2136,71.2,0,,,1,elemento_grafico
+2138,71.26666666666667,0,,,1,elemento_grafico
+2140,71.33333333333333,0,,,1,elemento_grafico
+2142,71.4,0,,,1,elemento_grafico
+2144,71.46666666666667,0,,,1,elemento_grafico
+2146,71.53333333333333,0,,,1,elemento_grafico
+2148,71.6,0,,,1,elemento_grafico
+2150,71.66666666666667,0,,,1,elemento_grafico
+2152,71.73333333333333,0,,,1,elemento_grafico
+2154,71.8,0,,gesticulando,1,elemento_grafico
+2156,71.86666666666666,0,,,1,elemento_grafico
+2158,71.93333333333334,0,,,1,elemento_grafico
+2160,72.0,0,,,1,elemento_grafico
+2162,72.06666666666666,0,,,1,elemento_grafico
+2164,72.13333333333334,0,,,1,elemento_grafico
+2166,72.2,0,,,1,elemento_grafico
+2168,72.26666666666667,0,,,1,elemento_grafico
+2170,72.33333333333333,0,,,1,elemento_grafico
+2172,72.4,0,,,1,elemento_grafico
+2174,72.46666666666667,0,,,1,elemento_grafico
+2176,72.53333333333333,0,,,1,elemento_grafico
+2178,72.6,0,,,1,elemento_grafico
+2180,72.66666666666667,0,,,1,elemento_grafico
+2182,72.73333333333333,0,,,1,elemento_grafico
+2184,72.8,0,,,1,elemento_grafico
+2186,72.86666666666666,0,,,1,elemento_grafico
+2188,72.93333333333334,0,,gesticulando,1,elemento_grafico
+2190,73.0,0,,,1,elemento_grafico
+2192,73.06666666666666,0,,,1,elemento_grafico
+2194,73.13333333333334,0,,,1,elemento_grafico
+2196,73.2,0,,gesticulando,1,elemento_grafico
+2198,73.26666666666667,0,,gesticulando,1,elemento_grafico
+2200,73.33333333333333,0,,,1,elemento_grafico
+2202,73.4,0,,gesticulando,1,elemento_grafico
+2204,73.46666666666667,0,,,1,elemento_grafico
+2206,73.53333333333333,0,,,1,elemento_grafico
+2208,73.6,0,,gesticulando,1,elemento_grafico
+2210,73.66666666666667,0,,,1,elemento_grafico
+2212,73.73333333333333,0,,,1,elemento_grafico
+2214,73.8,0,,,1,elemento_grafico
+2216,73.86666666666666,0,,,1,elemento_grafico
+2218,73.93333333333334,0,,,1,elemento_grafico
+2220,74.0,0,,gesticulando,1,elemento_grafico
+2222,74.06666666666666,0,,gesticulando,1,elemento_grafico
+2224,74.13333333333334,0,,,1,elemento_grafico
+2226,74.2,0,,,1,elemento_grafico
+2228,74.26666666666667,0,,,1,elemento_grafico
+2230,74.33333333333333,0,,,1,elemento_grafico
+2232,74.4,0,,,1,elemento_grafico
+2234,74.46666666666667,0,,,1,elemento_grafico
+2236,74.53333333333333,0,,,1,elemento_grafico
+2238,74.6,0,,,1,elemento_grafico
+2240,74.66666666666667,0,,,1,elemento_grafico
+2242,74.73333333333333,0,,gesticulando,1,elemento_grafico
+2244,74.8,0,,gesticulando,1,elemento_grafico
+2246,74.86666666666666,0,,,1,elemento_grafico
+2248,74.93333333333334,0,,,1,elemento_grafico
+2250,75.0,0,,gesticulando,1,elemento_grafico
+2252,75.06666666666666,0,,gesticulando,1,elemento_grafico
+2254,75.13333333333334,0,,gesticulando,1,elemento_grafico
+2256,75.2,0,,,1,elemento_grafico
+2258,75.26666666666667,0,,,1,elemento_grafico
+2260,75.33333333333333,0,,,1,elemento_grafico
+2262,75.4,0,,gesticulando,1,elemento_grafico
+2264,75.46666666666667,0,,,1,elemento_grafico
+2266,75.53333333333333,0,,gesticulando,1,elemento_grafico
+2268,75.6,0,,,1,elemento_grafico
+2270,75.66666666666667,0,,,1,elemento_grafico
+2272,75.73333333333333,0,,,1,elemento_grafico
+2274,75.8,0,,gesticulando,1,elemento_grafico
+2276,75.86666666666666,0,,,1,elemento_grafico
+2278,75.93333333333334,0,,,1,elemento_grafico
+2280,76.0,0,,,1,elemento_grafico
+2282,76.06666666666666,0,,,1,elemento_grafico
+2284,76.13333333333334,0,,,1,elemento_grafico
+2286,76.2,0,,gesticulando,1,elemento_grafico
+2288,76.26666666666667,0,,,1,elemento_grafico
+2290,76.33333333333333,0,,,1,elemento_grafico
+2292,76.4,0,,,1,elemento_grafico
+2294,76.46666666666667,0,,gesticulando,1,elemento_grafico
+2296,76.53333333333333,0,,,1,elemento_grafico
+2298,76.6,0,,gesticulando,1,elemento_grafico
+2300,76.66666666666667,0,,,1,elemento_grafico
+2302,76.73333333333333,0,,,1,elemento_grafico
+2304,76.8,0,,,1,elemento_grafico
+2306,76.86666666666666,0,,,1,elemento_grafico
+2308,76.93333333333334,0,,,1,elemento_grafico
+2310,77.0,0,,,1,elemento_grafico
+2312,77.06666666666666,0,,,1,elemento_grafico
+2314,77.13333333333334,0,,,1,elemento_grafico
+2316,77.2,0,,,1,elemento_grafico
+2318,77.26666666666667,0,,,1,elemento_grafico
+2320,77.33333333333333,0,,,1,elemento_grafico
+2322,77.4,0,,gesticulando,1,elemento_grafico
+2324,77.46666666666667,0,,gesticulando,1,elemento_grafico
+2326,77.53333333333333,0,,,1,elemento_grafico
+2328,77.6,0,,,1,elemento_grafico
+2330,77.66666666666667,0,,,1,elemento_grafico
+2332,77.73333333333333,0,,,1,elemento_grafico
+2334,77.8,0,,,1,elemento_grafico
+2336,77.86666666666666,0,,gesticulando,1,elemento_grafico
+2338,77.93333333333334,0,,gesticulando,1,elemento_grafico
+2340,78.0,0,,,1,elemento_grafico
+2342,78.06666666666666,0,,,1,elemento_grafico
+2344,78.13333333333334,0,,,1,elemento_grafico
+2346,78.2,0,,,1,elemento_grafico
+2348,78.26666666666667,0,,,1,elemento_grafico
+2350,78.33333333333333,0,,,1,elemento_grafico
+2352,78.4,0,,,1,elemento_grafico
+2354,78.46666666666667,0,,,1,elemento_grafico
+2356,78.53333333333333,0,,,1,elemento_grafico
+2358,78.6,0,,,1,elemento_grafico
+2360,78.66666666666667,0,,,1,elemento_grafico
+2362,78.73333333333333,0,,,1,elemento_grafico
+2364,78.8,0,,,1,elemento_grafico
+2366,78.86666666666666,0,,,1,elemento_grafico
+2368,78.93333333333334,0,,gesticulando,1,elemento_grafico
+2370,79.0,1,fear,,1,movimento_brusco
+2372,79.06666666666666,1,fear,em_pe,1,careta_exagerada
+2374,79.13333333333334,1,fear,em_pe,0,
+2376,79.2,1,happy,em_pe,0,
+2378,79.26666666666667,1,fear,"em_pe, gesticulando",0,
+2380,79.33333333333333,1,fear,"em_pe, gesticulando",0,
+2382,79.4,1,fear,em_pe,0,
+2384,79.46666666666667,1,fear,"em_pe, gesticulando",1,careta_exagerada
+2386,79.53333333333333,1,sad,em_pe,0,
+2388,79.6,1,angry,em_pe,0,
+2390,79.66666666666667,1,fear,em_pe,0,
+2392,79.73333333333333,1,fear,"em_pe, gesticulando",1,careta_exagerada
+2394,79.8,1,fear,em_pe,0,
+2396,79.86666666666666,1,fear,"em_pe, gesticulando",1,careta_exagerada
+2398,79.93333333333334,1,fear,em_pe,0,
+2400,80.0,0,,correndo,2,"elemento_grafico, movimento_brusco"
+2402,80.06666666666666,0,,em_pe,1,elemento_grafico
+2404,80.13333333333334,0,,em_pe,1,elemento_grafico
+2406,80.2,0,,"caminhando, gesticulando",1,elemento_grafico
+2408,80.26666666666667,0,,,1,elemento_grafico
+2410,80.33333333333333,0,,,1,elemento_grafico
+2412,80.4,0,,,1,elemento_grafico
+2414,80.46666666666667,0,,gesticulando,1,elemento_grafico
+2416,80.53333333333333,0,,,1,elemento_grafico
+2418,80.6,0,,,1,elemento_grafico
+2420,80.66666666666667,0,,"dancando, gesticulando",1,elemento_grafico
+2422,80.73333333333333,0,,gesticulando,1,elemento_grafico
+2424,80.8,0,,,1,elemento_grafico
+2426,80.86666666666666,0,,"trabalhando_computador, gesticulando",1,elemento_grafico
+2428,80.93333333333334,0,,gesticulando,1,elemento_grafico
+2430,81.0,0,,trabalhando_computador,1,elemento_grafico
+2432,81.06666666666666,0,,,1,elemento_grafico
+2434,81.13333333333334,1,sad,trabalhando_computador,2,"careta_exagerada, elemento_grafico"
+2436,81.2,0,,,1,elemento_grafico
+2438,81.26666666666667,0,,gesticulando,1,elemento_grafico
+2440,81.33333333333333,0,,,1,elemento_grafico
+2442,81.4,0,,gesticulando,1,elemento_grafico
+2444,81.46666666666667,0,,gesticulando,1,elemento_grafico
+2446,81.53333333333333,0,,,1,elemento_grafico
+2448,81.6,0,,,1,elemento_grafico
+2450,81.66666666666667,0,,,1,elemento_grafico
+2452,81.73333333333333,1,sad,,1,elemento_grafico
+2454,81.8,1,sad,trabalhando_computador,1,elemento_grafico
+2456,81.86666666666666,1,sad,,2,"careta_exagerada, elemento_grafico"
+2458,81.93333333333334,1,sad,"trabalhando_computador, gesticulando",1,elemento_grafico
+2460,82.0,1,sad,,2,"careta_exagerada, elemento_grafico"
+2462,82.06666666666666,0,,"trabalhando_computador, gesticulando",1,elemento_grafico
+2464,82.13333333333334,1,sad,gesticulando,2,"careta_exagerada, elemento_grafico"
+2466,82.2,0,,,1,elemento_grafico
+2468,82.26666666666667,0,,,1,elemento_grafico
+2470,82.33333333333333,1,sad,em_pe,1,elemento_grafico
+2472,82.4,1,fear,"em_pe, gesticulando",1,elemento_grafico
+2474,82.46666666666667,1,neutral,em_pe,1,elemento_grafico
+2476,82.53333333333333,1,sad,,2,"careta_exagerada, elemento_grafico"
+2478,82.6,0,,,1,elemento_grafico
+2480,82.66666666666667,1,sad,,2,"careta_exagerada, elemento_grafico"
+2482,82.73333333333333,1,sad,,2,"careta_exagerada, elemento_grafico"
+2484,82.8,1,neutral,,1,elemento_grafico
+2486,82.86666666666666,1,sad,,1,elemento_grafico
+2488,82.93333333333334,1,sad,,2,"careta_exagerada, elemento_grafico"
+2490,83.0,1,angry,,1,elemento_grafico
+2492,83.06666666666666,0,,gesticulando,1,elemento_grafico
+2494,83.13333333333334,1,sad,"em_pe, gesticulando",1,elemento_grafico
+2496,83.2,1,sad,gesticulando,1,elemento_grafico
+2498,83.26666666666667,0,,gesticulando,1,elemento_grafico
+2500,83.33333333333333,1,sad,,2,"careta_exagerada, elemento_grafico"
+2502,83.4,1,sad,,2,"careta_exagerada, elemento_grafico"
+2504,83.46666666666667,1,sad,trabalhando_computador,2,"careta_exagerada, elemento_grafico"
+2506,83.53333333333333,1,sad,trabalhando_computador,2,"careta_exagerada, elemento_grafico"
+2508,83.6,0,,gesticulando,1,elemento_grafico
+2510,83.66666666666667,1,sad,"trabalhando_computador, gesticulando",2,"careta_exagerada, elemento_grafico"
+2512,83.73333333333333,0,,"trabalhando_computador, gesticulando",1,elemento_grafico
+2514,83.8,0,,trabalhando_computador,1,elemento_grafico
+2516,83.86666666666666,0,,,1,elemento_grafico
+2518,83.93333333333334,0,,gesticulando,1,elemento_grafico
+2520,84.0,0,,,1,elemento_grafico
+2522,84.06666666666666,0,,gesticulando,1,elemento_grafico
+2524,84.13333333333334,0,,"trabalhando_computador, gesticulando",1,elemento_grafico
+2526,84.2,0,,gesticulando,1,elemento_grafico
+2528,84.26666666666667,0,,trabalhando_computador,1,elemento_grafico
+2530,84.33333333333333,0,,"trabalhando_computador, gesticulando",1,elemento_grafico
+2532,84.4,1,sad,,1,elemento_grafico
+2534,84.46666666666667,1,sad,"trabalhando_computador, gesticulando",1,elemento_grafico
+2536,84.53333333333333,0,,"trabalhando_computador, gesticulando",1,elemento_grafico
+2538,84.6,0,,trabalhando_computador,1,elemento_grafico
+2540,84.66666666666667,1,sad,trabalhando_computador,2,"careta_exagerada, elemento_grafico"
+2542,84.73333333333333,0,,"trabalhando_computador, gesticulando",1,elemento_grafico
+2544,84.8,0,,trabalhando_computador,1,elemento_grafico
+2546,84.86666666666666,0,,trabalhando_computador,1,elemento_grafico
+2548,84.93333333333334,0,,"trabalhando_computador, gesticulando",1,elemento_grafico
+2550,85.0,0,,"trabalhando_computador, gesticulando",1,elemento_grafico
+2552,85.06666666666666,0,,trabalhando_computador,1,elemento_grafico
+2554,85.13333333333334,0,,trabalhando_computador,1,elemento_grafico
+2556,85.2,0,,"trabalhando_computador, gesticulando",1,elemento_grafico
+2558,85.26666666666667,0,,trabalhando_computador,1,elemento_grafico
+2560,85.33333333333333,0,,gesticulando,1,elemento_grafico
+2562,85.4,0,,gesticulando,1,elemento_grafico
+2564,85.46666666666667,0,,"trabalhando_computador, gesticulando",1,elemento_grafico
+2566,85.53333333333333,0,,trabalhando_computador,1,elemento_grafico
+2568,85.6,0,,trabalhando_computador,1,elemento_grafico
+2570,85.66666666666667,0,,trabalhando_computador,1,elemento_grafico
+2572,85.73333333333333,0,,trabalhando_computador,1,elemento_grafico
+2574,85.8,1,sad,trabalhando_computador,1,elemento_grafico
+2576,85.86666666666666,1,angry,"trabalhando_computador, gesticulando",2,"careta_exagerada, elemento_grafico"
+2578,85.93333333333334,0,,trabalhando_computador,1,elemento_grafico
+2580,86.0,0,,,1,elemento_grafico
+2582,86.06666666666666,0,,,1,elemento_grafico
+2584,86.13333333333334,0,,,1,elemento_grafico
+2586,86.2,0,,gesticulando,1,elemento_grafico
+2588,86.26666666666667,0,,gesticulando,1,elemento_grafico
+2590,86.33333333333333,0,,gesticulando,1,elemento_grafico
+2592,86.4,0,,,1,elemento_grafico
+2594,86.46666666666667,0,,gesticulando,1,elemento_grafico
+2596,86.53333333333333,0,,,1,elemento_grafico
+2598,86.6,0,,gesticulando,1,elemento_grafico
+2600,86.66666666666667,0,,gesticulando,1,elemento_grafico
+2602,86.73333333333333,0,,gesticulando,1,elemento_grafico
+2604,86.8,0,,gesticulando,1,elemento_grafico
+2606,86.86666666666666,0,,,1,elemento_grafico
+2608,86.93333333333334,0,,gesticulando,1,elemento_grafico
+2610,87.0,0,,,1,elemento_grafico
+2612,87.06666666666666,0,,,1,elemento_grafico
+2614,87.13333333333334,0,,gesticulando,1,elemento_grafico
+2616,87.2,0,,gesticulando,1,elemento_grafico
+2618,87.26666666666667,0,,,1,elemento_grafico
+2620,87.33333333333333,0,,,1,elemento_grafico
+2622,87.4,0,,gesticulando,1,elemento_grafico
+2624,87.46666666666667,0,,,1,elemento_grafico
+2626,87.53333333333333,0,,,1,elemento_grafico
+2628,87.6,0,,,1,elemento_grafico
+2630,87.66666666666667,0,,,1,elemento_grafico
+2632,87.73333333333333,0,,,1,elemento_grafico
+2634,87.8,0,,,1,elemento_grafico
+2636,87.86666666666666,0,,,1,elemento_grafico
+2638,87.93333333333334,0,,gesticulando,1,elemento_grafico
+2640,88.0,0,,,1,elemento_grafico
+2642,88.06666666666666,0,,,1,elemento_grafico
+2644,88.13333333333334,0,,,1,elemento_grafico
+2646,88.2,0,,,1,elemento_grafico
+2648,88.26666666666667,0,,gesticulando,1,elemento_grafico
+2650,88.33333333333333,0,,gesticulando,1,elemento_grafico
+2652,88.4,0,,gesticulando,1,elemento_grafico
+2654,88.46666666666667,1,happy,,2,"careta_exagerada, elemento_grafico"
+2656,88.53333333333333,0,,,1,elemento_grafico
+2658,88.6,1,sad,,1,elemento_grafico
+2660,88.66666666666667,1,sad,gesticulando,2,"careta_exagerada, elemento_grafico"
+2662,88.73333333333333,1,happy,gesticulando,1,elemento_grafico
+2664,88.8,0,,gesticulando,1,elemento_grafico
+2666,88.86666666666666,0,,gesticulando,1,elemento_grafico
+2668,88.93333333333334,0,,gesticulando,1,elemento_grafico
+2670,89.0,0,,gesticulando,1,elemento_grafico
+2672,89.06666666666666,0,,,1,elemento_grafico
+2674,89.13333333333334,0,,,1,elemento_grafico
+2676,89.2,0,,,1,elemento_grafico
+2678,89.26666666666667,0,,,1,elemento_grafico
+2680,89.33333333333333,0,,,1,elemento_grafico
+2682,89.4,0,,,1,elemento_grafico
+2684,89.46666666666667,0,,,1,elemento_grafico
+2686,89.53333333333333,0,,,1,elemento_grafico
+2688,89.6,0,,,1,elemento_grafico
+2690,89.66666666666667,0,,,1,elemento_grafico
+2692,89.73333333333333,0,,gesticulando,1,elemento_grafico
+2694,89.8,0,,,1,elemento_grafico
+2696,89.86666666666666,0,,gesticulando,1,elemento_grafico
+2698,89.93333333333334,0,,,1,elemento_grafico
+2700,90.0,1,sad,,1,elemento_grafico
+2702,90.06666666666666,1,neutral,,1,elemento_grafico
+2704,90.13333333333334,1,sad,,1,elemento_grafico
+2706,90.2,0,,,1,elemento_grafico
+2708,90.26666666666667,0,,,1,elemento_grafico
+2710,90.33333333333333,0,,gesticulando,1,elemento_grafico
+2712,90.4,0,,,1,elemento_grafico
+2714,90.46666666666667,0,,,1,elemento_grafico
+2716,90.53333333333333,0,,,1,elemento_grafico
+2718,90.6,0,,,1,elemento_grafico
+2720,90.66666666666667,0,,,1,elemento_grafico
+2722,90.73333333333333,0,,,1,elemento_grafico
+2724,90.8,0,,,1,elemento_grafico
+2726,90.86666666666666,0,,gesticulando,1,elemento_grafico
+2728,90.93333333333334,0,,,1,elemento_grafico
+2730,91.0,0,,,1,elemento_grafico
+2732,91.06666666666666,0,,,1,elemento_grafico
+2734,91.13333333333334,0,,,1,elemento_grafico
+2736,91.2,1,neutral,,1,elemento_grafico
+2738,91.26666666666667,1,neutral,,1,elemento_grafico
+2740,91.33333333333333,0,,,1,elemento_grafico
+2742,91.4,0,,,1,elemento_grafico
+2744,91.46666666666667,0,,,1,elemento_grafico
+2746,91.53333333333333,0,,,1,elemento_grafico
+2748,91.6,0,,,1,elemento_grafico
+2750,91.66666666666667,0,,gesticulando,1,elemento_grafico
+2752,91.73333333333333,0,,,1,elemento_grafico
+2754,91.8,0,,,1,elemento_grafico
+2756,91.86666666666666,0,,,1,elemento_grafico
+2758,91.93333333333334,0,,,1,elemento_grafico
+2760,92.0,0,,,2,"elemento_grafico, movimento_brusco"
+2762,92.06666666666666,0,,,1,elemento_grafico
+2764,92.13333333333334,0,,,1,elemento_grafico
+2766,92.2,0,,,1,elemento_grafico
+2768,92.26666666666667,0,,,1,elemento_grafico
+2770,92.33333333333333,0,,,1,elemento_grafico
+2772,92.4,0,,,1,elemento_grafico
+2774,92.46666666666667,0,,,1,elemento_grafico
+2776,92.53333333333333,0,,,1,elemento_grafico
+2778,92.6,0,,,1,elemento_grafico
+2780,92.66666666666667,0,,,1,elemento_grafico
+2782,92.73333333333333,0,,,1,elemento_grafico
+2784,92.8,0,,,1,elemento_grafico
+2786,92.86666666666666,0,,,1,elemento_grafico
+2788,92.93333333333334,0,,,1,elemento_grafico
+2790,93.0,0,,,1,elemento_grafico
+2792,93.06666666666666,0,,,1,elemento_grafico
+2794,93.13333333333334,0,,,1,elemento_grafico
+2796,93.2,0,,,1,elemento_grafico
+2798,93.26666666666667,0,,,1,elemento_grafico
+2800,93.33333333333333,0,,,1,elemento_grafico
+2802,93.4,0,,,1,elemento_grafico
+2804,93.46666666666667,0,,,1,elemento_grafico
+2806,93.53333333333333,0,,,1,elemento_grafico
+2808,93.6,0,,,1,elemento_grafico
+2810,93.66666666666667,0,,,1,elemento_grafico
+2812,93.73333333333333,0,,,1,elemento_grafico
+2814,93.8,0,,,1,elemento_grafico
+2816,93.86666666666666,0,,,1,elemento_grafico
+2818,93.93333333333334,0,,,1,elemento_grafico
+2820,94.0,0,,,1,elemento_grafico
+2822,94.06666666666666,0,,,1,elemento_grafico
+2824,94.13333333333334,0,,,1,elemento_grafico
+2826,94.2,0,,,1,elemento_grafico
+2828,94.26666666666667,0,,,1,elemento_grafico
+2830,94.33333333333333,0,,,1,elemento_grafico
+2832,94.4,0,,,1,elemento_grafico
+2834,94.46666666666667,0,,,1,elemento_grafico
+2836,94.53333333333333,0,,,1,elemento_grafico
+2838,94.6,0,,,1,elemento_grafico
+2840,94.66666666666667,0,,,1,elemento_grafico
+2842,94.73333333333333,0,,,1,elemento_grafico
+2844,94.8,0,,,1,elemento_grafico
+2846,94.86666666666666,0,,,1,elemento_grafico
+2848,94.93333333333334,0,,,1,elemento_grafico
+2850,95.0,0,,,1,elemento_grafico
+2852,95.06666666666666,0,,,1,elemento_grafico
+2854,95.13333333333334,0,,,1,elemento_grafico
+2856,95.2,0,,,1,elemento_grafico
+2858,95.26666666666667,0,,,1,elemento_grafico
+2860,95.33333333333333,0,,,1,elemento_grafico
+2862,95.4,0,,,1,elemento_grafico
+2864,95.46666666666667,0,,,1,elemento_grafico
+2866,95.53333333333333,0,,,1,elemento_grafico
+2868,95.6,0,,,1,elemento_grafico
+2870,95.66666666666667,0,,,1,elemento_grafico
+2872,95.73333333333333,0,,,1,elemento_grafico
+2874,95.8,0,,,1,elemento_grafico
+2876,95.86666666666666,0,,,1,elemento_grafico
+2878,95.93333333333334,0,,,1,elemento_grafico
+2880,96.0,0,,,1,elemento_grafico
+2882,96.06666666666666,0,,,1,elemento_grafico
+2884,96.13333333333334,0,,,1,elemento_grafico
+2886,96.2,0,,,1,elemento_grafico
+2888,96.26666666666667,0,,"deitado, gesticulando",1,elemento_grafico
+2890,96.33333333333333,0,,,1,elemento_grafico
+2892,96.4,0,,,1,elemento_grafico
+2894,96.46666666666667,0,,,1,elemento_grafico
+2896,96.53333333333333,0,,deitado,1,elemento_grafico
+2898,96.6,0,,"deitado, gesticulando",1,elemento_grafico
+2900,96.66666666666667,0,,"deitado, gesticulando",1,elemento_grafico
+2902,96.73333333333333,0,,,1,elemento_grafico
+2904,96.8,0,,deitado,1,elemento_grafico
+2906,96.86666666666666,0,,deitado,1,elemento_grafico
+2908,96.93333333333334,0,,deitado,1,elemento_grafico
+2910,97.0,0,,,1,elemento_grafico
+2912,97.06666666666666,0,,deitado,1,elemento_grafico
+2914,97.13333333333334,0,,deitado,1,elemento_grafico
+2916,97.2,0,,deitado,1,elemento_grafico
+2918,97.26666666666667,0,,"deitado, gesticulando",1,elemento_grafico
+2920,97.33333333333333,0,,,1,elemento_grafico
+2922,97.4,0,,,1,elemento_grafico
+2924,97.46666666666667,0,,,1,elemento_grafico
+2926,97.53333333333333,0,,deitado,1,elemento_grafico
+2928,97.6,0,,deitado,1,elemento_grafico
+2930,97.66666666666667,0,,deitado,1,elemento_grafico
+2932,97.73333333333333,0,,deitado,1,elemento_grafico
+2934,97.8,0,,deitado,1,elemento_grafico
+2936,97.86666666666666,0,,deitado,1,elemento_grafico
+2938,97.93333333333334,0,,deitado,1,elemento_grafico
+2940,98.0,0,,deitado,2,"elemento_grafico, movimento_brusco"
+2942,98.06666666666666,0,,"deitado, gesticulando",1,elemento_grafico
+2944,98.13333333333334,0,,,1,elemento_grafico
+2946,98.2,0,,,1,elemento_grafico
+2948,98.26666666666667,0,,,1,elemento_grafico
+2950,98.33333333333333,0,,,1,elemento_grafico
+2952,98.4,0,,,1,elemento_grafico
+2954,98.46666666666667,0,,,1,elemento_grafico
+2956,98.53333333333333,0,,,1,elemento_grafico
+2958,98.6,0,,,1,elemento_grafico
+2960,98.66666666666667,0,,,1,elemento_grafico
+2962,98.73333333333333,0,,"deitado, gesticulando",1,elemento_grafico
+2964,98.8,0,,"deitado, gesticulando",1,elemento_grafico
+2966,98.86666666666666,0,,deitado,1,elemento_grafico
+2968,98.93333333333334,0,,,1,elemento_grafico
+2970,99.0,0,,,1,elemento_grafico
+2972,99.06666666666666,0,,,1,elemento_grafico
+2974,99.13333333333334,0,,,1,elemento_grafico
+2976,99.2,0,,"deitado, gesticulando",1,elemento_grafico
+2978,99.26666666666667,0,,,1,elemento_grafico
+2980,99.33333333333333,0,,,1,elemento_grafico
+2982,99.4,0,,,1,elemento_grafico
+2984,99.46666666666667,0,,,1,elemento_grafico
+2986,99.53333333333333,0,,usando_celular,1,elemento_grafico
+2988,99.6,0,,,1,elemento_grafico
+2990,99.66666666666667,0,,,1,elemento_grafico
+2992,99.73333333333333,0,,,1,elemento_grafico
+2994,99.8,0,,,1,elemento_grafico
+2996,99.86666666666666,0,,,1,elemento_grafico
+2998,99.93333333333334,0,,,1,elemento_grafico
+3000,100.0,0,,,1,elemento_grafico
+3002,100.06666666666666,0,,,1,elemento_grafico
+3004,100.13333333333334,0,,,1,elemento_grafico
+3006,100.2,0,,,1,elemento_grafico
+3008,100.26666666666667,0,,,1,elemento_grafico
+3010,100.33333333333333,0,,,1,elemento_grafico
+3012,100.4,0,,,1,elemento_grafico
+3014,100.46666666666667,0,,,1,elemento_grafico
+3016,100.53333333333333,0,,,1,elemento_grafico
+3018,100.6,0,,,1,elemento_grafico
+3020,100.66666666666667,0,,,1,elemento_grafico
+3022,100.73333333333333,0,,,1,elemento_grafico
+3024,100.8,0,,,1,elemento_grafico
+3026,100.86666666666666,0,,deitado,1,elemento_grafico
+3028,100.93333333333334,0,,deitado,1,elemento_grafico
+3030,101.0,0,,,1,elemento_grafico
+3032,101.06666666666666,0,,,1,elemento_grafico
+3034,101.13333333333334,0,,,1,elemento_grafico
+3036,101.2,0,,,1,elemento_grafico
+3038,101.26666666666667,0,,,1,elemento_grafico
+3040,101.33333333333333,0,,,1,elemento_grafico
+3042,101.4,0,,gesticulando,1,elemento_grafico
+3044,101.46666666666667,0,,,1,elemento_grafico
+3046,101.53333333333333,0,,,1,elemento_grafico
+3048,101.6,0,,,1,elemento_grafico
+3050,101.66666666666667,0,,,1,elemento_grafico
+3052,101.73333333333333,0,,,1,elemento_grafico
+3054,101.8,1,sad,,2,"careta_exagerada, elemento_grafico"
+3056,101.86666666666666,0,,,1,elemento_grafico
+3058,101.93333333333334,0,,,1,elemento_grafico
+3060,102.0,0,,,1,elemento_grafico
+3062,102.06666666666666,0,,,1,elemento_grafico
+3064,102.13333333333334,0,,,1,elemento_grafico
+3066,102.2,0,,,1,elemento_grafico
+3068,102.26666666666667,0,,"deitado, gesticulando",1,elemento_grafico
+3070,102.33333333333333,0,,deitado,1,elemento_grafico
+3072,102.4,0,,deitado,1,elemento_grafico
+3074,102.46666666666667,0,,"deitado, gesticulando",1,elemento_grafico
+3076,102.53333333333333,0,,deitado,1,elemento_grafico
+3078,102.6,0,,deitado,1,elemento_grafico
+3080,102.66666666666667,0,,,1,elemento_grafico
+3082,102.73333333333333,0,,gesticulando,1,elemento_grafico
+3084,102.8,0,,,1,elemento_grafico
+3086,102.86666666666666,0,,,1,elemento_grafico
+3088,102.93333333333334,0,,,1,elemento_grafico
+3090,103.0,0,,,1,elemento_grafico
+3092,103.06666666666666,0,,,1,elemento_grafico
+3094,103.13333333333334,1,fear,,2,"careta_exagerada, elemento_grafico"
+3096,103.2,0,,,1,elemento_grafico
+3098,103.26666666666667,0,,,1,elemento_grafico
+3100,103.33333333333333,0,,deitado,1,elemento_grafico
+3102,103.4,1,fear,deitado,1,elemento_grafico
+3104,103.46666666666667,0,,deitado,1,elemento_grafico
+3106,103.53333333333333,0,,"deitado, gesticulando",1,elemento_grafico
+3108,103.6,0,,deitado,1,elemento_grafico
+3110,103.66666666666667,0,,deitado,1,elemento_grafico
+3112,103.73333333333333,0,,deitado,1,elemento_grafico
+3114,103.8,0,,,1,elemento_grafico
+3116,103.86666666666666,0,,,1,elemento_grafico
+3118,103.93333333333334,0,,deitado,1,elemento_grafico
+3120,104.0,0,,deitado,2,"elemento_grafico, movimento_brusco"
+3122,104.06666666666666,0,,deitado,1,elemento_grafico
+3124,104.13333333333334,0,,deitado,1,elemento_grafico
+3126,104.2,0,,deitado,1,elemento_grafico
+3128,104.26666666666667,0,,deitado,1,elemento_grafico
+3130,104.33333333333333,0,,deitado,1,elemento_grafico
+3132,104.4,0,,deitado,1,elemento_grafico
+3134,104.46666666666667,0,,deitado,1,elemento_grafico
+3136,104.53333333333333,0,,deitado,1,elemento_grafico
+3138,104.6,0,,deitado,1,elemento_grafico
+3140,104.66666666666667,0,,deitado,1,elemento_grafico
+3142,104.73333333333333,0,,deitado,1,elemento_grafico
+3144,104.8,0,,deitado,1,elemento_grafico
+3146,104.86666666666666,0,,,1,elemento_grafico
+3148,104.93333333333334,0,,,1,elemento_grafico
+3150,105.0,0,,,1,elemento_grafico
+3152,105.06666666666666,0,,,1,elemento_grafico
+3154,105.13333333333334,0,,gesticulando,1,elemento_grafico
+3156,105.2,0,,gesticulando,1,elemento_grafico
+3158,105.26666666666667,0,,,1,elemento_grafico
+3160,105.33333333333333,0,,trabalhando_computador,1,elemento_grafico
+3162,105.4,0,,,1,elemento_grafico
+3164,105.46666666666667,0,,gesticulando,1,elemento_grafico
+3166,105.53333333333333,0,,,1,elemento_grafico
+3168,105.6,0,,,1,elemento_grafico
+3170,105.66666666666667,0,,,1,elemento_grafico
+3172,105.73333333333333,0,,,1,elemento_grafico
+3174,105.8,0,,,1,elemento_grafico
+3176,105.86666666666666,0,,gesticulando,1,elemento_grafico
+3178,105.93333333333334,0,,gesticulando,1,elemento_grafico
+3180,106.0,0,,gesticulando,1,elemento_grafico
+3182,106.06666666666666,0,,gesticulando,1,elemento_grafico
+3184,106.13333333333334,0,,,1,elemento_grafico
+3186,106.2,0,,,1,elemento_grafico
+3188,106.26666666666667,0,,gesticulando,1,elemento_grafico
+3190,106.33333333333333,0,,,1,elemento_grafico
+3192,106.4,0,,gesticulando,1,elemento_grafico
+3194,106.46666666666667,0,,,1,elemento_grafico
+3196,106.53333333333333,0,,,1,elemento_grafico
+3198,106.6,0,,gesticulando,1,elemento_grafico
+3200,106.66666666666667,0,,,1,elemento_grafico
+3202,106.73333333333333,0,,,1,elemento_grafico
+3204,106.8,0,,,1,elemento_grafico
+3206,106.86666666666666,0,,,1,elemento_grafico
+3208,106.93333333333334,0,,gesticulando,1,elemento_grafico
+3210,107.0,0,,,1,elemento_grafico
+3212,107.06666666666666,0,,,1,elemento_grafico
+3214,107.13333333333334,0,,gesticulando,1,elemento_grafico
+3216,107.2,0,,gesticulando,1,elemento_grafico
+3218,107.26666666666667,0,,,1,elemento_grafico
+3220,107.33333333333333,1,surprise,gesticulando,1,elemento_grafico
+3222,107.4,0,,,1,elemento_grafico
+3224,107.46666666666667,0,,gesticulando,1,elemento_grafico
+3226,107.53333333333333,1,happy,,1,elemento_grafico
+3228,107.6,0,,,1,elemento_grafico
+3230,107.66666666666667,0,,,1,elemento_grafico
+3232,107.73333333333333,1,happy,,1,elemento_grafico
+3234,107.8,1,neutral,,1,elemento_grafico
+3236,107.86666666666666,1,fear,gesticulando,2,"careta_exagerada, elemento_grafico"
+3238,107.93333333333334,0,,gesticulando,1,elemento_grafico
+3240,108.0,0,,,1,elemento_grafico
+3242,108.06666666666666,0,,gesticulando,1,elemento_grafico
+3244,108.13333333333334,0,,,1,elemento_grafico
+3246,108.2,0,,gesticulando,1,elemento_grafico
+3248,108.26666666666667,0,,,1,elemento_grafico
+3250,108.33333333333333,0,,gesticulando,1,elemento_grafico
+3252,108.4,0,,,1,elemento_grafico
+3254,108.46666666666667,0,,,1,elemento_grafico
+3256,108.53333333333333,0,,,1,elemento_grafico
+3258,108.6,0,,,1,elemento_grafico
+3260,108.66666666666667,0,,gesticulando,1,elemento_grafico
+3262,108.73333333333333,0,,,1,elemento_grafico
+3264,108.8,0,,,1,elemento_grafico
+3266,108.86666666666666,0,,gesticulando,1,elemento_grafico
+3268,108.93333333333334,0,,,1,elemento_grafico
+3270,109.0,0,,,1,elemento_grafico
+3272,109.06666666666666,0,,,1,elemento_grafico
+3274,109.13333333333334,0,,,1,elemento_grafico
+3276,109.2,0,,,1,elemento_grafico
+3278,109.26666666666667,0,,,1,elemento_grafico
+3280,109.33333333333333,0,,gesticulando,1,elemento_grafico
+3282,109.4,0,,,1,elemento_grafico
+3284,109.46666666666667,0,,,1,elemento_grafico
+3286,109.53333333333333,0,,,1,elemento_grafico
+3288,109.6,0,,,1,elemento_grafico
+3290,109.66666666666667,0,,gesticulando,1,elemento_grafico
+3292,109.73333333333333,0,,,1,elemento_grafico
+3294,109.8,0,,,1,elemento_grafico
+3296,109.86666666666666,0,,,1,elemento_grafico
+3298,109.93333333333334,0,,,1,elemento_grafico
+3300,110.0,1,angry,gesticulando,2,"elemento_grafico, movimento_brusco"
+3302,110.06666666666666,1,sad,,0,
+3304,110.13333333333334,1,sad,,0,
+3306,110.2,1,fear,gesticulando,0,
+3308,110.26666666666667,1,fear,,1,elemento_grafico
+3310,110.33333333333333,1,fear,,0,
+3312,110.4,1,fear,,0,
+3314,110.46666666666667,1,angry,gesticulando,2,"careta_exagerada, elemento_grafico"
+3316,110.53333333333333,1,sad,,1,elemento_grafico
+3318,110.6,1,fear,gesticulando,0,
+3320,110.66666666666667,1,sad,,0,
+3322,110.73333333333333,1,angry,,2,"careta_exagerada, elemento_grafico"
+3324,110.8,1,fear,,1,elemento_grafico

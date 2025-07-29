@@ -1,0 +1,154 @@
+================================================================================
+RELATÓRIO DE ANÁLISE DE VÍDEO
+================================================================================
+
+1. INFORMAÇÕES DO VÍDEO
+----------------------------------------
+Arquivo: data/input/video.mp4
+Duração: 110.87 segundos
+Resolução: 1280x720
+FPS: 30
+Total de frames: 3326
+Data da análise: 2025-07-27T17:08:55.479712
+
+2. RESUMO DA ANÁLISE
+----------------------------------------
+Frames analisados: 1663
+Total de rostos detectados: 933
+Pessoas únicas estimadas: 50
+Total de anomalias detectadas: 3331
+
+3. DESCOBERTAS PRINCIPAIS
+----------------------------------------
+• Aproximadamente 50 pessoas aparecem no vídeo
+• Emoção mais comum: neutral (31.3%)
+• Atividade principal: Pessoa em pé
+• 3331 anomalias detectadas
+• Anomalia mais comum: Elemento gráfico não natural detectado
+
+4. ANÁLISE DE EMOÇÕES
+----------------------------------------
+- raiva: 63 ocorrências (6.8%)
+- nojo: 3 ocorrências (0.3%)
+- medo: 81 ocorrências (8.7%)
+- feliz: 156 ocorrências (16.7%)
+- triste: 241 ocorrências (25.8%)
+- surpresa: 97 ocorrências (10.4%)
+- neutro: 292 ocorrências (31.3%)
+
+Emoção mais comum: neutro
+
+5. ATIVIDADES DETECTADAS
+----------------------------------------
+- Pessoa sentada: 14 ocorrências
+- Pessoa em pé: 458 ocorrências
+- Pessoa caminhando: 152 ocorrências
+- Pessoa correndo: 8 ocorrências
+- Pessoa dançando: 38 ocorrências
+- Trabalhando no computador: 36 ocorrências
+- Usando celular: 72 ocorrências
+- Pessoa deitada: 145 ocorrências
+- Gesticulando muito: 386 ocorrências
+
+6. ANOMALIAS DETECTADAS
+----------------------------------------
+Total de anomalias: 3331
+
+ELEMENTO_GRAFICO (2719 ocorrências):
+  1. Frame 0 (tempo: 0.00s)
+     Descrição: Formas geométricas perfeitas detectadas
+     Severidade: média
+  2. Frame 2 (tempo: 0.07s)
+     Descrição: Formas geométricas perfeitas detectadas
+     Severidade: média
+  3. Frame 4 (tempo: 0.13s)
+     Descrição: Formas geométricas perfeitas detectadas
+     Severidade: média
+  4. Frame 6 (tempo: 0.20s)
+     Descrição: Formas geométricas perfeitas detectadas
+     Severidade: média
+  5. Frame 8 (tempo: 0.27s)
+     Descrição: Formas geométricas perfeitas detectadas
+     Severidade: média
+  ... e mais 2714 ocorrências
+
+CARETA_EXAGERADA (305 ocorrências):
+  1. Frame 2 (tempo: 0.07s)
+     Descrição: Expressão sad com intensidade 99.7%
+     Severidade: baixa
+  2. Frame 4 (tempo: 0.13s)
+     Descrição: Expressão sad com intensidade 99.8%
+     Severidade: baixa
+  3. Frame 4 (tempo: 0.13s)
+     Descrição: Expressão sad com intensidade 99.9%
+     Severidade: baixa
+  4. Frame 6 (tempo: 0.20s)
+     Descrição: Expressão sad com intensidade 99.3%
+     Severidade: baixa
+  5. Frame 10 (tempo: 0.33s)
+     Descrição: Expressão neutral com intensidade 99.1%
+     Severidade: baixa
+  ... e mais 300 ocorrências
+
+MOVIMENTO_BRUSCO (18 ocorrências):
+  1. Frame 180 (tempo: 6.00s)
+     Descrição: Movimento brusco detectado (75.1% da imagem)
+     Severidade: média
+  2. Frame 360 (tempo: 12.00s)
+     Descrição: Movimento brusco detectado (74.4% da imagem)
+     Severidade: média
+  3. Frame 540 (tempo: 18.00s)
+     Descrição: Movimento brusco detectado (84.7% da imagem)
+     Severidade: média
+  4. Frame 720 (tempo: 24.00s)
+     Descrição: Movimento brusco detectado (87.0% da imagem)
+     Severidade: média
+  5. Frame 900 (tempo: 30.00s)
+     Descrição: Movimento brusco detectado (92.4% da imagem)
+     Severidade: alta
+  ... e mais 13 ocorrências
+
+PADRAO_VISUAL_ANOMALO (289 ocorrências):
+  1. Frame 398 (tempo: 13.27s)
+     Descrição: Padrão de alta frequência anormal detectado
+     Severidade: baixa
+  2. Frame 400 (tempo: 13.33s)
+     Descrição: Padrão de alta frequência anormal detectado
+     Severidade: baixa
+  3. Frame 402 (tempo: 13.40s)
+     Descrição: Padrão de alta frequência anormal detectado
+     Severidade: baixa
+  4. Frame 404 (tempo: 13.47s)
+     Descrição: Padrão de alta frequência anormal detectado
+     Severidade: baixa
+  5. Frame 406 (tempo: 13.53s)
+     Descrição: Padrão de alta frequência anormal detectado
+     Severidade: baixa
+  ... e mais 284 ocorrências
+
+7. LINHA DO TEMPO (PRINCIPAIS EVENTOS)
+----------------------------------------
+Tempo 00:00: 49 pessoas | Emoções: fear, sad, neutral, happy, angry | ANOMALIA: careta_exagerada, elemento_grafico
+Tempo 00:01: 51 pessoas | Emoções: fear, surprise, sad, neutral, angry | ANOMALIA: careta_exagerada, elemento_grafico
+Tempo 00:02: 40 pessoas | Emoções: angry, sad, happy, neutral | ANOMALIA: careta_exagerada, elemento_grafico
+Tempo 00:03: 46 pessoas | Emoções: fear, sad, neutral, happy, angry | ANOMALIA: careta_exagerada, elemento_grafico
+Tempo 00:04: 10 pessoas | Emoções: neutral, fear, sad | ANOMALIA: careta_exagerada, elemento_grafico
+Tempo 00:05: 7 pessoas | Emoções: sad, neutral | ANOMALIA: careta_exagerada, elemento_grafico
+Tempo 00:06: 15 pessoas | Emoções: happy, neutral | ANOMALIA: movimento_brusco, careta_exagerada, elemento_grafico
+Tempo 00:07: 15 pessoas | Emoções: happy, neutral | ANOMALIA: careta_exagerada, elemento_grafico
+Tempo 00:08: 15 pessoas | Emoções: happy, neutral | ANOMALIA: careta_exagerada, elemento_grafico
+Tempo 00:09: 15 pessoas | Emoções: happy | ANOMALIA: careta_exagerada, elemento_grafico
+Tempo 00:10: 15 pessoas | Emoções: happy, neutral | ANOMALIA: careta_exagerada, elemento_grafico
+Tempo 00:11: 15 pessoas | Emoções: sad, neutral | ANOMALIA: careta_exagerada, elemento_grafico
+Tempo 00:12: ANOMALIA: movimento_brusco, elemento_grafico
+Tempo 00:13: ANOMALIA: padrao_visual_anomalo, elemento_grafico
+Tempo 00:14: ANOMALIA: padrao_visual_anomalo, elemento_grafico
+Tempo 00:15: ANOMALIA: padrao_visual_anomalo, elemento_grafico
+Tempo 00:16: ANOMALIA: padrao_visual_anomalo, elemento_grafico
+Tempo 00:17: ANOMALIA: padrao_visual_anomalo, elemento_grafico
+Tempo 00:18: 9 pessoas | Emoções: fear, surprise, sad, happy, angry | ANOMALIA: movimento_brusco, careta_exagerada, elemento_grafico
+Tempo 00:19: 12 pessoas | Emoções: fear, sad, neutral, happy, angry | ANOMALIA: careta_exagerada, elemento_grafico
+
+================================================================================
+FIM DO RELATÓRIO
+================================================================================
