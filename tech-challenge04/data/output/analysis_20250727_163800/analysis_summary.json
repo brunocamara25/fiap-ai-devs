@@ -1,0 +1,31 @@
+{
+  "status": "success",
+  "video_file": "data/input/video.mp4",
+  "output_directory": "data/output\\analysis_20250727_163800",
+  "processing_time_seconds": 283.21,
+  "processing_time_formatted": "4.7 minutos",
+  "results_summary": {
+    "total_frames": 3326,
+    "frames_analyzed": 666,
+    "faces_detected": 369,
+    "unique_people": 7,
+    "total_anomalies": 1476
+  },
+  "generated_files": {
+    "raw_results": "data/output\\analysis_20250727_163800\\data\\analysis_results_20250727_164241.json",
+    "reports": {
+      "json": "data/output\\analysis_20250727_163800\\reports\\relatorio_completo_20250727_164241.json",
+      "txt": "data/output\\analysis_20250727_163800\\reports\\relatorio_analise_20250727_164241.txt",
+      "html": "data/output\\analysis_20250727_163800\\reports\\relatorio_web_20250727_164241.html",
+      "pdf": "data/output\\analysis_20250727_163800\\reports\\relatorio_visual_20250727_164241.pdf",
+      "csv": "data/output\\analysis_20250727_163800\\reports\\dados_analise_20250727_164241.csv"
+    }
+  },
+  "key_findings": [
+    "Aproximadamente 7 pessoas aparecem no vídeo",
+    "Emoção mais comum: neutral (32.8%)",
+    "Atividade principal: Gesticulando muito",
+    "1476 anomalias detectadas",
+    "Anomalia mais comum: Elemento gráfico não natural detectado"
+  ]
+}

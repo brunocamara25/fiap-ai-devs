@@ -1,0 +1,31 @@
+{
+  "status": "success",
+  "video_file": "data/input/video.mp4",
+  "output_directory": "data/output\\analysis_20250728_212117",
+  "processing_time_seconds": 254.84,
+  "processing_time_formatted": "4.2 minutos",
+  "results_summary": {
+    "total_frames": 3326,
+    "frames_analyzed": 666,
+    "faces_detected": 369,
+    "unique_people": 25,
+    "total_anomalies": 52
+  },
+  "generated_files": {
+    "raw_results": "data/output\\analysis_20250728_212117\\data\\analysis_results_20250728_212530.json",
+    "reports": {
+      "json": "data/output\\analysis_20250728_212117\\reports\\relatorio_completo_20250728_212530.json",
+      "txt": "data/output\\analysis_20250728_212117\\reports\\relatorio_analise_20250728_212530.txt",
+      "html": "data/output\\analysis_20250728_212117\\reports\\relatorio_web_20250728_212530.html",
+      "pdf": "data/output\\analysis_20250728_212117\\reports\\relatorio_visual_20250728_212530.pdf",
+      "csv": "data/output\\analysis_20250728_212117\\reports\\dados_analise_20250728_212530.csv"
+    }
+  },
+  "key_findings": [
+    "Aproximadamente 25 pessoas aparecem no vídeo",
+    "Emoção mais comum: neutral (32.8%)",
+    "Atividade principal: Gesticulando muito",
+    "52 anomalias detectadas",
+    "Anomalia mais comum: Expressão facial exagerada"
+  ]
+}

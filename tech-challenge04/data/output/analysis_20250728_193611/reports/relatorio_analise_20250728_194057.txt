@@ -1,0 +1,154 @@
+================================================================================
+RELATÓRIO DE ANÁLISE DE VÍDEO
+================================================================================
+
+1. INFORMAÇÕES DO VÍDEO
+----------------------------------------
+Arquivo: data/input/video.mp4
+Duração: 110.87 segundos
+Resolução: 1280x720
+FPS: 30
+Total de frames: 3326
+Data da análise: 2025-07-28T19:36:11.566225
+
+2. RESUMO DA ANÁLISE
+----------------------------------------
+Frames analisados: 666
+Total de rostos detectados: 369
+Pessoas únicas estimadas: 25
+Total de anomalias detectadas: 649
+
+3. DESCOBERTAS PRINCIPAIS
+----------------------------------------
+• Aproximadamente 25 pessoas aparecem no vídeo
+• Emoção mais comum: neutral (32.8%)
+• Atividade principal: Gesticulando muito
+• 649 anomalias detectadas
+• Anomalia mais comum: Elemento gráfico não natural detectado
+
+4. ANÁLISE DE EMOÇÕES
+----------------------------------------
+- raiva: 23 ocorrências (6.2%)
+- nojo: 1 ocorrências (0.3%)
+- medo: 38 ocorrências (10.3%)
+- feliz: 65 ocorrências (17.6%)
+- triste: 82 ocorrências (22.2%)
+- surpresa: 39 ocorrências (10.6%)
+- neutro: 121 ocorrências (32.8%)
+
+Emoção mais comum: neutro
+
+5. ATIVIDADES DETECTADAS
+----------------------------------------
+- Pessoa sentada: 2 ocorrências
+- Pessoa em pé: 113 ocorrências
+- Pessoa caminhando: 152 ocorrências
+- Pessoa correndo: 16 ocorrências
+- Pessoa dançando: 119 ocorrências
+- Trabalhando no computador: 12 ocorrências
+- Usando celular: 29 ocorrências
+- Pessoa deitada: 48 ocorrências
+- Gesticulando muito: 160 ocorrências
+
+6. ANOMALIAS DETECTADAS
+----------------------------------------
+Total de anomalias: 649
+
+ELEMENTO_GRAFICO (412 ocorrências):
+  1. Frame 0 (tempo: 0.00s)
+     Descrição: Formas geométricas perfeitas detectadas
+     Severidade: média
+  2. Frame 5 (tempo: 0.17s)
+     Descrição: Formas geométricas perfeitas detectadas
+     Severidade: média
+  3. Frame 10 (tempo: 0.33s)
+     Descrição: Formas geométricas perfeitas detectadas
+     Severidade: média
+  4. Frame 15 (tempo: 0.50s)
+     Descrição: Formas geométricas perfeitas detectadas
+     Severidade: média
+  5. Frame 25 (tempo: 0.83s)
+     Descrição: Formas geométricas perfeitas detectadas
+     Severidade: média
+  ... e mais 407 ocorrências
+
+CARETA_EXAGERADA (131 ocorrências):
+  1. Frame 5 (tempo: 0.17s)
+     Descrição: Expressão sad com intensidade 99.4%
+     Severidade: baixa
+  2. Frame 10 (tempo: 0.33s)
+     Descrição: Expressão neutral com intensidade 99.1%
+     Severidade: baixa
+  3. Frame 15 (tempo: 0.50s)
+     Descrição: Expressão neutral com intensidade 95.6%
+     Severidade: baixa
+  4. Frame 25 (tempo: 0.83s)
+     Descrição: Expressão suspeita: fear
+     Severidade: média
+  5. Frame 30 (tempo: 1.00s)
+     Descrição: Expressão angry com intensidade 99.6%
+     Severidade: baixa
+  ... e mais 126 ocorrências
+
+PADRAO_VISUAL_ANOMALO (99 ocorrências):
+  1. Frame 400 (tempo: 13.33s)
+     Descrição: Padrão de alta frequência anormal detectado
+     Severidade: baixa
+  2. Frame 405 (tempo: 13.50s)
+     Descrição: Padrão de alta frequência anormal detectado
+     Severidade: baixa
+  3. Frame 410 (tempo: 13.67s)
+     Descrição: Padrão de alta frequência anormal detectado
+     Severidade: baixa
+  4. Frame 415 (tempo: 13.83s)
+     Descrição: Padrão de alta frequência anormal detectado
+     Severidade: baixa
+  5. Frame 420 (tempo: 14.00s)
+     Descrição: Padrão de alta frequência anormal detectado
+     Severidade: baixa
+  ... e mais 94 ocorrências
+
+MOVIMENTO_BRUSCO (7 ocorrências):
+  1. Frame 540 (tempo: 18.00s)
+     Descrição: Movimento brusco detectado (84.6% da imagem)
+     Severidade: baixa
+  2. Frame 720 (tempo: 24.00s)
+     Descrição: Movimento brusco detectado (87.5% da imagem)
+     Severidade: baixa
+  3. Frame 900 (tempo: 30.00s)
+     Descrição: Movimento brusco detectado (92.4% da imagem)
+     Severidade: baixa
+  4. Frame 1080 (tempo: 36.00s)
+     Descrição: Movimento brusco detectado (89.9% da imagem)
+     Severidade: baixa
+  5. Frame 1440 (tempo: 48.00s)
+     Descrição: Movimento brusco detectado (94.0% da imagem)
+     Severidade: baixa
+  ... e mais 2 ocorrências
+
+7. LINHA DO TEMPO (PRINCIPAIS EVENTOS)
+----------------------------------------
+Tempo 00:00: 18 pessoas | Emoções: angry, sad, neutral, fear | ANOMALIA: careta_exagerada, elemento_grafico
+Tempo 00:01: 21 pessoas | Emoções: surprise, angry, sad, fear, neutral | ANOMALIA: careta_exagerada, elemento_grafico
+Tempo 00:02: 15 pessoas | Emoções: sad, neutral, happy | ANOMALIA: careta_exagerada, elemento_grafico
+Tempo 00:03: 19 pessoas | Emoções: angry, sad, fear, happy, neutral | ANOMALIA: careta_exagerada, elemento_grafico
+Tempo 00:04: 4 pessoas | Emoções: sad, fear, neutral | ANOMALIA: careta_exagerada, elemento_grafico
+Tempo 00:05: 3 pessoas | Emoções: sad, neutral | ANOMALIA: elemento_grafico
+Tempo 00:06: 6 pessoas | Emoções: neutral, happy | ANOMALIA: careta_exagerada, elemento_grafico
+Tempo 00:07: 6 pessoas | Emoções: neutral, happy | ANOMALIA: careta_exagerada, elemento_grafico
+Tempo 00:08: 6 pessoas | Emoções: neutral, happy | ANOMALIA: careta_exagerada, elemento_grafico
+Tempo 00:09: 6 pessoas | Emoções: happy | ANOMALIA: careta_exagerada, elemento_grafico
+Tempo 00:10: 6 pessoas | Emoções: neutral, happy | ANOMALIA: careta_exagerada, elemento_grafico
+Tempo 00:11: 6 pessoas | Emoções: neutral | ANOMALIA: careta_exagerada, elemento_grafico
+Tempo 00:12: ANOMALIA: elemento_grafico
+Tempo 00:13: ANOMALIA: padrao_visual_anomalo, elemento_grafico
+Tempo 00:14: ANOMALIA: padrao_visual_anomalo, elemento_grafico
+Tempo 00:15: ANOMALIA: padrao_visual_anomalo, elemento_grafico
+Tempo 00:16: ANOMALIA: padrao_visual_anomalo, elemento_grafico
+Tempo 00:17: ANOMALIA: padrao_visual_anomalo, elemento_grafico
+Tempo 00:18: 4 pessoas | Emoções: sad, fear, happy | ANOMALIA: careta_exagerada, movimento_brusco, elemento_grafico
+Tempo 00:19: 5 pessoas | Emoções: angry, neutral, happy, fear | ANOMALIA: careta_exagerada, elemento_grafico
+
+================================================================================
+FIM DO RELATÓRIO
+================================================================================

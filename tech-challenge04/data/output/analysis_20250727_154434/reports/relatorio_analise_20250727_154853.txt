@@ -1,0 +1,37 @@
+================================================================================
+RELATÓRIO DE ANÁLISE DE VÍDEO
+================================================================================
+
+1. INFORMAÇÕES DO VÍDEO
+----------------------------------------
+Arquivo: data/input/video.mp4
+Duração: 110.87 segundos
+Resolução: 1280x720
+FPS: 30
+Total de frames: 3326
+Data da análise: 2025-07-27T15:44:37.247483
+
+2. RESUMO DA ANÁLISE
+----------------------------------------
+Frames analisados: 666
+Total de rostos detectados: 369
+Pessoas únicas estimadas: 7
+Total de anomalias detectadas: 1476
+
+3. DESCOBERTAS PRINCIPAIS
+----------------------------------------
+• Aproximadamente 7 pessoas aparecem no vídeo
+• Emoção mais comum: neutral (32.8%)
+• Atividade principal: Gesticulando muito
+• 1476 anomalias detectadas
+• Anomalia mais comum: Elemento gráfico não natural detectado
+
+4. ANÁLISE DE EMOÇÕES
+----------------------------------------
+- raiva: 23 ocorrências (6.2%)
+- nojo: 1 ocorrências (0.3%)
+- medo: 38 ocorrências (10.3%)
+- feliz: 65 ocorrências (17.6%)
+- triste: 82 ocorrências (22.2%)
+- surpresa: 39 ocorrências (10.6%)
+- neutro: 121 ocorrências (32.8%)

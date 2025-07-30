@@ -1,0 +1,31 @@
+{
+  "status": "success",
+  "video_file": "data/input/video.mp4",
+  "output_directory": "data/output\\analysis_20250727_180252",
+  "processing_time_seconds": 826.47,
+  "processing_time_formatted": "13.8 minutos",
+  "results_summary": {
+    "total_frames": 3326,
+    "frames_analyzed": 1663,
+    "faces_detected": 933,
+    "unique_people": 28,
+    "total_anomalies": 1522
+  },
+  "generated_files": {
+    "raw_results": "data/output\\analysis_20250727_180252\\data\\analysis_results_20250727_181635.json",
+    "reports": {
+      "json": "data/output\\analysis_20250727_180252\\reports\\relatorio_completo_20250727_181636.json",
+      "txt": "data/output\\analysis_20250727_180252\\reports\\relatorio_analise_20250727_181636.txt",
+      "html": "data/output\\analysis_20250727_180252\\reports\\relatorio_web_20250727_181636.html",
+      "pdf": "data/output\\analysis_20250727_180252\\reports\\relatorio_visual_20250727_181636.pdf",
+      "csv": "data/output\\analysis_20250727_180252\\reports\\dados_analise_20250727_181636.csv"
+    }
+  },
+  "key_findings": [
+    "Aproximadamente 28 pessoas aparecem no vídeo",
+    "Emoção mais comum: neutral (31.3%)",
+    "Atividade principal: Pessoa em pé",
+    "1522 anomalias detectadas",
+    "Anomalia mais comum: Elemento gráfico não natural detectado"
+  ]
+}

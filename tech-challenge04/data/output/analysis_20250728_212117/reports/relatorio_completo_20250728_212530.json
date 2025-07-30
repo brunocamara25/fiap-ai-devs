@@ -1,0 +1,1617 @@
+{
+  "relatorio_analise_video": {
+    "informacoes_gerais": {
+      "data_processamento": "2025-07-28T21:21:17.177691",
+      "arquivo_video": "data/input/video.mp4",
+      "duracao_segundos": 110.86666666666666,
+      "total_frames": 3326,
+      "frames_analisados": 666,
+      "fps_original": 30,
+      "resolucao": "1280x720"
+    },
+    "resumo_executivo": [
+      "Aproximadamente 25 pessoas aparecem no vídeo",
+      "Emoção mais comum: neutral (32.8%)",
+      "Atividade principal: Gesticulando muito",
+      "52 anomalias detectadas",
+      "Anomalia mais comum: Expressão facial exagerada"
+    ],
+    "estatisticas": {
+      "pessoas": {
+        "total_deteccoes_rostos": 369,
+        "pessoas_unicas_estimadas": 25
+      },
+      "emocoes": {
+        "raiva": {
+          "count": 23,
+          "percentage": 6.23
+        },
+        "nojo": {
+          "count": 1,
+          "percentage": 0.27
+        },
+        "medo": {
+          "count": 38,
+          "percentage": 10.3
+        },
+        "feliz": {
+          "count": 65,
+          "percentage": 17.62
+        },
+        "triste": {
+          "count": 82,
+          "percentage": 22.22
+        },
+        "surpresa": {
+          "count": 39,
+          "percentage": 10.57
+        },
+        "neutro": {
+          "count": 121,
+          "percentage": 32.79
+        },
+        "mais_comum": "neutro"
+      },
+      "atividades": {
+        "sentado": {
+          "count": 2,
+          "percentage": 0.2590673575129534,
+          "description": "Pessoa sentada"
+        },
+        "em_pe": {
+          "count": 113,
+          "percentage": 14.637305699481864,
+          "description": "Pessoa em pé"
+        },
+        "caminhando": {
+          "count": 152,
+          "percentage": 19.689119170984455,
+          "description": "Pessoa caminhando"
+        },
+        "correndo": {
+          "count": 16,
+          "percentage": 2.072538860103627,
+          "description": "Pessoa correndo"
+        },
+        "dancando": {
+          "count": 119,
+          "percentage": 15.414507772020725,
+          "description": "Pessoa dançando"
+        },
+        "trabalhando_computador": {
+          "count": 139,
+          "percentage": 18.00518134715026,
+          "description": "Trabalhando no computador"
+        },
+        "usando_celular": {
+          "count": 29,
+          "percentage": 3.756476683937824,
+          "description": "Usando celular"
+        },
+        "deitado": {
+          "count": 48,
+          "percentage": 6.217616580310881,
+          "description": "Pessoa deitada"
+        },
+        "gesticulando": {
+          "count": 154,
+          "percentage": 19.94818652849741,
+          "description": "Gesticulando muito"
+        }
+      },
+      "anomalias": {
+        "total": 52,
+        "taxa_por_frame": 0.07807807807807808,
+        "distribuicao": {
+          "careta_exagerada": {
+            "count": 41,
+            "percentage": 78.84615384615384,
+            "description": "Expressão facial exagerada"
+          },
+          "elemento_grafico": {
+            "count": 4,
+            "percentage": 7.6923076923076925,
+            "description": "Elemento gráfico não natural detectado"
+          },
+          "movimento_brusco": {
+            "count": 7,
+            "percentage": 13.461538461538462,
+            "description": "Movimento brusco ou anormal"
+          }
+        }
+      }
+    },
+    "linha_tempo": [
+      {
+        "tempo": "00:00",
+        "segundo": 0,
+        "pessoas": 18,
+        "emocoes": [
+          "neutral",
+          "fear",
+          "angry",
+          "sad"
+        ],
+        "atividades": [
+          "em_pe",
+          "caminhando"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:01",
+        "segundo": 1,
+        "pessoas": 21,
+        "emocoes": [
+          "surprise",
+          "neutral",
+          "sad",
+          "fear",
+          "angry"
+        ],
+        "atividades": [
+          "caminhando",
+          "usando_celular"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:02",
+        "segundo": 2,
+        "pessoas": 15,
+        "emocoes": [
+          "neutral",
+          "happy",
+          "sad"
+        ],
+        "atividades": [
+          "gesticulando",
+          "caminhando",
+          "usando_celular"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:03",
+        "segundo": 3,
+        "pessoas": 19,
+        "emocoes": [
+          "neutral",
+          "sad",
+          "happy",
+          "fear",
+          "angry"
+        ],
+        "atividades": [
+          "gesticulando",
+          "caminhando",
+          "usando_celular"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:04",
+        "segundo": 4,
+        "pessoas": 4,
+        "emocoes": [
+          "neutral",
+          "fear",
+          "sad"
+        ],
+        "atividades": [
+          "sentado",
+          "gesticulando",
+          "caminhando",
+          "usando_celular"
+        ],
+        "anomalias": []
+      },
+      {
+        "tempo": "00:05",
+        "segundo": 5,
+        "pessoas": 3,
+        "emocoes": [
+          "neutral",
+          "sad"
+        ],
+        "atividades": [
+          "dancando",
+          "em_pe",
+          "gesticulando",
+          "usando_celular"
+        ],
+        "anomalias": []
+      },
+      {
+        "tempo": "00:06",
+        "segundo": 6,
+        "pessoas": 6,
+        "emocoes": [
+          "neutral",
+          "happy"
+        ],
+        "atividades": [
+          "dancando",
+          "correndo",
+          "caminhando",
+          "usando_celular"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:07",
+        "segundo": 7,
+        "pessoas": 6,
+        "emocoes": [
+          "neutral",
+          "happy"
+        ],
+        "atividades": [
+          "usando_celular",
+          "dancando",
+          "caminhando",
+          "correndo",
+          "gesticulando"
+        ],
+        "anomalias": []
+      },
+      {
+        "tempo": "00:08",
+        "segundo": 8,
+        "pessoas": 6,
+        "emocoes": [
+          "neutral",
+          "happy"
+        ],
+        "atividades": [
+          "dancando",
+          "caminhando"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:09",
+        "segundo": 9,
+        "pessoas": 6,
+        "emocoes": [
+          "happy"
+        ],
+        "atividades": [
+          "dancando",
+          "em_pe",
+          "gesticulando",
+          "caminhando"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:10",
+        "segundo": 10,
+        "pessoas": 6,
+        "emocoes": [
+          "neutral",
+          "happy"
+        ],
+        "atividades": [
+          "dancando",
+          "gesticulando",
+          "caminhando"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:11",
+        "segundo": 11,
+        "pessoas": 6,
+        "emocoes": [
+          "neutral"
+        ],
+        "atividades": [
+          "em_pe",
+          "gesticulando",
+          "caminhando"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:18",
+        "segundo": 18,
+        "pessoas": 4,
+        "emocoes": [
+          "happy",
+          "fear",
+          "sad"
+        ],
+        "atividades": [
+          "dancando",
+          "correndo",
+          "gesticulando",
+          "caminhando"
+        ],
+        "anomalias": [
+          "careta_exagerada",
+          "movimento_brusco"
+        ]
+      },
+      {
+        "tempo": "00:19",
+        "segundo": 19,
+        "pessoas": 5,
+        "emocoes": [
+          "neutral",
+          "fear",
+          "happy",
+          "angry"
+        ],
+        "atividades": [
+          "dancando",
+          "correndo",
+          "gesticulando",
+          "caminhando"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:20",
+        "segundo": 20,
+        "pessoas": 6,
+        "emocoes": [
+          "sad",
+          "happy",
+          "fear",
+          "angry"
+        ],
+        "atividades": [
+          "correndo",
+          "gesticulando",
+          "caminhando"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:21",
+        "segundo": 21,
+        "pessoas": 6,
+        "emocoes": [
+          "neutral",
+          "sad"
+        ],
+        "atividades": [
+          "dancando",
+          "correndo",
+          "gesticulando",
+          "caminhando"
+        ],
+        "anomalias": []
+      },
+      {
+        "tempo": "00:22",
+        "segundo": 22,
+        "pessoas": 4,
+        "emocoes": [
+          "angry",
+          "fear",
+          "sad"
+        ],
+        "atividades": [
+          "dancando",
+          "caminhando"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:23",
+        "segundo": 23,
+        "pessoas": 2,
+        "emocoes": [
+          "happy",
+          "fear"
+        ],
+        "atividades": [
+          "dancando",
+          "gesticulando",
+          "caminhando"
+        ],
+        "anomalias": []
+      },
+      {
+        "tempo": "00:24",
+        "segundo": 24,
+        "pessoas": 6,
+        "emocoes": [
+          "neutral",
+          "sad"
+        ],
+        "atividades": [
+          "dancando",
+          "correndo",
+          "gesticulando",
+          "em_pe"
+        ],
+        "anomalias": [
+          "movimento_brusco"
+        ]
+      },
+      {
+        "tempo": "00:25",
+        "segundo": 25,
+        "pessoas": 6,
+        "emocoes": [
+          "neutral"
+        ],
+        "atividades": [
+          "dancando",
+          "em_pe",
+          "gesticulando"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:26",
+        "segundo": 26,
+        "pessoas": 6,
+        "emocoes": [
+          "neutral"
+        ],
+        "atividades": [
+          "em_pe",
+          "gesticulando"
+        ],
+        "anomalias": []
+      },
+      {
+        "tempo": "00:27",
+        "segundo": 27,
+        "pessoas": 6,
+        "emocoes": [
+          "neutral"
+        ],
+        "atividades": [
+          "em_pe"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:28",
+        "segundo": 28,
+        "pessoas": 6,
+        "emocoes": [
+          "neutral"
+        ],
+        "atividades": [
+          "em_pe",
+          "gesticulando"
+        ],
+        "anomalias": []
+      },
+      {
+        "tempo": "00:29",
+        "segundo": 29,
+        "pessoas": 6,
+        "emocoes": [
+          "sad"
+        ],
+        "atividades": [
+          "em_pe",
+          "gesticulando"
+        ],
+        "anomalias": []
+      },
+      {
+        "tempo": "00:30",
+        "segundo": 30,
+        "pessoas": 6,
+        "emocoes": [
+          "surprise"
+        ],
+        "atividades": [
+          "em_pe",
+          "correndo",
+          "gesticulando",
+          "caminhando"
+        ],
+        "anomalias": [
+          "careta_exagerada",
+          "movimento_brusco"
+        ]
+      },
+      {
+        "tempo": "00:31",
+        "segundo": 31,
+        "pessoas": 6,
+        "emocoes": [
+          "surprise"
+        ],
+        "atividades": [
+          "dancando",
+          "em_pe",
+          "gesticulando",
+          "caminhando"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:32",
+        "segundo": 32,
+        "pessoas": 6,
+        "emocoes": [
+          "surprise",
+          "angry"
+        ],
+        "atividades": [
+          "em_pe",
+          "gesticulando",
+          "caminhando"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:33",
+        "segundo": 33,
+        "pessoas": 6,
+        "emocoes": [
+          "surprise"
+        ],
+        "atividades": [
+          "em_pe",
+          "gesticulando",
+          "caminhando"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:34",
+        "segundo": 34,
+        "pessoas": 6,
+        "emocoes": [
+          "surprise"
+        ],
+        "atividades": [
+          "em_pe",
+          "gesticulando",
+          "caminhando"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:35",
+        "segundo": 35,
+        "pessoas": 6,
+        "emocoes": [
+          "surprise",
+          "fear"
+        ],
+        "atividades": [
+          "em_pe",
+          "gesticulando"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:36",
+        "segundo": 36,
+        "pessoas": 6,
+        "emocoes": [
+          "neutral",
+          "happy",
+          "sad"
+        ],
+        "atividades": [
+          "dancando",
+          "gesticulando",
+          "deitado"
+        ],
+        "anomalias": [
+          "movimento_brusco"
+        ]
+      },
+      {
+        "tempo": "00:37",
+        "segundo": 37,
+        "pessoas": 6,
+        "emocoes": [
+          "happy",
+          "sad"
+        ],
+        "atividades": [
+          "gesticulando",
+          "deitado"
+        ],
+        "anomalias": []
+      },
+      {
+        "tempo": "00:38",
+        "segundo": 38,
+        "pessoas": 6,
+        "emocoes": [
+          "neutral",
+          "happy",
+          "sad"
+        ],
+        "atividades": [
+          "gesticulando",
+          "deitado"
+        ],
+        "anomalias": []
+      },
+      {
+        "tempo": "00:39",
+        "segundo": 39,
+        "pessoas": 6,
+        "emocoes": [
+          "neutral",
+          "sad"
+        ],
+        "atividades": [
+          "gesticulando",
+          "deitado"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:40",
+        "segundo": 40,
+        "pessoas": 6,
+        "emocoes": [
+          "neutral",
+          "happy",
+          "angry",
+          "sad"
+        ],
+        "atividades": [
+          "gesticulando",
+          "deitado"
+        ],
+        "anomalias": []
+      },
+      {
+        "tempo": "00:41",
+        "segundo": 41,
+        "pessoas": 6,
+        "emocoes": [
+          "neutral",
+          "fear",
+          "angry"
+        ],
+        "atividades": [
+          "gesticulando",
+          "deitado"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:42",
+        "segundo": 42,
+        "pessoas": 6,
+        "emocoes": [
+          "neutral",
+          "angry",
+          "fear",
+          "sad"
+        ],
+        "atividades": [
+          "deitado"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:43",
+        "segundo": 43,
+        "pessoas": 6,
+        "emocoes": [
+          "sad",
+          "happy",
+          "fear",
+          "angry"
+        ],
+        "atividades": [
+          "dancando",
+          "gesticulando",
+          "deitado"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:44",
+        "segundo": 44,
+        "pessoas": 6,
+        "emocoes": [
+          "fear",
+          "angry",
+          "sad"
+        ],
+        "atividades": [
+          "gesticulando"
+        ],
+        "anomalias": []
+      },
+      {
+        "tempo": "00:45",
+        "segundo": 45,
+        "pessoas": 6,
+        "emocoes": [
+          "disgust",
+          "fear",
+          "sad"
+        ],
+        "atividades": [],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:46",
+        "segundo": 46,
+        "pessoas": 6,
+        "emocoes": [
+          "fear",
+          "angry",
+          "sad"
+        ],
+        "atividades": [
+          "gesticulando"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:47",
+        "segundo": 47,
+        "pessoas": 6,
+        "emocoes": [
+          "happy",
+          "sad"
+        ],
+        "atividades": [
+          "em_pe",
+          "gesticulando",
+          "caminhando"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:48",
+        "segundo": 48,
+        "pessoas": 6,
+        "emocoes": [
+          "neutral",
+          "happy",
+          "fear"
+        ],
+        "atividades": [
+          "dancando",
+          "correndo",
+          "gesticulando",
+          "em_pe"
+        ],
+        "anomalias": [
+          "careta_exagerada",
+          "movimento_brusco"
+        ]
+      },
+      {
+        "tempo": "00:49",
+        "segundo": 49,
+        "pessoas": 6,
+        "emocoes": [
+          "happy"
+        ],
+        "atividades": [
+          "dancando",
+          "em_pe",
+          "gesticulando",
+          "caminhando"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:50",
+        "segundo": 50,
+        "pessoas": 6,
+        "emocoes": [
+          "happy"
+        ],
+        "atividades": [
+          "em_pe",
+          "gesticulando",
+          "caminhando"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:51",
+        "segundo": 51,
+        "pessoas": 6,
+        "emocoes": [
+          "neutral",
+          "happy",
+          "fear"
+        ],
+        "atividades": [
+          "gesticulando",
+          "caminhando"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:52",
+        "segundo": 52,
+        "pessoas": 6,
+        "emocoes": [
+          "neutral",
+          "happy"
+        ],
+        "atividades": [
+          "em_pe",
+          "gesticulando",
+          "caminhando"
+        ],
+        "anomalias": []
+      },
+      {
+        "tempo": "00:53",
+        "segundo": 53,
+        "pessoas": 6,
+        "emocoes": [
+          "neutral",
+          "happy",
+          "angry"
+        ],
+        "atividades": [
+          "em_pe",
+          "gesticulando",
+          "caminhando"
+        ],
+        "anomalias": []
+      },
+      {
+        "tempo": "00:54",
+        "segundo": 54,
+        "pessoas": 6,
+        "emocoes": [
+          "neutral"
+        ],
+        "atividades": [
+          "dancando",
+          "correndo",
+          "gesticulando",
+          "em_pe"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:55",
+        "segundo": 55,
+        "pessoas": 6,
+        "emocoes": [
+          "neutral"
+        ],
+        "atividades": [
+          "em_pe"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:56",
+        "segundo": 56,
+        "pessoas": 6,
+        "emocoes": [
+          "neutral",
+          "happy",
+          "surprise"
+        ],
+        "atividades": [
+          "em_pe",
+          "gesticulando"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "00:57",
+        "segundo": 57,
+        "pessoas": 0,
+        "emocoes": [],
+        "atividades": [
+          "correndo",
+          "gesticulando",
+          "em_pe",
+          "caminhando"
+        ],
+        "anomalias": [
+          "movimento_brusco",
+          "elemento_grafico"
+        ]
+      },
+      {
+        "tempo": "00:58",
+        "segundo": 58,
+        "pessoas": 0,
+        "emocoes": [],
+        "atividades": [
+          "dancando",
+          "sentado",
+          "em_pe",
+          "caminhando"
+        ],
+        "anomalias": [
+          "elemento_grafico"
+        ]
+      },
+      {
+        "tempo": "00:59",
+        "segundo": 59,
+        "pessoas": 1,
+        "emocoes": [
+          "sad"
+        ],
+        "atividades": [
+          "em_pe",
+          "gesticulando",
+          "caminhando"
+        ],
+        "anomalias": [
+          "elemento_grafico"
+        ]
+      },
+      {
+        "tempo": "01:00",
+        "segundo": 60,
+        "pessoas": 0,
+        "emocoes": [],
+        "atividades": [
+          "gesticulando",
+          "caminhando"
+        ],
+        "anomalias": [
+          "elemento_grafico"
+        ]
+      },
+      {
+        "tempo": "01:01",
+        "segundo": 61,
+        "pessoas": 0,
+        "emocoes": [],
+        "atividades": [
+          "dancando",
+          "gesticulando"
+        ],
+        "anomalias": [
+          "movimento_brusco"
+        ]
+      },
+      {
+        "tempo": "01:19",
+        "segundo": 79,
+        "pessoas": 6,
+        "emocoes": [
+          "happy",
+          "fear"
+        ],
+        "atividades": [
+          "dancando",
+          "em_pe",
+          "gesticulando"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "01:22",
+        "segundo": 82,
+        "pessoas": 4,
+        "emocoes": [
+          "sad"
+        ],
+        "atividades": [
+          "gesticulando",
+          "caminhando",
+          "trabalhando_computador"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "01:23",
+        "segundo": 83,
+        "pessoas": 4,
+        "emocoes": [
+          "angry",
+          "sad"
+        ],
+        "atividades": [
+          "gesticulando",
+          "caminhando",
+          "trabalhando_computador"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "01:24",
+        "segundo": 84,
+        "pessoas": 1,
+        "emocoes": [
+          "sad"
+        ],
+        "atividades": [
+          "gesticulando",
+          "trabalhando_computador"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "01:25",
+        "segundo": 85,
+        "pessoas": 1,
+        "emocoes": [
+          "fear"
+        ],
+        "atividades": [
+          "gesticulando",
+          "trabalhando_computador"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "01:28",
+        "segundo": 88,
+        "pessoas": 2,
+        "emocoes": [
+          "happy",
+          "sad"
+        ],
+        "atividades": [
+          "trabalhando_computador"
+        ],
+        "anomalias": [
+          "careta_exagerada"
+        ]
+      },
+      {
+        "tempo": "01:30",
+        "segundo": 90,
+        "pessoas": 1,
+        "emocoes": [
+          "sad"
+        ],
+        "atividades": [
+          "gesticulando",
+          "trabalhando_computador"
+        ],
+        "anomalias": []
+      },
+      {
+        "tempo": "01:42",
+        "segundo": 102,
+        "pessoas": 1,
+        "emocoes": [
+          "fear"
+        ],
+        "atividades": [
+          "gesticulando",
+          "trabalhando_computador"
+        ],
+        "anomalias": []
+      },
+      {
+        "tempo": "01:47",
+        "segundo": 107,
+        "pessoas": 1,
+        "emocoes": [
+          "surprise"
+        ],
+        "atividades": [
+          "gesticulando",
+          "caminhando",
+          "trabalhando_computador"
+        ],
+        "anomalias": []
+      },
+      {
+        "tempo": "01:50",
+        "segundo": 110,
+        "pessoas": 6,
+        "emocoes": [
+          "fear",
+          "angry",
+          "sad"
+        ],
+        "atividades": [
+          "dancando",
+          "em_pe",
+          "gesticulando"
+        ],
+        "anomalias": []
+      }
+    ],
+    "dados_detalhados": {
+      "total_anomalias": 52,
+      "anomalias": [
+        {
+          "tipo": "careta_exagerada",
+          "frame": 5,
+          "tempo_segundos": 0.16666666666666666,
+          "descricao": "Expressão sad com intensidade 99.4%",
+          "severidade": "baixa",
+          "confianca": 0.9941481351852417
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 40,
+          "tempo_segundos": 1.3333333333333333,
+          "descricao": "Expressão surprise com intensidade 99.5%",
+          "severidade": "baixa",
+          "confianca": 0.9954661130905151
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 75,
+          "tempo_segundos": 2.5,
+          "descricao": "Expressão neutral com intensidade 99.0%",
+          "severidade": "baixa",
+          "confianca": 0.9902275800704956
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 105,
+          "tempo_segundos": 3.5,
+          "descricao": "Expressão angry com intensidade 98.9%",
+          "severidade": "baixa",
+          "confianca": 0.9893704665457647
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 205,
+          "tempo_segundos": 6.833333333333333,
+          "descricao": "Expressão happy com intensidade 99.7%",
+          "severidade": "baixa",
+          "confianca": 0.9973903298377991
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 240,
+          "tempo_segundos": 8.0,
+          "descricao": "Expressão happy com intensidade 100.0%",
+          "severidade": "baixa",
+          "confianca": 0.9997273087501526
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 270,
+          "tempo_segundos": 9.0,
+          "descricao": "Expressão happy com intensidade 100.0%",
+          "severidade": "baixa",
+          "confianca": 0.9996598362719915
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 305,
+          "tempo_segundos": 10.166666666666666,
+          "descricao": "Expressão happy com intensidade 98.9%",
+          "severidade": "baixa",
+          "confianca": 0.9887324571609497
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 345,
+          "tempo_segundos": 11.5,
+          "descricao": "Expressão neutral com intensidade 97.4%",
+          "severidade": "baixa",
+          "confianca": 0.9738869071006775
+        },
+        {
+          "tipo": "movimento_brusco",
+          "frame": 540,
+          "tempo_segundos": 18.0,
+          "descricao": "Movimento brusco detectado (84.6% da imagem)",
+          "severidade": "baixa",
+          "confianca": 1.0
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 550,
+          "tempo_segundos": 18.333333333333332,
+          "descricao": "Expressão sad com intensidade 99.3%",
+          "severidade": "baixa",
+          "confianca": 0.9929065704345703
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 585,
+          "tempo_segundos": 19.5,
+          "descricao": "Expressão neutral com intensidade 98.4%",
+          "severidade": "baixa",
+          "confianca": 0.9835720052464012
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 620,
+          "tempo_segundos": 20.666666666666668,
+          "descricao": "Expressão sad com intensidade 97.1%",
+          "severidade": "baixa",
+          "confianca": 0.9709782038953061
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 660,
+          "tempo_segundos": 22.0,
+          "descricao": "Expressão sad com intensidade 96.3%",
+          "severidade": "baixa",
+          "confianca": 0.9633360505104065
+        },
+        {
+          "tipo": "movimento_brusco",
+          "frame": 720,
+          "tempo_segundos": 24.0,
+          "descricao": "Movimento brusco detectado (87.5% da imagem)",
+          "severidade": "baixa",
+          "confianca": 1.0
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 760,
+          "tempo_segundos": 25.333333333333332,
+          "descricao": "Expressão neutral com intensidade 97.5%",
+          "severidade": "baixa",
+          "confianca": 0.975150465965271
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 825,
+          "tempo_segundos": 27.5,
+          "descricao": "Expressão neutral com intensidade 96.3%",
+          "severidade": "baixa",
+          "confianca": 0.9628442525863647
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 900,
+          "tempo_segundos": 30.0,
+          "descricao": "Expressão surprise com intensidade 95.9%",
+          "severidade": "baixa",
+          "confianca": 0.9588255261674837
+        },
+        {
+          "tipo": "movimento_brusco",
+          "frame": 900,
+          "tempo_segundos": 30.0,
+          "descricao": "Movimento brusco detectado (92.4% da imagem)",
+          "severidade": "baixa",
+          "confianca": 1.0
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 935,
+          "tempo_segundos": 31.166666666666668,
+          "descricao": "Expressão surprise com intensidade 99.3%",
+          "severidade": "baixa",
+          "confianca": 0.9929880508198677
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 970,
+          "tempo_segundos": 32.333333333333336,
+          "descricao": "Expressão suspeita: surprise",
+          "severidade": "média",
+          "confianca": 0.9307491183280945
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 1000,
+          "tempo_segundos": 33.333333333333336,
+          "descricao": "Expressão surprise com intensidade 95.5%",
+          "severidade": "baixa",
+          "confianca": 0.9550023674964905
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 1035,
+          "tempo_segundos": 34.5,
+          "descricao": "Expressão surprise com intensidade 97.9%",
+          "severidade": "baixa",
+          "confianca": 0.9785622954368591
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 1075,
+          "tempo_segundos": 35.833333333333336,
+          "descricao": "Expressão surprise com intensidade 95.1%",
+          "severidade": "baixa",
+          "confianca": 0.9514288873332076
+        },
+        {
+          "tipo": "movimento_brusco",
+          "frame": 1080,
+          "tempo_segundos": 36.0,
+          "descricao": "Movimento brusco detectado (89.9% da imagem)",
+          "severidade": "baixa",
+          "confianca": 1.0
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 1175,
+          "tempo_segundos": 39.166666666666664,
+          "descricao": "Expressão sad com intensidade 97.5%",
+          "severidade": "baixa",
+          "confianca": 0.9745531663032273
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 1235,
+          "tempo_segundos": 41.166666666666664,
+          "descricao": "Expressão fear com intensidade 99.3%",
+          "severidade": "baixa",
+          "confianca": 0.9934412240982056
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 1265,
+          "tempo_segundos": 42.166666666666664,
+          "descricao": "Expressão neutral com intensidade 98.2%",
+          "severidade": "baixa",
+          "confianca": 0.9817095984047413
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 1315,
+          "tempo_segundos": 43.833333333333336,
+          "descricao": "Expressão happy com intensidade 98.1%",
+          "severidade": "baixa",
+          "confianca": 0.9812786601449656
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 1350,
+          "tempo_segundos": 45.0,
+          "descricao": "Expressão fear com intensidade 99.5%",
+          "severidade": "baixa",
+          "confianca": 0.9953355786404359
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 1385,
+          "tempo_segundos": 46.166666666666664,
+          "descricao": "Expressão sad com intensidade 98.0%",
+          "severidade": "baixa",
+          "confianca": 0.9803140139954106
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 1415,
+          "tempo_segundos": 47.166666666666664,
+          "descricao": "Expressão sad com intensidade 99.3%",
+          "severidade": "baixa",
+          "confianca": 0.9930961728096008
+        },
+        {
+          "tipo": "movimento_brusco",
+          "frame": 1440,
+          "tempo_segundos": 48.0,
+          "descricao": "Movimento brusco detectado (94.0% da imagem)",
+          "severidade": "baixa",
+          "confianca": 1.0
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 1450,
+          "tempo_segundos": 48.333333333333336,
+          "descricao": "Expressão suspeita: fear",
+          "severidade": "média",
+          "confianca": 0.8669966459274292
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 1480,
+          "tempo_segundos": 49.333333333333336,
+          "descricao": "Expressão happy com intensidade 99.9%",
+          "severidade": "baixa",
+          "confianca": 0.9988652467727661
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 1510,
+          "tempo_segundos": 50.333333333333336,
+          "descricao": "Expressão happy com intensidade 99.5%",
+          "severidade": "baixa",
+          "confianca": 0.9945333596785879
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 1540,
+          "tempo_segundos": 51.333333333333336,
+          "descricao": "Expressão happy com intensidade 99.5%",
+          "severidade": "baixa",
+          "confianca": 0.994878531112846
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 1620,
+          "tempo_segundos": 54.0,
+          "descricao": "Expressão neutral com intensidade 100.0%",
+          "severidade": "baixa",
+          "confianca": 0.9995812774203685
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 1655,
+          "tempo_segundos": 55.166666666666664,
+          "descricao": "Expressão neutral com intensidade 98.4%",
+          "severidade": "baixa",
+          "confianca": 0.9837741246088818
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 1685,
+          "tempo_segundos": 56.166666666666664,
+          "descricao": "Expressão neutral com intensidade 99.7%",
+          "severidade": "baixa",
+          "confianca": 0.9971185922622681
+        },
+        {
+          "tipo": "elemento_grafico",
+          "frame": 1710,
+          "tempo_segundos": 57.0,
+          "descricao": "Região com saturação anormalmente alta detectada",
+          "severidade": "média",
+          "confianca": 1.0
+        },
+        {
+          "tipo": "movimento_brusco",
+          "frame": 1710,
+          "tempo_segundos": 57.0,
+          "descricao": "Movimento brusco detectado (84.8% da imagem)",
+          "severidade": "baixa",
+          "confianca": 1.0
+        },
+        {
+          "tipo": "elemento_grafico",
+          "frame": 1740,
+          "tempo_segundos": 58.0,
+          "descricao": "Região com saturação anormalmente alta detectada",
+          "severidade": "média",
+          "confianca": 1.0
+        },
+        {
+          "tipo": "elemento_grafico",
+          "frame": 1770,
+          "tempo_segundos": 59.0,
+          "descricao": "Região com saturação anormalmente alta detectada",
+          "severidade": "média",
+          "confianca": 1.0
+        },
+        {
+          "tipo": "elemento_grafico",
+          "frame": 1800,
+          "tempo_segundos": 60.0,
+          "descricao": "Região com saturação anormalmente alta detectada",
+          "severidade": "média",
+          "confianca": 1.0
+        },
+        {
+          "tipo": "movimento_brusco",
+          "frame": 1830,
+          "tempo_segundos": 61.0,
+          "descricao": "Movimento brusco detectado (87.1% da imagem)",
+          "severidade": "baixa",
+          "confianca": 1.0
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 2395,
+          "tempo_segundos": 79.83333333333333,
+          "descricao": "Expressão suspeita: fear",
+          "severidade": "média",
+          "confianca": 0.9446202483546883
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 2460,
+          "tempo_segundos": 82.0,
+          "descricao": "Expressão sad com intensidade 100.0%",
+          "severidade": "baixa",
+          "confianca": 0.9998323917388916
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 2500,
+          "tempo_segundos": 83.33333333333333,
+          "descricao": "Expressão sad com intensidade 100.0%",
+          "severidade": "baixa",
+          "confianca": 0.9999797940242168
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 2540,
+          "tempo_segundos": 84.66666666666667,
+          "descricao": "Expressão sad com intensidade 99.9%",
+          "severidade": "baixa",
+          "confianca": 0.9992938042528863
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 2575,
+          "tempo_segundos": 85.83333333333333,
+          "descricao": "Expressão suspeita: fear",
+          "severidade": "média",
+          "confianca": 0.8588100587612425
+        },
+        {
+          "tipo": "careta_exagerada",
+          "frame": 2660,
+          "tempo_segundos": 88.66666666666667,
+          "descricao": "Expressão sad com intensidade 100.0%",
+          "severidade": "baixa",
+          "confianca": 0.9995484948158264
+        }
+      ]
+    }
+  }
+}

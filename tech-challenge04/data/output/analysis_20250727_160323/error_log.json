@@ -1,0 +1,7 @@
+{
+  "status": "error",
+  "video_file": "data/input/video.mp4",
+  "error_message": "'\\n            font-family'",
+  "error_type": "KeyError",
+  "processing_time_seconds": 253.75957489013672
+}

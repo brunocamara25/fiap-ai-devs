@@ -1,0 +1,131 @@
+================================================================================
+RELATÓRIO DE ANÁLISE DE VÍDEO
+================================================================================
+
+1. INFORMAÇÕES DO VÍDEO
+----------------------------------------
+Arquivo: data/input/video.mp4
+Duração: 110.87 segundos
+Resolução: 1280x720
+FPS: 30
+Total de frames: 3326
+Data da análise: 2025-07-28T21:15:26.486832
+
+2. RESUMO DA ANÁLISE
+----------------------------------------
+Frames analisados: 666
+Total de rostos detectados: 369
+Pessoas únicas estimadas: 25
+Total de anomalias detectadas: 52
+
+3. DESCOBERTAS PRINCIPAIS
+----------------------------------------
+• Aproximadamente 25 pessoas aparecem no vídeo
+• Emoção mais comum: neutral (32.8%)
+• Atividade principal: Gesticulando muito
+• 52 anomalias detectadas
+• Anomalia mais comum: Expressão facial exagerada
+
+4. ANÁLISE DE EMOÇÕES
+----------------------------------------
+- raiva: 23 ocorrências (6.2%)
+- nojo: 1 ocorrências (0.3%)
+- medo: 38 ocorrências (10.3%)
+- feliz: 65 ocorrências (17.6%)
+- triste: 82 ocorrências (22.2%)
+- surpresa: 39 ocorrências (10.6%)
+- neutro: 121 ocorrências (32.8%)
+
+Emoção mais comum: neutro
+
+5. ATIVIDADES DETECTADAS
+----------------------------------------
+- Pessoa sentada: 2 ocorrências
+- Pessoa em pé: 113 ocorrências
+- Pessoa caminhando: 152 ocorrências
+- Pessoa correndo: 16 ocorrências
+- Pessoa dançando: 119 ocorrências
+- Trabalhando no computador: 139 ocorrências
+- Usando celular: 29 ocorrências
+- Pessoa deitada: 48 ocorrências
+- Gesticulando muito: 162 ocorrências
+
+6. ANOMALIAS DETECTADAS
+----------------------------------------
+Total de anomalias: 52
+
+CARETA_EXAGERADA (41 ocorrências):
+  1. Frame 5 (tempo: 0.17s)
+     Descrição: Expressão sad com intensidade 99.4%
+     Severidade: baixa
+  2. Frame 40 (tempo: 1.33s)
+     Descrição: Expressão surprise com intensidade 99.5%
+     Severidade: baixa
+  3. Frame 75 (tempo: 2.50s)
+     Descrição: Expressão neutral com intensidade 99.0%
+     Severidade: baixa
+  4. Frame 105 (tempo: 3.50s)
+     Descrição: Expressão angry com intensidade 98.9%
+     Severidade: baixa
+  5. Frame 205 (tempo: 6.83s)
+     Descrição: Expressão happy com intensidade 99.7%
+     Severidade: baixa
+  ... e mais 36 ocorrências
+
+MOVIMENTO_BRUSCO (7 ocorrências):
+  1. Frame 540 (tempo: 18.00s)
+     Descrição: Movimento brusco detectado (84.6% da imagem)
+     Severidade: baixa
+  2. Frame 720 (tempo: 24.00s)
+     Descrição: Movimento brusco detectado (87.5% da imagem)
+     Severidade: baixa
+  3. Frame 900 (tempo: 30.00s)
+     Descrição: Movimento brusco detectado (92.4% da imagem)
+     Severidade: baixa
+  4. Frame 1080 (tempo: 36.00s)
+     Descrição: Movimento brusco detectado (89.9% da imagem)
+     Severidade: baixa
+  5. Frame 1440 (tempo: 48.00s)
+     Descrição: Movimento brusco detectado (94.0% da imagem)
+     Severidade: baixa
+  ... e mais 2 ocorrências
+
+ELEMENTO_GRAFICO (4 ocorrências):
+  1. Frame 1710 (tempo: 57.00s)
+     Descrição: Região com saturação anormalmente alta detectada
+     Severidade: média
+  2. Frame 1740 (tempo: 58.00s)
+     Descrição: Região com saturação anormalmente alta detectada
+     Severidade: média
+  3. Frame 1770 (tempo: 59.00s)
+     Descrição: Região com saturação anormalmente alta detectada
+     Severidade: média
+  4. Frame 1800 (tempo: 60.00s)
+     Descrição: Região com saturação anormalmente alta detectada
+     Severidade: média
+
+7. LINHA DO TEMPO (PRINCIPAIS EVENTOS)
+----------------------------------------
+Tempo 00:00: 18 pessoas | Emoções: sad, neutral, fear, angry | ANOMALIA: careta_exagerada
+Tempo 00:01: 21 pessoas | Emoções: fear, angry, neutral, sad, surprise | ANOMALIA: careta_exagerada
+Tempo 00:02: 15 pessoas | Emoções: sad, neutral, happy | ANOMALIA: careta_exagerada
+Tempo 00:03: 19 pessoas | Emoções: fear, angry, neutral, sad, happy | ANOMALIA: careta_exagerada
+Tempo 00:04: 4 pessoas | Emoções: sad, neutral, fear | 
+Tempo 00:05: 3 pessoas | Emoções: sad, neutral | 
+Tempo 00:06: 6 pessoas | Emoções: neutral, happy | ANOMALIA: careta_exagerada
+Tempo 00:07: 6 pessoas | Emoções: neutral, happy | 
+Tempo 00:08: 6 pessoas | Emoções: neutral, happy | ANOMALIA: careta_exagerada
+Tempo 00:09: 6 pessoas | Emoções: happy | ANOMALIA: careta_exagerada
+Tempo 00:10: 6 pessoas | Emoções: neutral, happy | ANOMALIA: careta_exagerada
+Tempo 00:11: 6 pessoas | Emoções: neutral | ANOMALIA: careta_exagerada
+Tempo 00:18: 4 pessoas | Emoções: sad, fear, happy | ANOMALIA: careta_exagerada, movimento_brusco
+Tempo 00:19: 5 pessoas | Emoções: neutral, fear, angry, happy | ANOMALIA: careta_exagerada
+Tempo 00:20: 6 pessoas | Emoções: sad, angry, fear, happy | ANOMALIA: careta_exagerada
+Tempo 00:21: 6 pessoas | Emoções: sad, neutral | 
+Tempo 00:22: 4 pessoas | Emoções: sad, angry, fear | ANOMALIA: careta_exagerada
+Tempo 00:24: 6 pessoas | Emoções: sad, neutral | ANOMALIA: movimento_brusco
+Tempo 00:25: 6 pessoas | Emoções: neutral | ANOMALIA: careta_exagerada
+
+================================================================================
+FIM DO RELATÓRIO
+================================================================================

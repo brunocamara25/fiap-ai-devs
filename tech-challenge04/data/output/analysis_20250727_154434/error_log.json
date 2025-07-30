@@ -1,0 +1,7 @@
+{
+  "status": "error",
+  "video_file": "data/input/video.mp4",
+  "error_message": "string indices must be integers",
+  "error_type": "TypeError",
+  "processing_time_seconds": 259.1933913230896
+}
