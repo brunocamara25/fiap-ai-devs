@@ -1,0 +1,1185 @@
+{
+  "summary": {
+    "total_anomalies": 53,
+    "frames_analyzed": 666,
+    "anomaly_rate": 0.07957957957957958,
+    "anomaly_distribution": {
+      "careta_exagerada": {
+        "count": 42,
+        "percentage": 79.24528301886792,
+        "description": "Expressão facial exagerada"
+      },
+      "elemento_grafico": {
+        "count": 4,
+        "percentage": 7.547169811320755,
+        "description": "Elemento gráfico não natural detectado"
+      },
+      "movimento_brusco": {
+        "count": 7,
+        "percentage": 13.20754716981132,
+        "description": "Movimento brusco ou anormal"
+      }
+    },
+    "most_common_anomaly": {
+      "type": "careta_exagerada",
+      "description": "Expressão facial exagerada",
+      "count": 42
+    }
+  },
+  "anomalies": [
+    {
+      "type": "careta_exagerada",
+      "frame_number": 0,
+      "timestamp": 0.0,
+      "description": "Expressão sad com intensidade 99.7%",
+      "severity": "baixa",
+      "confidence": 0.9970357418060303,
+      "details": {
+        "emotion": "sad",
+        "intensity": 0.9970357418060303,
+        "face_id": "face_0_1",
+        "bbox": {
+          "x": 654,
+          "y": 281,
+          "width": 202,
+          "height": 202
+        }
+      },
+      "start_frame": 0,
+      "end_frame": 25,
+      "duration": 4,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 30,
+      "timestamp": 1.0,
+      "description": "Expressão angry com intensidade 99.6%",
+      "severity": "baixa",
+      "confidence": 0.9958752386346886,
+      "details": {
+        "emotion": "angry",
+        "intensity": 0.9958752386346886,
+        "face_id": "face_30_2",
+        "bbox": {
+          "x": 0,
+          "y": 265,
+          "width": 237,
+          "height": 237
+        }
+      },
+      "start_frame": 30,
+      "end_frame": 50,
+      "duration": 9,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 60,
+      "timestamp": 2.0,
+      "description": "Expressão neutral com intensidade 99.1%",
+      "severity": "baixa",
+      "confidence": 0.9907397031784058,
+      "details": {
+        "emotion": "neutral",
+        "intensity": 0.9907397031784058,
+        "face_id": "face_60_1",
+        "bbox": {
+          "x": 695,
+          "y": 151,
+          "width": 203,
+          "height": 203
+        }
+      },
+      "start_frame": 60,
+      "end_frame": 80,
+      "duration": 5,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 90,
+      "timestamp": 3.0,
+      "description": "Expressão neutral com intensidade 97.7%",
+      "severity": "baixa",
+      "confidence": 0.977218508720398,
+      "details": {
+        "emotion": "neutral",
+        "intensity": 0.977218508720398,
+        "face_id": "face_90_0",
+        "bbox": {
+          "x": 463,
+          "y": 35,
+          "width": 209,
+          "height": 209
+        }
+      },
+      "start_frame": 90,
+      "end_frame": 110,
+      "duration": 7,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 130,
+      "timestamp": 4.333333333333333,
+      "description": "Expressão neutral com intensidade 97.9%",
+      "severity": "baixa",
+      "confidence": 0.9790419327641685,
+      "details": {
+        "emotion": "neutral",
+        "intensity": 0.9790419327641685,
+        "face_id": "face_130_0",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 243,
+          "height": 243
+        }
+      },
+      "start_frame": 130,
+      "end_frame": 130,
+      "duration": 1,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 205,
+      "timestamp": 6.833333333333333,
+      "description": "Expressão happy com intensidade 99.3%",
+      "severity": "baixa",
+      "confidence": 0.9930889018668053,
+      "details": {
+        "emotion": "happy",
+        "intensity": 0.9930889018668053,
+        "face_id": "face_205_0",
+        "bbox": {
+          "x": 420,
+          "y": 255,
+          "width": 306,
+          "height": 306
+        }
+      },
+      "start_frame": 205,
+      "end_frame": 230,
+      "duration": 4,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 240,
+      "timestamp": 8.0,
+      "description": "Expressão happy com intensidade 100.0%",
+      "severity": "baixa",
+      "confidence": 0.9997120499267638,
+      "details": {
+        "emotion": "happy",
+        "intensity": 0.9997120499267638,
+        "face_id": "face_240_0",
+        "bbox": {
+          "x": 465,
+          "y": 227,
+          "width": 330,
+          "height": 330
+        }
+      },
+      "start_frame": 240,
+      "end_frame": 260,
+      "duration": 3,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 270,
+      "timestamp": 9.0,
+      "description": "Expressão happy com intensidade 100.0%",
+      "severity": "baixa",
+      "confidence": 0.9997068047523499,
+      "details": {
+        "emotion": "happy",
+        "intensity": 0.9997068047523499,
+        "face_id": "face_270_0",
+        "bbox": {
+          "x": 473,
+          "y": 211,
+          "width": 285,
+          "height": 285
+        }
+      },
+      "start_frame": 270,
+      "end_frame": 295,
+      "duration": 6,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 330,
+      "timestamp": 11.0,
+      "description": "Expressão neutral com intensidade 99.7%",
+      "severity": "baixa",
+      "confidence": 0.9971912506590783,
+      "details": {
+        "emotion": "neutral",
+        "intensity": 0.9971912506590783,
+        "face_id": "face_330_0",
+        "bbox": {
+          "x": 472,
+          "y": 229,
+          "width": 313,
+          "height": 313
+        }
+      },
+      "start_frame": 330,
+      "end_frame": 350,
+      "duration": 3,
+      "count": 1
+    },
+    {
+      "type": "movimento_brusco",
+      "frame_number": 540,
+      "timestamp": 18.0,
+      "description": "Movimento brusco detectado (84.6% da imagem)",
+      "severity": "baixa",
+      "confidence": 1.0,
+      "details": {
+        "movement_ratio": 0.846318359375,
+        "average_ratio": 0.011513671875,
+        "spike_factor": 73.50551314673453
+      },
+      "start_frame": 540,
+      "end_frame": 540,
+      "duration": 1,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 550,
+      "timestamp": 18.333333333333332,
+      "description": "Expressão sad com intensidade 99.5%",
+      "severity": "baixa",
+      "confidence": 0.9947969317436218,
+      "details": {
+        "emotion": "sad",
+        "intensity": 0.9947969317436218,
+        "face_id": "face_550_0",
+        "bbox": {
+          "x": 526,
+          "y": 104,
+          "width": 292,
+          "height": 292
+        }
+      },
+      "start_frame": 550,
+      "end_frame": 565,
+      "duration": 4,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 585,
+      "timestamp": 19.5,
+      "description": "Expressão neutral com intensidade 98.4%",
+      "severity": "baixa",
+      "confidence": 0.984428702856821,
+      "details": {
+        "emotion": "neutral",
+        "intensity": 0.984428702856821,
+        "face_id": "face_585_0",
+        "bbox": {
+          "x": 206,
+          "y": 148,
+          "width": 235,
+          "height": 235
+        }
+      },
+      "start_frame": 585,
+      "end_frame": 585,
+      "duration": 1,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 620,
+      "timestamp": 20.666666666666668,
+      "description": "Expressão sad com intensidade 97.1%",
+      "severity": "baixa",
+      "confidence": 0.971203625202179,
+      "details": {
+        "emotion": "sad",
+        "intensity": 0.971203625202179,
+        "face_id": "face_620_0",
+        "bbox": {
+          "x": 659,
+          "y": 402,
+          "width": 194,
+          "height": 194
+        }
+      },
+      "start_frame": 620,
+      "end_frame": 640,
+      "duration": 2,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 660,
+      "timestamp": 22.0,
+      "description": "Expressão sad com intensidade 95.1%",
+      "severity": "baixa",
+      "confidence": 0.9505895972251892,
+      "details": {
+        "emotion": "sad",
+        "intensity": 0.9505895972251892,
+        "face_id": "face_660_0",
+        "bbox": {
+          "x": 768,
+          "y": 10,
+          "width": 200,
+          "height": 200
+        }
+      },
+      "start_frame": 660,
+      "end_frame": 665,
+      "duration": 2,
+      "count": 1
+    },
+    {
+      "type": "movimento_brusco",
+      "frame_number": 720,
+      "timestamp": 24.0,
+      "description": "Movimento brusco detectado (87.5% da imagem)",
+      "severity": "baixa",
+      "confidence": 1.0,
+      "details": {
+        "movement_ratio": 0.8746755642361111,
+        "average_ratio": 0.17009928385416667,
+        "spike_factor": 5.142147247286518
+      },
+      "start_frame": 720,
+      "end_frame": 720,
+      "duration": 1,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 730,
+      "timestamp": 24.333333333333332,
+      "description": "Expressão neutral com intensidade 96.1%",
+      "severity": "baixa",
+      "confidence": 0.961455342856368,
+      "details": {
+        "emotion": "neutral",
+        "intensity": 0.961455342856368,
+        "face_id": "face_730_0",
+        "bbox": {
+          "x": 537,
+          "y": 110,
+          "width": 204,
+          "height": 204
+        }
+      },
+      "start_frame": 730,
+      "end_frame": 755,
+      "duration": 2,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 760,
+      "timestamp": 25.333333333333332,
+      "description": "Expressão neutral com intensidade 97.6%",
+      "severity": "baixa",
+      "confidence": 0.9764188514005453,
+      "details": {
+        "emotion": "neutral",
+        "intensity": 0.9764188514005453,
+        "face_id": "face_760_0",
+        "bbox": {
+          "x": 542,
+          "y": 105,
+          "width": 212,
+          "height": 212
+        }
+      },
+      "start_frame": 760,
+      "end_frame": 765,
+      "duration": 2,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 825,
+      "timestamp": 27.5,
+      "description": "Expressão neutral com intensidade 95.3%",
+      "severity": "baixa",
+      "confidence": 0.9525118470191956,
+      "details": {
+        "emotion": "neutral",
+        "intensity": 0.9525118470191956,
+        "face_id": "face_825_0",
+        "bbox": {
+          "x": 547,
+          "y": 99,
+          "width": 207,
+          "height": 207
+        }
+      },
+      "start_frame": 825,
+      "end_frame": 825,
+      "duration": 1,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 900,
+      "timestamp": 30.0,
+      "description": "Expressão surprise com intensidade 98.8%",
+      "severity": "baixa",
+      "confidence": 0.9883342981338501,
+      "details": {
+        "emotion": "surprise",
+        "intensity": 0.9883342981338501,
+        "face_id": "face_900_0",
+        "bbox": {
+          "x": 601,
+          "y": 246,
+          "width": 347,
+          "height": 347
+        }
+      },
+      "start_frame": 900,
+      "end_frame": 925,
+      "duration": 9,
+      "count": 1
+    },
+    {
+      "type": "movimento_brusco",
+      "frame_number": 900,
+      "timestamp": 30.0,
+      "description": "Movimento brusco detectado (92.4% da imagem)",
+      "severity": "baixa",
+      "confidence": 1.0,
+      "details": {
+        "movement_ratio": 0.9242469618055555,
+        "average_ratio": 0.0002468532986111111,
+        "spike_factor": 3744.114285714286
+      },
+      "start_frame": 900,
+      "end_frame": 900,
+      "duration": 1,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 935,
+      "timestamp": 31.166666666666668,
+      "description": "Expressão surprise com intensidade 99.3%",
+      "severity": "baixa",
+      "confidence": 0.9930745363235474,
+      "details": {
+        "emotion": "surprise",
+        "intensity": 0.9930745363235474,
+        "face_id": "face_935_0",
+        "bbox": {
+          "x": 599,
+          "y": 215,
+          "width": 308,
+          "height": 308
+        }
+      },
+      "start_frame": 935,
+      "end_frame": 960,
+      "duration": 8,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 970,
+      "timestamp": 32.333333333333336,
+      "description": "Expressão suspeita: surprise",
+      "severity": "média",
+      "confidence": 0.8561233282089233,
+      "details": {
+        "emotion": "surprise",
+        "reason": "emoção_suspeita",
+        "face_id": "face_970_0"
+      },
+      "start_frame": 970,
+      "end_frame": 990,
+      "duration": 6,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 1000,
+      "timestamp": 33.333333333333336,
+      "description": "Expressão surprise com intensidade 95.7%",
+      "severity": "baixa",
+      "confidence": 0.9573752854690126,
+      "details": {
+        "emotion": "surprise",
+        "intensity": 0.9573752854690126,
+        "face_id": "face_1000_0",
+        "bbox": {
+          "x": 497,
+          "y": 211,
+          "width": 304,
+          "height": 304
+        }
+      },
+      "start_frame": 1000,
+      "end_frame": 1025,
+      "duration": 9,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 1035,
+      "timestamp": 34.5,
+      "description": "Expressão surprise com intensidade 95.2%",
+      "severity": "baixa",
+      "confidence": 0.9516149759292603,
+      "details": {
+        "emotion": "surprise",
+        "intensity": 0.9516149759292603,
+        "face_id": "face_1035_0",
+        "bbox": {
+          "x": 554,
+          "y": 203,
+          "width": 313,
+          "height": 313
+        }
+      },
+      "start_frame": 1035,
+      "end_frame": 1060,
+      "duration": 7,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 1075,
+      "timestamp": 35.833333333333336,
+      "description": "Expressão surprise com intensidade 97.0%",
+      "severity": "baixa",
+      "confidence": 0.970144215805028,
+      "details": {
+        "emotion": "surprise",
+        "intensity": 0.970144215805028,
+        "face_id": "face_1075_0",
+        "bbox": {
+          "x": 589,
+          "y": 199,
+          "width": 316,
+          "height": 316
+        }
+      },
+      "start_frame": 1075,
+      "end_frame": 1075,
+      "duration": 2,
+      "count": 1
+    },
+    {
+      "type": "movimento_brusco",
+      "frame_number": 1080,
+      "timestamp": 36.0,
+      "description": "Movimento brusco detectado (89.9% da imagem)",
+      "severity": "baixa",
+      "confidence": 1.0,
+      "details": {
+        "movement_ratio": 0.8993424479166666,
+        "average_ratio": 0.06231960720486111,
+        "spike_factor": 14.431131521100397
+      },
+      "start_frame": 1080,
+      "end_frame": 1080,
+      "duration": 1,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 1175,
+      "timestamp": 39.166666666666664,
+      "description": "Expressão sad com intensidade 96.3%",
+      "severity": "baixa",
+      "confidence": 0.9630680018188957,
+      "details": {
+        "emotion": "sad",
+        "intensity": 0.9630680018188957,
+        "face_id": "face_1175_0",
+        "bbox": {
+          "x": 498,
+          "y": 138,
+          "width": 363,
+          "height": 363
+        }
+      },
+      "start_frame": 1175,
+      "end_frame": 1175,
+      "duration": 1,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 1235,
+      "timestamp": 41.166666666666664,
+      "description": "Expressão fear com intensidade 98.2%",
+      "severity": "baixa",
+      "confidence": 0.9823592326212843,
+      "details": {
+        "emotion": "fear",
+        "intensity": 0.9823592326212843,
+        "face_id": "face_1235_0",
+        "bbox": {
+          "x": 543,
+          "y": 162,
+          "width": 290,
+          "height": 290
+        }
+      },
+      "start_frame": 1235,
+      "end_frame": 1245,
+      "duration": 4,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 1270,
+      "timestamp": 42.333333333333336,
+      "description": "Expressão sad com intensidade 98.6%",
+      "severity": "baixa",
+      "confidence": 0.9860852940184229,
+      "details": {
+        "emotion": "sad",
+        "intensity": 0.9860852940184229,
+        "face_id": "face_1270_0",
+        "bbox": {
+          "x": 481,
+          "y": 77,
+          "width": 426,
+          "height": 426
+        }
+      },
+      "start_frame": 1270,
+      "end_frame": 1290,
+      "duration": 6,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 1305,
+      "timestamp": 43.5,
+      "description": "Expressão sad com intensidade 95.8%",
+      "severity": "baixa",
+      "confidence": 0.9584477593365003,
+      "details": {
+        "emotion": "sad",
+        "intensity": 0.9584477593365003,
+        "face_id": "face_1305_0",
+        "bbox": {
+          "x": 436,
+          "y": 71,
+          "width": 466,
+          "height": 466
+        }
+      },
+      "start_frame": 1305,
+      "end_frame": 1330,
+      "duration": 3,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 1340,
+      "timestamp": 44.666666666666664,
+      "description": "Expressão angry com intensidade 96.8%",
+      "severity": "baixa",
+      "confidence": 0.9676221609115601,
+      "details": {
+        "emotion": "angry",
+        "intensity": 0.9676221609115601,
+        "face_id": "face_1340_0",
+        "bbox": {
+          "x": 476,
+          "y": 92,
+          "width": 440,
+          "height": 440
+        }
+      },
+      "start_frame": 1340,
+      "end_frame": 1355,
+      "duration": 4,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 1375,
+      "timestamp": 45.833333333333336,
+      "description": "Expressão suspeita: fear",
+      "severity": "média",
+      "confidence": 0.9210835193296052,
+      "details": {
+        "emotion": "fear",
+        "reason": "emoção_suspeita",
+        "face_id": "face_1375_0"
+      },
+      "start_frame": 1375,
+      "end_frame": 1400,
+      "duration": 5,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 1405,
+      "timestamp": 46.833333333333336,
+      "description": "Expressão sad com intensidade 99.6%",
+      "severity": "baixa",
+      "confidence": 0.9959763889340891,
+      "details": {
+        "emotion": "sad",
+        "intensity": 0.9959763889340891,
+        "face_id": "face_1405_0",
+        "bbox": {
+          "x": 383,
+          "y": 82,
+          "width": 517,
+          "height": 517
+        }
+      },
+      "start_frame": 1405,
+      "end_frame": 1430,
+      "duration": 4,
+      "count": 1
+    },
+    {
+      "type": "movimento_brusco",
+      "frame_number": 1440,
+      "timestamp": 48.0,
+      "description": "Movimento brusco detectado (94.0% da imagem)",
+      "severity": "baixa",
+      "confidence": 1.0,
+      "details": {
+        "movement_ratio": 0.9401302083333334,
+        "average_ratio": 0.07680040147569445,
+        "spike_factor": 12.241214762801246
+      },
+      "start_frame": 1440,
+      "end_frame": 1440,
+      "duration": 1,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 1445,
+      "timestamp": 48.166666666666664,
+      "description": "Expressão suspeita: fear",
+      "severity": "média",
+      "confidence": 0.8710198998451233,
+      "details": {
+        "emotion": "fear",
+        "reason": "emoção_suspeita",
+        "face_id": "face_1445_0"
+      },
+      "start_frame": 1445,
+      "end_frame": 1470,
+      "duration": 4,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 1475,
+      "timestamp": 49.166666666666664,
+      "description": "Expressão happy com intensidade 99.8%",
+      "severity": "baixa",
+      "confidence": 0.9982362987713458,
+      "details": {
+        "emotion": "happy",
+        "intensity": 0.9982362987713458,
+        "face_id": "face_1475_0",
+        "bbox": {
+          "x": 576,
+          "y": 135,
+          "width": 177,
+          "height": 177
+        }
+      },
+      "start_frame": 1475,
+      "end_frame": 1490,
+      "duration": 3,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 1510,
+      "timestamp": 50.333333333333336,
+      "description": "Expressão happy com intensidade 99.4%",
+      "severity": "baixa",
+      "confidence": 0.9936367273330688,
+      "details": {
+        "emotion": "happy",
+        "intensity": 0.9936367273330688,
+        "face_id": "face_1510_0",
+        "bbox": {
+          "x": 547,
+          "y": 376,
+          "width": 186,
+          "height": 186
+        }
+      },
+      "start_frame": 1510,
+      "end_frame": 1535,
+      "duration": 4,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 1540,
+      "timestamp": 51.333333333333336,
+      "description": "Expressão happy com intensidade 99.4%",
+      "severity": "baixa",
+      "confidence": 0.9942821264266968,
+      "details": {
+        "emotion": "happy",
+        "intensity": 0.9942821264266968,
+        "face_id": "face_1540_0",
+        "bbox": {
+          "x": 611,
+          "y": 160,
+          "width": 162,
+          "height": 162
+        }
+      },
+      "start_frame": 1540,
+      "end_frame": 1560,
+      "duration": 2,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 1620,
+      "timestamp": 54.0,
+      "description": "Expressão neutral com intensidade 100.0%",
+      "severity": "baixa",
+      "confidence": 0.9997610449790955,
+      "details": {
+        "emotion": "neutral",
+        "intensity": 0.9997610449790955,
+        "face_id": "face_1620_0",
+        "bbox": {
+          "x": 520,
+          "y": 195,
+          "width": 334,
+          "height": 334
+        }
+      },
+      "start_frame": 1620,
+      "end_frame": 1640,
+      "duration": 5,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 1655,
+      "timestamp": 55.166666666666664,
+      "description": "Expressão neutral com intensidade 97.0%",
+      "severity": "baixa",
+      "confidence": 0.9704099332797607,
+      "details": {
+        "emotion": "neutral",
+        "intensity": 0.9704099332797607,
+        "face_id": "face_1655_0",
+        "bbox": {
+          "x": 516,
+          "y": 185,
+          "width": 336,
+          "height": 336
+        }
+      },
+      "start_frame": 1655,
+      "end_frame": 1680,
+      "duration": 5,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 1685,
+      "timestamp": 56.166666666666664,
+      "description": "Expressão neutral com intensidade 99.7%",
+      "severity": "baixa",
+      "confidence": 0.9969811437714782,
+      "details": {
+        "emotion": "neutral",
+        "intensity": 0.9969811437714782,
+        "face_id": "face_1685_0",
+        "bbox": {
+          "x": 497,
+          "y": 180,
+          "width": 330,
+          "height": 330
+        }
+      },
+      "start_frame": 1685,
+      "end_frame": 1695,
+      "duration": 3,
+      "count": 1
+    },
+    {
+      "type": "elemento_grafico",
+      "frame_number": 1710,
+      "timestamp": 57.0,
+      "description": "Região com saturação anormalmente alta detectada",
+      "severity": "média",
+      "confidence": 1.0,
+      "details": {
+        "reason": "alta_saturacao",
+        "saturation_ratio": 0.32430772569444444,
+        "bbox": {
+          "x": 692,
+          "y": 371,
+          "width": 588,
+          "height": 349
+        }
+      },
+      "start_frame": 1710,
+      "end_frame": 1735,
+      "duration": 26,
+      "count": 1
+    },
+    {
+      "type": "movimento_brusco",
+      "frame_number": 1710,
+      "timestamp": 57.0,
+      "description": "Movimento brusco detectado (85.0% da imagem)",
+      "severity": "baixa",
+      "confidence": 1.0,
+      "details": {
+        "movement_ratio": 0.8499164496527778,
+        "average_ratio": 0.024072536892361114,
+        "spike_factor": 35.30647614969405
+      },
+      "start_frame": 1710,
+      "end_frame": 1710,
+      "duration": 1,
+      "count": 1
+    },
+    {
+      "type": "elemento_grafico",
+      "frame_number": 1740,
+      "timestamp": 58.0,
+      "description": "Região com saturação anormalmente alta detectada",
+      "severity": "média",
+      "confidence": 1.0,
+      "details": {
+        "reason": "alta_saturacao",
+        "saturation_ratio": 0.30733506944444444,
+        "bbox": {
+          "x": 776,
+          "y": 371,
+          "width": 504,
+          "height": 349
+        }
+      },
+      "start_frame": 1740,
+      "end_frame": 1765,
+      "duration": 30,
+      "count": 1
+    },
+    {
+      "type": "elemento_grafico",
+      "frame_number": 1770,
+      "timestamp": 59.0,
+      "description": "Região com saturação anormalmente alta detectada",
+      "severity": "média",
+      "confidence": 1.0,
+      "details": {
+        "reason": "alta_saturacao",
+        "saturation_ratio": 0.25038953993055557,
+        "bbox": {
+          "x": 0,
+          "y": 696,
+          "width": 368,
+          "height": 24
+        }
+      },
+      "start_frame": 1770,
+      "end_frame": 1795,
+      "duration": 29,
+      "count": 1
+    },
+    {
+      "type": "elemento_grafico",
+      "frame_number": 1800,
+      "timestamp": 60.0,
+      "description": "Região com saturação anormalmente alta detectada",
+      "severity": "média",
+      "confidence": 1.0,
+      "details": {
+        "reason": "alta_saturacao",
+        "saturation_ratio": 0.26958767361111113,
+        "bbox": {
+          "x": 0,
+          "y": 386,
+          "width": 552,
+          "height": 334
+        }
+      },
+      "start_frame": 1800,
+      "end_frame": 1825,
+      "duration": 42,
+      "count": 1
+    },
+    {
+      "type": "movimento_brusco",
+      "frame_number": 1830,
+      "timestamp": 61.0,
+      "description": "Movimento brusco detectado (87.2% da imagem)",
+      "severity": "baixa",
+      "confidence": 1.0,
+      "details": {
+        "movement_ratio": 0.8716048177083333,
+        "average_ratio": 0.10470024956597221,
+        "spike_factor": 8.324763516051892
+      },
+      "start_frame": 1830,
+      "end_frame": 1830,
+      "duration": 1,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 2395,
+      "timestamp": 79.83333333333333,
+      "description": "Expressão suspeita: fear",
+      "severity": "média",
+      "confidence": 0.9166226387023926,
+      "details": {
+        "emotion": "fear",
+        "reason": "emoção_suspeita",
+        "face_id": "face_2395_0"
+      },
+      "start_frame": 2395,
+      "end_frame": 2395,
+      "duration": 1,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 2460,
+      "timestamp": 82.0,
+      "description": "Expressão sad com intensidade 100.0%",
+      "severity": "baixa",
+      "confidence": 0.9999510049819946,
+      "details": {
+        "emotion": "sad",
+        "intensity": 0.9999510049819946,
+        "face_id": "face_2460_0",
+        "bbox": {
+          "x": 623,
+          "y": 290,
+          "width": 210,
+          "height": 210
+        }
+      },
+      "start_frame": 2460,
+      "end_frame": 2485,
+      "duration": 2,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 2495,
+      "timestamp": 83.16666666666667,
+      "description": "Expressão sad com intensidade 99.4%",
+      "severity": "baixa",
+      "confidence": 0.9943925738334656,
+      "details": {
+        "emotion": "sad",
+        "intensity": 0.9943925738334656,
+        "face_id": "face_2495_0",
+        "bbox": {
+          "x": 550,
+          "y": 324,
+          "width": 192,
+          "height": 192
+        }
+      },
+      "start_frame": 2495,
+      "end_frame": 2510,
+      "duration": 3,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 2540,
+      "timestamp": 84.66666666666667,
+      "description": "Expressão sad com intensidade 100.0%",
+      "severity": "baixa",
+      "confidence": 0.9995049833956351,
+      "details": {
+        "emotion": "sad",
+        "intensity": 0.9995049833956351,
+        "face_id": "face_2540_0",
+        "bbox": {
+          "x": 416,
+          "y": 273,
+          "width": 229,
+          "height": 229
+        }
+      },
+      "start_frame": 2540,
+      "end_frame": 2540,
+      "duration": 1,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 2660,
+      "timestamp": 88.66666666666667,
+      "description": "Expressão sad com intensidade 99.9%",
+      "severity": "baixa",
+      "confidence": 0.9992824196815491,
+      "details": {
+        "emotion": "sad",
+        "intensity": 0.9992824196815491,
+        "face_id": "face_2660_0",
+        "bbox": {
+          "x": 176,
+          "y": 221,
+          "width": 242,
+          "height": 242
+        }
+      },
+      "start_frame": 2660,
+      "end_frame": 2660,
+      "duration": 1,
+      "count": 1
+    },
+    {
+      "type": "careta_exagerada",
+      "frame_number": 3315,
+      "timestamp": 110.5,
+      "description": "Expressão angry com intensidade 96.3%",
+      "severity": "baixa",
+      "confidence": 0.9626558423042297,
+      "details": {
+        "emotion": "angry",
+        "intensity": 0.9626558423042297,
+        "face_id": "face_3315_0",
+        "bbox": {
+          "x": 413,
+          "y": 160,
+          "width": 205,
+          "height": 205
+        }
+      },
+      "start_frame": 3315,
+      "end_frame": 3320,
+      "duration": 2,
+      "count": 1
+    }
+  ],
+  "thresholds": {
+    "emotion": 0.95,
+    "movement": 0.8,
+    "graphic": 0.9
+  }
+}

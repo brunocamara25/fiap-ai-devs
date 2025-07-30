@@ -1,0 +1,545 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Análise de Vídeo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #555;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        .metric-box {
+            display: inline-block;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            min-width: 150px;
+        }
+        .metric-value {
+            font-size: 36px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .metric-label {
+            font-size: 14px;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+        .anomaly-item {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .anomaly-high {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+        .timeline-item {
+            border-left: 3px solid #007bff;
+            padding-left: 20px;
+            margin-left: 10px;
+            margin-bottom: 20px;
+        }
+        .chart-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .key-finding {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Relatório de Análise de Vídeo</h1>
+        
+        <div style="text-align: center; margin-bottom: 30px;">
+            <p><strong>Data da Análise:</strong> 29/07/2025 21:38</p>
+            <p><strong>Arquivo:</strong> video.mp4</p>
+        </div>
+        
+        <h2>📈 Métricas Principais</h2>
+        <div style="text-align: center;">
+            <div class="metric-box">
+                <div class="metric-value">365</div>
+                <div class="metric-label">Rostos Detectados</div>
+            </div>
+            <div class="metric-box">
+                <div class="metric-value">25</div>
+                <div class="metric-label">Pessoas Estimadas</div>
+            </div>
+            <div class="metric-box">
+                <div class="metric-value">53</div>
+                <div class="metric-label">Anomalias</div>
+            </div>
+            <div class="metric-box">
+                <div class="metric-value">110.9s</div>
+                <div class="metric-label">Duração</div>
+            </div>
+        </div>
+        
+        <h2>🎯 Descobertas Principais</h2>
+        <div class="key-finding">✓ Aproximadamente 25 pessoas aparecem no vídeo</div><div class="key-finding">✓ Emoção mais comum: neutral (31.8%)</div><div class="key-finding">✓ Atividade principal: Gesticulando muito</div><div class="key-finding">✓ 53 anomalias detectadas</div><div class="key-finding">✓ Anomalia mais comum: Expressão facial exagerada</div>
+        
+        <h2>😊 Distribuição de Emoções</h2>
+        <table>
+            <tr>
+                <th>Emoção</th>
+                <th>Ocorrências</th>
+                <th>Percentual</th>
+            </tr>
+            
+                <tr>
+                    <td>raiva</td>
+                    <td>23</td>
+                    <td>6.3%</td>
+                </tr>
+                
+                <tr>
+                    <td>nojo</td>
+                    <td>1</td>
+                    <td>0.3%</td>
+                </tr>
+                
+                <tr>
+                    <td>medo</td>
+                    <td>38</td>
+                    <td>10.4%</td>
+                </tr>
+                
+                <tr>
+                    <td>feliz</td>
+                    <td>65</td>
+                    <td>17.8%</td>
+                </tr>
+                
+                <tr>
+                    <td>triste</td>
+                    <td>83</td>
+                    <td>22.7%</td>
+                </tr>
+                
+                <tr>
+                    <td>surpresa</td>
+                    <td>39</td>
+                    <td>10.7%</td>
+                </tr>
+                
+                <tr>
+                    <td>neutro</td>
+                    <td>116</td>
+                    <td>31.8%</td>
+                </tr>
+                
+        </table>
+        
+        <h2>🏃 Atividades Detectadas</h2>
+        <table>
+            <tr>
+                <th>Atividade</th>
+                <th>Ocorrências</th>
+                <th>Descrição</th>
+            </tr>
+            
+                <tr>
+                    <td>sentado</td>
+                    <td>5</td>
+                    <td>Pessoa sentada</td>
+                </tr>
+                
+                <tr>
+                    <td>em_pe</td>
+                    <td>131</td>
+                    <td>Pessoa em pé</td>
+                </tr>
+                
+                <tr>
+                    <td>caminhando</td>
+                    <td>160</td>
+                    <td>Pessoa caminhando</td>
+                </tr>
+                
+                <tr>
+                    <td>correndo</td>
+                    <td>17</td>
+                    <td>Pessoa correndo</td>
+                </tr>
+                
+                <tr>
+                    <td>dancando</td>
+                    <td>119</td>
+                    <td>Pessoa dançando</td>
+                </tr>
+                
+                <tr>
+                    <td>trabalhando_computador</td>
+                    <td>143</td>
+                    <td>Trabalhando no computador</td>
+                </tr>
+                
+                <tr>
+                    <td>usando_celular</td>
+                    <td>29</td>
+                    <td>Usando celular</td>
+                </tr>
+                
+                <tr>
+                    <td>deitado</td>
+                    <td>56</td>
+                    <td>Pessoa deitada</td>
+                </tr>
+                
+                <tr>
+                    <td>gesticulando</td>
+                    <td>171</td>
+                    <td>Gesticulando muito</td>
+                </tr>
+                
+        </table>
+        
+        <h2>⚠️ Anomalias Detectadas</h2>
+        
+                <div class="anomaly-item">
+                    <strong>careta_exagerada</strong> - Frame 0 
+                    (0.00s)<br>
+                    Expressão sad com intensidade 99.7%<br>
+                    <small>Severidade: baixa</small>
+                </div>
+                
+                <div class="anomaly-item">
+                    <strong>careta_exagerada</strong> - Frame 30 
+                    (1.00s)<br>
+                    Expressão angry com intensidade 99.6%<br>
+                    <small>Severidade: baixa</small>
+                </div>
+                
+                <div class="anomaly-item">
+                    <strong>careta_exagerada</strong> - Frame 60 
+                    (2.00s)<br>
+                    Expressão neutral com intensidade 99.1%<br>
+                    <small>Severidade: baixa</small>
+                </div>
+                
+                <div class="anomaly-item">
+                    <strong>careta_exagerada</strong> - Frame 90 
+                    (3.00s)<br>
+                    Expressão neutral com intensidade 97.7%<br>
+                    <small>Severidade: baixa</small>
+                </div>
+                
+                <div class="anomaly-item">
+                    <strong>careta_exagerada</strong> - Frame 130 
+                    (4.33s)<br>
+                    Expressão neutral com intensidade 97.9%<br>
+                    <small>Severidade: baixa</small>
+                </div>
+                
+                <div class="anomaly-item">
+                    <strong>careta_exagerada</strong> - Frame 205 
+                    (6.83s)<br>
+                    Expressão happy com intensidade 99.3%<br>
+                    <small>Severidade: baixa</small>
+                </div>
+                
+                <div class="anomaly-item">
+                    <strong>careta_exagerada</strong> - Frame 240 
+                    (8.00s)<br>
+                    Expressão happy com intensidade 100.0%<br>
+                    <small>Severidade: baixa</small>
+                </div>
+                
+                <div class="anomaly-item">
+                    <strong>careta_exagerada</strong> - Frame 270 
+                    (9.00s)<br>
+                    Expressão happy com intensidade 100.0%<br>
+                    <small>Severidade: baixa</small>
+                </div>
+                
+                <div class="anomaly-item">
+                    <strong>careta_exagerada</strong> - Frame 330 
+                    (11.00s)<br>
+                    Expressão neutral com intensidade 99.7%<br>
+                    <small>Severidade: baixa</small>
+                </div>
+                
+                <div class="anomaly-item">
+                    <strong>movimento_brusco</strong> - Frame 540 
+                    (18.00s)<br>
+                    Movimento brusco detectado (84.6% da imagem)<br>
+                    <small>Severidade: baixa</small>
+                </div>
+                
+        
+        <h2>⏱️ Linha do Tempo</h2>
+        <div style="max-height: 400px; overflow-y: auto;">
+            
+                <div class="timeline-item">
+                    <strong>00:00</strong><br>
+                    Pessoas: 18<br>
+                    Emoções: sad, fear, happy, neutral, angry<br>
+                    <span style='color: red;'>Anomalia: careta_exagerada</span>
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:01</strong><br>
+                    Pessoas: 21<br>
+                    Emoções: sad, surprise, fear, neutral, angry<br>
+                    <span style='color: red;'>Anomalia: careta_exagerada</span>
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:02</strong><br>
+                    Pessoas: 14<br>
+                    Emoções: sad, happy, neutral<br>
+                    <span style='color: red;'>Anomalia: careta_exagerada</span>
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:03</strong><br>
+                    Pessoas: 18<br>
+                    Emoções: sad, fear, happy, neutral, angry<br>
+                    <span style='color: red;'>Anomalia: careta_exagerada</span>
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:04</strong><br>
+                    Pessoas: 4<br>
+                    Emoções: fear, neutral, sad<br>
+                    <span style='color: red;'>Anomalia: careta_exagerada</span>
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:05</strong><br>
+                    Pessoas: 2<br>
+                    Emoções: sad, neutral<br>
+                    
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:06</strong><br>
+                    Pessoas: 6<br>
+                    Emoções: happy, neutral<br>
+                    <span style='color: red;'>Anomalia: careta_exagerada</span>
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:07</strong><br>
+                    Pessoas: 6<br>
+                    Emoções: happy<br>
+                    
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:08</strong><br>
+                    Pessoas: 6<br>
+                    Emoções: happy, neutral<br>
+                    <span style='color: red;'>Anomalia: careta_exagerada</span>
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:09</strong><br>
+                    Pessoas: 6<br>
+                    Emoções: happy<br>
+                    <span style='color: red;'>Anomalia: careta_exagerada</span>
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:10</strong><br>
+                    Pessoas: 6<br>
+                    Emoções: happy, neutral<br>
+                    
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:11</strong><br>
+                    Pessoas: 6<br>
+                    Emoções: sad, neutral<br>
+                    <span style='color: red;'>Anomalia: careta_exagerada</span>
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:18</strong><br>
+                    Pessoas: 4<br>
+                    Emoções: sad, happy, fear<br>
+                    <span style='color: red;'>Anomalia: careta_exagerada, movimento_brusco</span>
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:19</strong><br>
+                    Pessoas: 5<br>
+                    Emoções: sad, happy, angry, neutral<br>
+                    <span style='color: red;'>Anomalia: careta_exagerada</span>
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:20</strong><br>
+                    Pessoas: 6<br>
+                    Emoções: fear, happy, angry, sad<br>
+                    <span style='color: red;'>Anomalia: careta_exagerada</span>
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:21</strong><br>
+                    Pessoas: 6<br>
+                    Emoções: sad, neutral<br>
+                    
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:22</strong><br>
+                    Pessoas: 4<br>
+                    Emoções: sad, angry, fear<br>
+                    <span style='color: red;'>Anomalia: careta_exagerada</span>
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:23</strong><br>
+                    Pessoas: 2<br>
+                    Emoções: happy<br>
+                    
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:24</strong><br>
+                    Pessoas: 6<br>
+                    Emoções: sad, neutral<br>
+                    <span style='color: red;'>Anomalia: careta_exagerada, movimento_brusco</span>
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:25</strong><br>
+                    Pessoas: 6<br>
+                    Emoções: neutral<br>
+                    <span style='color: red;'>Anomalia: careta_exagerada</span>
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:26</strong><br>
+                    Pessoas: 6<br>
+                    Emoções: neutral<br>
+                    
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:27</strong><br>
+                    Pessoas: 6<br>
+                    Emoções: neutral<br>
+                    <span style='color: red;'>Anomalia: careta_exagerada</span>
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:28</strong><br>
+                    Pessoas: 6<br>
+                    Emoções: sad, neutral<br>
+                    
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:29</strong><br>
+                    Pessoas: 6<br>
+                    Emoções: sad, neutral<br>
+                    
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:30</strong><br>
+                    Pessoas: 6<br>
+                    Emoções: surprise<br>
+                    <span style='color: red;'>Anomalia: careta_exagerada, movimento_brusco</span>
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:31</strong><br>
+                    Pessoas: 6<br>
+                    Emoções: surprise<br>
+                    <span style='color: red;'>Anomalia: careta_exagerada</span>
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:32</strong><br>
+                    Pessoas: 6<br>
+                    Emoções: angry, surprise<br>
+                    <span style='color: red;'>Anomalia: careta_exagerada</span>
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:33</strong><br>
+                    Pessoas: 6<br>
+                    Emoções: surprise<br>
+                    <span style='color: red;'>Anomalia: careta_exagerada</span>
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:34</strong><br>
+                    Pessoas: 6<br>
+                    Emoções: surprise<br>
+                    <span style='color: red;'>Anomalia: careta_exagerada</span>
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>00:35</strong><br>
+                    Pessoas: 6<br>
+                    Emoções: fear, surprise<br>
+                    <span style='color: red;'>Anomalia: careta_exagerada</span>
+                </div>
+                
+        </div>
+        
+        <hr style="margin-top: 50px;">
+        <p style="text-align: center; color: #6c757d;">
+            Relatório gerado automaticamente pelo Sistema de Análise de Vídeo com IA
+        </p>
+    </div>
+</body>
+</html>
+        
