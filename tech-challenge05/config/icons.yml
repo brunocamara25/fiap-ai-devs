@@ -1,0 +1,99 @@
+# === CONFIG PADRÃO (pode só aceitar assim) ===
+paths:
+  icons_root: ../../icons
+  out: ./outputs
+  copy_files: true         # true=copia; false=symlink
+  cache_dir: ./.cache_icons # onde salvo caches
+
+classes:
+  # Conjunto FECHADO de classes funcionais (reutilizáveis em STRIDE, custo, etc.).
+  closed_set: [
+    vm_compute, serverless_functions, container_service, kubernetes,
+    relational_db, nosql_db, object_storage, file_storage, block_storage,
+    data_warehouse, etl_data_factory, streaming_ingest, message_queue,
+    api_gateway, event_topic_pubsub, web_app_appservice, devops_ci_cd,
+    monitoring, logging, iam_identity, kms_key_vault, security, waf,
+    vpc_vnet, private_endpoint, dns, load_balancer, vpn_gateway, cdn,
+    iot_edge, ml_ai_platform, migration, media_services,
+    workflow_orchestration, blockchain
+  ]
+  # (opcional) classes auxiliares p/ análises de fluxo/ameaças:
+  extras: [external_actor, internet_edge, on_prem, trust_boundary, arrow_head, arrow_body]
+  include_extras: false
+
+ignore:
+  # Pastas/fragmentos que NÃO viram classe (UI/marketplace/portal/trial/etc.)
+  
+  folder_globs: [
+    "azure/**/general/**", "azure/**/menu/**", "azure/**/new icons/**",
+    "azure/**/other/**", "azure/**/azure ecosystem/**", "azure/**/azure*ecosystem/**",
+    "aws/**/General-Icons/**", "aws/**/Customer-Enablement/**",
+    "aws/**/Cloud-Financial-Management/**",
+    "gcp/**/Home.svg", "gcp/**/Support.svg", "gcp/**/My-Cloud.svg"
+  ]
+  name_tokens: [
+    "marketplace", "support", "help", "guide", "trial", "preview",
+    "portal", "dashboard", "center", "recent", "home", "learn"
+  ]
+
+llm:
+  enabled: true               # usar LLM só quando heurísticas não resolverem
+  provider_hint: true         # passa 'aws/azure/gcp' como dica ao LLM
+  model: "llama3"             # ollama
+  temperature: 0.0
+  batch_size: 40
+  max_tokens: 1024
+  # Se LLM sugerir algo fora de closed_set => ignora
+  # confiança aqui é simbólica (eu aplico regras/score + heurísticas):
+  acceptance_threshold: 0.72
+
+unify_folders:
+  # Unifica automaticamente subpastas de 2º nível (compute/containers/…)
+  enabled: true
+  cache_file: "folder_unify.json"     # reaproveita mapeamentos em execuções futuras
+  # Limita a saída do LLM ao closed_set:
+  force_closed_set: true
+
+heuristics:
+  token2class:
+    "ec2,vm,compute,instance,compute_engine,virtual_machine": vm_compute
+    "kubernetes,gke,eks,aks,anthos": kubernetes
+    "lambda,functions,cloud_functions,function_app": serverless_functions
+    "s3,bucket,blob,storage_account,object_store": object_storage
+    "efs,filestore,fileshare,fsx": file_storage
+    "ebs,persistent_disk,disk_pool": block_storage
+    "rds,sql,postgres,mysql,sqlserver,spanner,synapse_sql": relational_db
+    "dynamodb,cosmosdb,bigtable,firestore,documentdb,keyspaces": nosql_db
+    "redshift,synapse,bigquery,data_warehouse": data_warehouse
+    "datafactory,data_factory,dataflow,dataproc,glue,dataprep": etl_data_factory
+    "kinesis,eventhub,pubsub,eventarc,msk,stream": streaming_ingest
+    "sqs,service_bus,mq,queue": message_queue
+    "sns,topic,eventgrid,event_hub,pubsub": event_topic_pubsub
+    "apigateway,api_gateway,api_management,apigee": api_gateway
+    "codebuild,codepipeline,codedeploy,devops,cloud_build,pipelines,devops_guru,cloud_shell,tools_for_powershell": devops_ci_cd
+    "cloudwatch,monitor,stackdriver,grafana,prometheus": monitoring
+    "logging,log_analytics,cloud_logging": logging
+    "iam,active_directory,ad,identity,verified_permissions": iam_identity
+    "kms,key_vault,secrets_manager,secret_manager,certificate_manager": kms_key_vault
+    "shield,waf,ddos,firewall_manager,web_security_scanner": waf
+    "security_hub,defender,security_command_center,inspector,macie,guardduty,security": security
+    "vpc,vnet,networking,cloud_network": vpc_vnet
+    "private_link,private_endpoint,private_service_connect": private_endpoint
+    "dns,route_53,dns_zone": dns
+    "alb,nlb,application_gateway,traffic_director,load_balancing": load_balancer
+    "vpn,vpn_gateway,site_to_site": vpn_gateway
+    "cloudfront,cdn,front_door": cdn
+    "iot,iot_core,iot_hub,greengrass,sitewise,twinmaker": iot_edge
+    "sagemaker,vertex_ai,azure_ml,automl,kendra,polly,translate,transcribe": ml_ai_platform
+    "media,ivs,elemental,mediaconnect,medialive,mediaconvert,video": media_services
+    "migrate,dms,database_migration,datasync,transfer,migration_hub": migration
+
+outputs:
+  emit:
+    - classes_txt
+    - classes_yaml
+    - icon_map_csv
+    - icon_map_json
+    - folder_unify_json
+    - unknown_icons_csv
+    - class_stats_json

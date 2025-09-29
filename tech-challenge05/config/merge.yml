@@ -1,0 +1,12 @@
+paths:
+  out_root: ../../datasets/combined
+  classes:  outputs/classes.yaml   # o MESMO que você usou no sintético/real
+  copy_images: true
+  resize_long: 1280                # redimensiona o lado maior
+
+merge:
+  sources:
+    - ../../datasets/synthetic         # seu dataset sintético
+    - ../../datasets/real          # seu dataset real (normalizado)
+  respect_splits: true             # usa os splits de cada fonte; se false, refaz via val_ratio
+  # val_ratio: 0.1                 # usado só quando respect_splits=false

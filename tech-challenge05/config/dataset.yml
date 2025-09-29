@@ -1,0 +1,212 @@
+paths:
+  xml_root: ../../dataset
+  out_root: ../../datasets/real
+  classes: outputs/classes.yaml
+  img_roots: [../../dataset]
+  copy_images: true
+  resize_long: 1280
+
+llm:
+  enabled: true
+  model: "llama3"
+  batch: 60
+  temperature: 0.0
+
+matching:
+  auto_fuzzy: true
+  fuzzy_cutoff: 0.60
+  use_llm: true
+
+normalization:
+  class_map:
+    azure_network_security_groups: security
+    azure_machine_learning_studio_workspaces: ml_ai_platform
+    aws_key_management_service: kms_key_vault
+    aws_cloudformation_template: devops_ci_cd
+    aws_simple_queue_service_queue: event_topic_pubsub
+    aws_simple_storage_service_object: object_storage
+    azure_sql_database: relational_db
+    gcp_cloud_load_balancing: load_balancer
+    azure_sql: relational_db
+    aws_amazon_virtual_private_cloud: vpc_vnet
+    aws_identity_access_management_role: iam_identity
+    azure_monitor: monitoring
+    azure_synapse_analytics: data_warehouse
+    aws_lambda: serverless_functions
+    gcp_cloud_run: container_service
+    gcp_compute_engine: vm_compute
+    aws_lambda_lambda_function: serverless_functions
+    aws_amazon_elastic_block_store: block_storage
+    aws_elastic_load_balancing_application_load_balancer: load_balancer
+    azure_container_instances: container_service
+    aws_dynamodb_table: nosql_db
+    azure_data_factories: etl_data_factory
+    gcp_google_kubernetes_engine: kubernetes
+    azure_logic_apps: workflow_orchestration
+    azure_api_management_services: api_gateway
+    aws_amazon_cloudfront: cdn
+    aws_cloudformation: devops_ci_cd
+    aws_amazon_redshift: data_warehouse
+    aws_elastic_container_service_service: container_service
+    aws_elastic_load_balancing: load_balancer
+    aws_simple_notification_service_topic: event_topic_pubsub
+    gcp_cloud_storage: object_storage
+    aws_amazon_elasticache: nosql_db
+    aws_amazon_cloudwatch: monitoring
+    aws_amazon_simple_storage_service: object_storage
+    gcp_vertex_ai: ml_ai_platform
+    aws_aurora_amazon_rds_instance: relational_db
+    aws_amazon_simple_notification_service: event_topic_pubsub
+    gcp_cloud_functions: serverless_functions
+    aws_vpc_virtual_private_cloud_vpc: vpc_vnet
+    aws_amazon_simple_queue_service: event_topic_pubsub
+    aws_route_53_hosted_zone: dns
+    aws_ec2_instances: vm_compute
+    aws_amazon_rds: relational_db
+    azure_sql_managed_instance: relational_db
+    gcp_pubsub: event_topic_pubsub
+    azure_devops: devops_ci_cd
+    aws_amazon_route_53: dns
+    azure_event_hubs: event_topic_pubsub
+    aws_amazon_ec2_auto_scaling: load_balancer
+    azure_function_apps: serverless_functions
+    azure_app_services: web_app_appservice
+    azure_sql_server: relational_db
+    aws_elastic_load_balancing_network_load_balancer: load_balancer
+    azure_virtual_networks: vpc_vnet
+    azure_application_insights: monitoring
+    aws_amazon_elastic_kubernetes_service: kubernetes
+    azure_resource_groups: vpc_vnet
+    azure_storage_accounts: object_storage
+    gcp_virtual_private_cloud: vpc_vnet
+    azure_virtual_machine: vm_compute
+    azure_databricks: data_warehouse
+    gcp_cloud_sql: relational_db
+    aws_elastic_block_store_volume: block_storage
+    aws_amazon_dynamodb: nosql_db
+    aws_ec2_instance: vm_compute
+    aws_simple_storage_service_bucket_with_objects: object_storage
+    azure_key_vaults: kms_key_vault
+    aws_simple_storage_service_bucket: object_storage
+    aws_amazon_elastic_container_service: container_service
+    aws_auto_scaling: load_balancer
+    azure_kubernetes_services: kubernetes
+    aws_simple_storage_service_s3_standard: object_storage
+    azure_openai: ml_ai_platform
+    azure_cosmos_db: nosql_db
+    gcp_identity_and_access_management: iam_identity
+    aws_elastic_container_service_container_2: container_service
+    aws_identity_and_access_management: iam_identity
+    aws_amazon_api_gateway: api_gateway
+    azure_vm_scale_sets: load_balancer
+    aws_amazon_ec2: vm_compute
+    azure_machine_learning: ml_ai_platform
+    "sei/sip": security
+    aws_autoscaling: load_balancer
+    aws_simple_email_service: event_topic_pubsub
+    resource_group: vpc_vnet
+    microsoft_entra: iam_identity
+    api: api_gateway
+    user: iam_identity
+    aws_waf: waf
+    aws_cloudfront: cdn
+    aws_cloudwatch: monitoring
+    aws_cloud_trail: logging
+    aws_elactic_file_system(nfs)_multi-az: file_storage
+    solr: nosql_db
+    aws_region: vpc_vnet
+    aws_public_subnet: vpc_vnet
+    aws_private_subnet: vpc_vnet
+    azure_services: vpc_vnet
+    aws_cloud: vpc_vnet
+    aws_backup: ignore
+    sass_services: ignore
+  synonyms:
+    compute: vm_compute
+    compute_engine: vm_compute
+    ec2: vm_compute
+    virtual_machine: vm_compute
+    developer_portal: api_gateway
+    queue: event_topic_pubsub
+    notification: event_topic_pubsub
+    pubsub: event_topic_pubsub
+    event_hubs: event_topic_pubsub
+    service_bus: event_topic_pubsub
+    region: vpc_vnet
+    resource_group: vpc_vnet
+    virtual_private_cloud: vpc_vnet
+    cloud: vpc_vnet
+    application_insights: monitoring
+    cloudwatch: monitoring
+    cloud_trail: logging
+    application_load_balancer: load_balancer
+    network_load_balancer: load_balancer
+    traffic_director: load_balancer
+    firewall: waf
+    storage_account: object_storage
+    bucket: object_storage
+    blob: object_storage
+    s3: object_storage
+    sql: relational_db
+    postgres: relational_db
+    mysql: relational_db
+    sql_server: relational_db
+    cloud_sql: relational_db
+    rds: relational_db
+    aurora: relational_db
+    bigquery: data_warehouse
+    synapse: data_warehouse
+    redshift: data_warehouse
+    databricks: data_warehouse
+    function_app: serverless_functions
+    functions: serverless_functions
+    lambda: serverless_functions
+    cloud_functions: serverless_functions
+    container_instances: container_service
+    cloud_run: container_service
+    gke: kubernetes
+    eks: kubernetes
+    aks: kubernetes
+    kms: kms_key_vault
+    key_vault: kms_key_vault
+    secret_manager: kms_key_vault
+    certificate_manager: kms_key_vault
+    route_53: dns
+    dns_zone: dns
+    cloud_dns: dns
+    logic_apps: workflow_orchestration
+    workflows: workflow_orchestration
+    openai: ml_ai_platform
+  ignore_labels:
+    - aws_backup
+    - sass_services
+
+heuristics:
+  token2class:
+    - [["api_gateway","apigateway","api_management","apigee","developer_portal","api"], api_gateway]
+    - [["cloudfront","cdn","front_door"], cdn]
+    - [["eks","aks","gke","kubernetes"], kubernetes]
+    - [["ecs","container_service","container_instances","cloud_run","container"], container_service]
+    - [["lambda","functions","function_app","cloud_functions"], serverless_functions]
+    - [["rds","sql_managed_instance","sql_server","cloud_sql","postgres","mysql","aurora"], relational_db]
+    - [["dynamodb","cosmos_db","bigtable","firestore","memorystore","elasticache","solr"], nosql_db]
+    - [["s3","storage_account","cloud_storage","bucket","blob","object_storage"], object_storage]
+    - [["efs","filestore","file_share","file_system"], file_storage]
+    - [["ebs","persistent_disk","block_store","disk"], block_storage]
+    - [["redshift","synapse","bigquery","dwh","data_warehouse","databricks"], data_warehouse]
+    - [["datafactory","data_factory","dataflow","dataproc","dataprep"], etl_data_factory]
+    - [["sns","sqs","service_bus","queue","topic","pubsub","event_hubs","simple_queue_service","simple_notification_service"], event_topic_pubsub]
+    - [["cloudwatch","application_insights","monitor"], monitoring]
+    - [["logging","cloud_trail","stackdriver","audit"], logging]
+    - [["iam","identity","entra","active_directory","user"], iam_identity]
+    - [["kms","key_vault","key_management","secret_manager","certificate_manager"], kms_key_vault]
+    - [["waf","web_security_scanner","firewall"], waf]
+    - [["security","security_center","defender","guardduty","inspector","network_security_group","network_security_groups","azure_firewalls"], security]
+    - [["vpc","vnet","virtual_network","subnet","resource_group","region","virtual_private_cloud","cloud"], vpc_vnet]
+    - [["dns","route_53","dns_zone","cloud_dns"], dns]
+    - [["alb","nlb","load_balancer","application_load_balancer","network_load_balancer","traffic_director","auto_scaling","autoscaling"], load_balancer]
+    - [["vpn"], vpn_gateway]
+    - [["vertex_ai","sagemaker","azure_ml","automl","ml"], ml_ai_platform]
+    - [["app_service","app_services","web_app"], web_app_appservice]
+    - [["logic_app","orchestrator","workflow"], workflow_orchestration]
+    - [["ec2","compute_engine","virtual_machine","vm_scale_sets","vm","compute"], vm_compute]

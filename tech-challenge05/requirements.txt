@@ -1,0 +1,22 @@
+# Requisitos principais
+tqdm
+pyyaml
+streamlit
+opencv-python
+pillow
+numpy
+pandas
+scikit-learn
+pytesseract
+reportlab
+cairosvg
+
+# Para treinamento com YOLO (exemplo com ultralytics)
+ultralytics
+
+# Para uso opcional de LLM (Ollama)
+ollama  # (opcional, se for usar classificação assistida por LLM)
+
+# Outros (dependendo do seu código)
+# matplotlib
+# seaborn

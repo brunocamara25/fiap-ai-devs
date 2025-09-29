@@ -413,7 +413,7 @@ with st.sidebar:
     st.subheader("Configuração")
     cfg_path = st.text_input("Config YAML", value="stride_app_config.yaml")
     if st.button("Recarregar config"):
-        st.experimental_set_query_params(ts=str(time.time()))
+        st.query_params.update(ts=str(time.time()))
     st.caption("Edite `stride_app_config.yaml` para salvar ajustes.")
 
 cfg = CFG  # já carregado
@@ -446,7 +446,7 @@ with tabs[0]:
     if up:
         img = Image.open(io.BytesIO(up.read())).convert("RGB")
         state.orig_img = img
-        st.image(img, caption="Original", use_column_width=True)
+        st.image(img, caption="Original", use_container_width=True)
         st.success("Imagem carregada!")
 
     # salva ajustes no runtime (não persiste no arquivo)
@@ -467,7 +467,7 @@ with tabs[1]:
         state.icon_dets = icon_dets
         state.vis_icons = vis
         state.names = names
-        st.image(vis, caption="Detecções por ícones", use_column_width=True)
+        st.image(vis, caption="Detecções por ícones", use_container_width=True)
         st.write(f"Total detecções: {len(icon_dets)}")
         if icon_dets:
             st.dataframe(
